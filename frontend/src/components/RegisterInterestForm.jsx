@@ -20,13 +20,13 @@ const RegisterInterestForm = ({
         {showLeftText ? (
           <div className="w-1/2 pl-10 text-white">
             <h2 className="text-5xl font-bold mb-4">{leftTitle}</h2>
-            <p className="text-2xl max-w-md whitespace-pre-line mb-4">
+            <p className="text-2xl max-w-xl whitespace-pre-line mb-9">
               {leftDescription}
             </p>
 
             {/* ✅ Bullet Points */}
             {leftBulletPoints.length > 0 && (
-  <ul className="list-disc list-inside text-white text-lg leading-relaxed font-medium space-y-2 mt-4">
+  <ul className="list-disc list-inside text-white text-2xl leading-relaxed font-medium space-y-2 mt-4">
     {leftBulletPoints.map((point, index) => (
       <li key={index}>{point}</li>
     ))}

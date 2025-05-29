@@ -25,7 +25,7 @@ place you love. So let’s do this, together."
                     {/* 🏙️ Left Image */}
                     <div className="flex-1">
                         <img
-                            src="/abouthead.jpg"
+                            src="/BULDINGS.png"
                             alt="About Briskbold"
                             className="w-full h-full object-cover rounded-3xl"
                         />
@@ -50,7 +50,7 @@ place you love. So let’s do this, together."
 
             {/* ✅ Register Interest Form Section */}
             <RegisterInterestForm
-                backgroundImage="/technology .png"
+                backgroundImage="abouthead.jpg"
                 title="Join Our Mission"
                 subtitle="We’re here to connect you to smarter property solutions."
                 buttonText="CONTACT OUR TEAM →"

@@ -15,7 +15,7 @@ const Contact = () => {
           title="We’re Here To Help!"
           subtitle=""
           description=""
-          backgroundImage="/images/contact-bg.jpg"
+          backgroundImage="/contactbg.jpg"
           showFilter={false}
           showContactInfo={true}
         />

@@ -11,7 +11,7 @@ const Navbar = () => {
     { name: 'Buy', path: '#' },
     { name: 'Rent', path: '#' },
     { name: 'New Projects', path: '#' },
-    { name: 'Community', path: '#' },
+    { name: 'Community', path: '/community' },
     { name: 'Developer', path: '#' },
     { name: 'More', path: '#' },
     { name: 'About', path: '/about' }, // ✅ Real path
