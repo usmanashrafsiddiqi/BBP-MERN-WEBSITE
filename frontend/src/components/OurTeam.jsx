@@ -22,8 +22,8 @@ const OurTeam = () => {
   return (
     <section className="w-full py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-[1320px] mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800">Our Team</h2>
-        <p className="text-gray-600 mt-2 mb-10 text-base md:text-lg max-w-2xl mx-auto">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-800">Our Team</h2>
+        <p className="text-gray-600 mt-2 mb-10 text-base md:text-xl max-w-2xl mx-auto">
           “Unlocking your Dreams, one key at a Time with Our Real Estate Expertise.”
         </p>
 
