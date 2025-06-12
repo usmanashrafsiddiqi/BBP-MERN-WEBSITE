@@ -4,18 +4,14 @@ const teamMembers = [
   {
     id: 1,
     name: "General Manager",
-    image: "/testi1.jpeg",
+    image: "/aimanmam.jpg",
     isHighlighted: true,
   },
-  { id: 2, image: "/diyatest.jpg" },
-  { id: 3, image: "/ubaid.jpg" },
-  { id: 4, image: "/diyatest.jpg" },
+  { id: 2, image: "/testi1.jpeg" },
+  { id: 3, image: "/u.jpg" },
+  { id: 4, image: "/d.jpg" },
   { id: 5, image: "/maufa.jpg" },
-  { id: 6, image: "/testi3.jpg" },
-  { id: 7, image: "/testi2.png" },
-  { id: 8, image: "/testi3.jpg" },
-  { id: 9, image: "/testi3.jpg" },
-  { id: 10, image: "/testi2.png" },
+
 ];
 
 const OurTeam = () => {
@@ -44,20 +40,22 @@ const OurTeam = () => {
           </div>
 
           {/* Right grid: 2 rows x 4 members */}
-          <div className="w-full lg:w-[70%] grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {teamMembers.slice(1, 9).map((member) => (
-              <div
-                key={member.id}
-                className="rounded-xl overflow-hidden h-[300px]"
-              >
-                <img
-                  src={member.image}
-                  alt={`Team member ${member.id}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
+         {/* Right grid: 2 rows x 2 columns (4 members) */}
+<div className="w-full lg:w-[70%] grid grid-cols-2 gap-4 md:gap-6">
+  {teamMembers.slice(1, 5).map((member) => (
+    <div
+      key={member.id}
+      className="rounded-xl overflow-hidden h-[300px]"
+    >
+      <img
+        src={member.image}
+        alt={`Team member ${member.id}`}
+        className="w-full h-full object-cover"
+      />
+    </div>
+  ))}
+</div>
+
         </div>
 
         {/* Button */}
