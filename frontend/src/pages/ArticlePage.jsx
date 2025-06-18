@@ -8,7 +8,7 @@ const articles = {
   article1: {
     title: 'Top 5 Real Estate Trends To Watch In 2024',
     date: 'October 28 2024',
-    bannerImage: '/blogcover1.jpg',
+    bannerImage: '/blog.jpg',
     sections: [
       {
         heading: 'Sustainable Living Takes Center Stage',
@@ -89,7 +89,7 @@ const ArticlePage = () => {
 
       {/* Title overlay */}
       <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-20 px-4">
-        <h1 className="text-3xl md:text-5xl font-bold">{article.title}</h1>
+        {/* <h1 className="text-3xl md:text-5xl font-bold">{article.title}</h1> */}
         <p className="mt-4 text-sm md:text-base">{article.date}</p>
       </div>
 

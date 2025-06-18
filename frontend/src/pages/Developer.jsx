@@ -1,213 +1,135 @@
 import React from 'react';
 import Header from '../components/Header';
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
+
 // Main Developers List
 const developers = [
   {
     name: 'Emaar',
     location: 'Dubai - UAE',
-    logo: '/emaar.jpg',
+    logo: '/emardev.png',
     featured: true,
+    description: "Emaar Properties stands at the forefront of Dubai's real estate sector, renowned for iconic developments such as the Burj Khalifa and The Dubai Mall. In January 2025, they achieved a remarkable 2,221 transactions, totaling AED 8.63 billion in sales. Emaar’s commitment to quality and innovation continues to set industry benchmarks."
   },
   {
     name: 'Damac',
     location: 'Dubai - UAE',
-    logo: '/logos/damac.png',
+    logo: '/damacdev.png',
     featured: true,
+    description: "DAMAC Properties has established itself as a leader in luxury real estate, offering a diverse portfolio of residential, commercial, and leisure properties across the Middle East. DAMAC recorded 1,767 transactions, with total sales reaching AED 4.13 billion in  January. Their emphasis on strategic locations and premium amenities appeals to discerning investors."
   },
   {
-    name: 'Majid Al Futtaim',
+    name: 'Sobha',
     location: 'Dubai - UAE',
-    logo: '/logos/majid.png',
+    logo: '/sobhadev.png',
     featured: true,
-  },
-  {
-    name: 'Nakheel',
-    location: 'Dubai - UAE',
-    logo: '/logos/nakheel.png',
-    featured: true,
-  },
-  {
-    name: 'Select Group',
-    location: 'Dubai - UAE',
-    logo: '/logos/select.png',
-    featured: true,
+    description:" Sobha Realty is recognized for its unwavering commitment to quality and attention to detail, delivering luxury residences that exemplify craftsmanship. In January, Sobha Realty completed 407 transactions, with total sales of AED 1.19 billion. Their integrated approach ensures excellence in every project"
   },
   {
     name: 'Danube Properties',
     location: 'Dubai - UAE',
-    logo: '/logos/danube.png',
+    logo: '/propertiesdev.png',
     featured: true,
+    description: "Danube Properties has rapidly ascended in the real estate market, known for delivering affordable yet high-quality residences. In January 2025, Danube completed 497 transactions, totaling AED 761.54 million in sales. Their customer-centric approach and timely project delivery have garnered trust among investors."
+  },
+  {
+    name: 'Ellington',
+    location: 'Dubai - UAE',
+    logo: '/ellingtondev.png',
+    featured: true,
+    description: "Ellington Properties is distinguished by its design-led approach, crafting bespoke residences that prioritize quality and lifestyle. In January 2025, Ellington achieved 237 transactions, with total sales of AED 620.07 million. Ellington’s focus on detail and aesthetics appeals to discerning buyers."
+  },
+  {
+    name: 'Samana',
+    location: 'Dubai - UAE',
+    logo: '/samanadev.png',
+    featured: true,
+    description: "SAMANA Developers is currently ranked as the 7th largest real estate developer in Dubai. With over 30 launched projects and 4 successful handovers, our vision is bold—and our growth, unstoppable. We are driven by one powerful philosophy: Pioneering Lifestyles. This means every SAMANA property is more than a building—it’s a transformative living experience, where design meets comfort, innovation meets elegance, and lifestyle comes first."
   },
   {
     name: 'Binghatti',
     location: 'Dubai - UAE',
-    logo: '/logos/binghatti.png',
+    logo: '/binghatidev.png',
     featured: false,
+    description: "Binghatti Developers is a Dubai-based luxury real estate developer known for its high-quality projects and partnerships with global brands. Founded in 2008, the company has established numerous residential and commercial projects in Dubai with a portfolio valued at over AED 40 billion. Binghatti is particularly recognized for its collaborations with luxury brands like Bugatti, Mercedes-Benz, and Jacob & Co. to develop branded residences. "
   },
   {
-    name: 'Ellington Properties',
+    name: 'Azizi',
     location: 'Dubai - UAE',
-    logo: '/logos/ellington.png',
+    logo: '/azizdev.png',
     featured: false,
+    description:"Azizi Developments is a Dubai-based, award-winning real estate developer known for its construction-driven approach and portfolio of luxury residential and commercial properties. They have a strong track record of delivering high-quality homes to both local and international investors, focusing on transparency and customer satisfaction. "
   },
   {
-    name: 'Sobha Properties',
+    name: 'Sobha',
     location: 'Dubai - UAE',
-    logo: '/logos/sobha.png',
+    logo: '/sobhadev.png',
     featured: true,
+    description:" Sobha Realty is recognized for its unwavering commitment to quality and attention to detail, delivering luxury residences that exemplify craftsmanship. In January, Sobha Realty completed 407 transactions, with total sales of AED 1.19 billion. Their integrated approach ensures excellence in every project"
   },
 ];
 
 // Additional Developers List
 const moreDevelopers = [
+    {
+        name: 'Binghatti',
+        location: 'Dubai - UAE',
+        logo: '/binghatidev.png',
+        featured: false,
+        description: 'Binghatti combines art and architecture to redefine urban living.'
+      },
+      {
+        name: 'Azizi',
+        location: 'Dubai - UAE',
+        logo: '/azizdev.png',
+        featured: false,
+        description: 'Azizi Developments delivers elegant and accessible homes across Dubai.'
+      },
+      {
+        name: 'Danube Properties',
+        location: 'Dubai - UAE',
+        logo: '/propertiesdev.png',
+        featured: true,
+        description: 'Danube is known for affordable luxury and timely project delivery.'
+      },
   {
-    name: 'Credo',
+    name: 'Sobha Properties',
     location: 'Dubai - UAE',
-    logo: '/logos/credo.png',
-    featured: false,
+    logo: '/logos/sobha.png',
+    featured: true,
+    description: 'Sobha Properties emphasizes quality construction and customer satisfaction.'
   },
   {
-    name: 'TownX',
+    name: 'Binghatti',
     location: 'Dubai - UAE',
-    logo: '/logos/townx.png',
+    logo: '/binghatidev.png',
     featured: false,
+    description: 'Binghatti combines art and architecture to redefine urban living.'
   },
   {
-    name: 'Green Group',
+    name: 'Danube Properties',
     location: 'Dubai - UAE',
-    logo: '/logos/green.png',
-    featured: false,
+    logo: '/propertiesdev.png',
+    featured: true,
+    description: 'Danube is known for affordable luxury and timely project delivery.'
   },
   {
-    name: 'ZāZEN',
+    name: 'Azizi',
     location: 'Dubai - UAE',
-    logo: '/logos/zazen.png',
+    logo: '/azizdev.png',
     featured: false,
+    description: 'Azizi Developments delivers elegant and accessible homes across Dubai.'
   },
   {
-    name: 'Nabni Developers',
+    name: 'Danube Properties',
     location: 'Dubai - UAE',
-    logo: '/logos/nabni.png',
-    featured: false,
+    logo: '/propertiesdev.png',
+    featured: true,
+    description: 'Danube is known for affordable luxury and timely project delivery.'
   },
-  {
-    name: 'Arenco',
-    location: 'Dubai - UAE',
-    logo: '/logos/arenco.png',
-    featured: false,
-  },
-  {
-    name: 'Ithra Dubai',
-    location: 'Dubai - UAE',
-    logo: '/logos/ithra.png',
-    featured: false,
-  },
-  {
-    name: 'Union Properties',
-    location: 'Dubai - UAE',
-    logo: '/logos/union.png',
-    featured: false,
-  },
-  {
-    name: 'Ithra Dubai',
-    location: 'Dubai - UAE',
-    logo: '/logos/ithra.png',
-    featured: false,
-  },
-  {
-    name: 'Union Properties',
-    location: 'Dubai - UAE',
-    logo: '/logos/union.png',
-    featured: false,
-  },
-  {
-    name: 'Ithra Dubai',
-    location: 'Dubai - UAE',
-    logo: '/logos/ithra.png',
-    featured: false,
-  },
-  {
-    name: 'Union Properties',
-    location: 'Dubai - UAE',
-    logo: '/logos/union.png',
-    featured: false,
-  },
-  {
-    name: 'Ithra Dubai',
-    location: 'Dubai - UAE',
-    logo: '/logos/ithra.png',
-    featured: false,
-  },
-  {
-    name: 'Union Properties',
-    location: 'Dubai - UAE',
-    logo: '/logos/union.png',
-    featured: false,
-  },
-  {
-    name: 'Ithra Dubai',
-    location: 'Dubai - UAE',
-    logo: '/logos/ithra.png',
-    featured: false,
-  },
-  {
-    name: 'Union Properties',
-    location: 'Dubai - UAE',
-    logo: '/logos/union.png',
-    featured: false,
-  },
-
-  {
-    name: 'Ithra Dubai',
-    location: 'Dubai - UAE',
-    logo: '/logos/ithra.png',
-    featured: false,
-  },
-  {
-    name: 'Union Properties',
-    location: 'Dubai - UAE',
-    logo: '/logos/union.png',
-    featured: false,
-  }, {
-    name: 'Ithra Dubai',
-    location: 'Dubai - UAE',
-    logo: '/logos/ithra.png',
-    featured: false,
-  },
-  {
-    name: 'Union Properties',
-    location: 'Dubai - UAE',
-    logo: '/logos/union.png',
-    featured: false,
-  },
-  {
-    name: 'Ithra Dubai',
-    location: 'Dubai - UAE',
-    logo: '/logos/ithra.png',
-    featured: false,
-  },
-  {
-    name: 'Union Properties',
-    location: 'Dubai - UAE',
-    logo: '/logos/union.png',
-    featured: false,
-  },
-  {
-    name: 'Ithra Dubai',
-    location: 'Dubai - UAE',
-    logo: '/logos/ithra.png',
-    featured: false,
-  },
-  {
-    name: 'Union Properties',
-    location: 'Dubai - UAE',
-    logo: '/logos/union.png',
-    featured: false,
-  },
-
 ];
 
+// Component
 const Developer = () => {
   return (
     <div>
@@ -242,16 +164,12 @@ const Developer = () => {
                   className="max-h-[110px] max-w-[240px] w-auto object-contain"
                 />
               </div>
-
               <h3 className="text-lg font-semibold text-gray-800">{dev.name}</h3>
               <div className="flex items-center text-sm text-gray-600 mb-2">
                 <img src="/icons/location.svg" alt="location" className="w-4 h-4 mr-1" />
                 {dev.location}
               </div>
-              <p className="text-sm text-gray-600 leading-snug">
-                With a legacy of crafting iconic landmarks and vibrant communities, {dev.name} is committed to
-                creating spaces where life, business, and leisure flourish harmoniously.
-              </p>
+              <p className="text-sm text-gray-600 leading-snug">{dev.description}</p>
             </div>
           ))}
         </div>
@@ -277,22 +195,18 @@ const Developer = () => {
                     className="max-h-[110px] max-w-[240px] w-auto object-contain"
                   />
                 </div>
-
                 <h3 className="text-lg font-semibold text-gray-800">{dev.name}</h3>
                 <div className="flex items-center text-sm text-gray-600 mb-2">
                   <img src="/icons/location.svg" alt="location" className="w-4 h-4 mr-1" />
                   {dev.location}
                 </div>
-                <p className="text-sm text-gray-600 leading-snug">
-                  With a legacy of crafting iconic landmarks and vibrant communities, {dev.name} is committed to
-                  creating spaces where life, business, and leisure flourish harmoniously.
-                </p>
+                <p className="text-sm text-gray-600 leading-snug">{dev.description}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

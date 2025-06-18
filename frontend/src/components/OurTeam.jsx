@@ -10,7 +10,7 @@ const teamMembers = [
   { id: 2, image: "/testi1.jpeg" },
   { id: 3, image: "/u.jpg" },
   { id: 4, image: "/d.jpg" },
-  { id: 5, image: "/maufa.jpg" },
+  { id: 5, image: "/marufa1.png" },
 
 ];
 
