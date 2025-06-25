@@ -8,6 +8,9 @@ import Community from './pages/Community';
 import Developer from './pages/Developer';
 import Blogs from './pages/Blogs';
 import ArticlePage from './pages/ArticlePage';
+import TeamInfo from './pages/TeamInfo'; // ✅ Import the new page;
+import Rent from './pages/Rent'; // ✅ import at the top
+import NewProjects from './pages/NewProjects';
 
 function App() {
   return (
@@ -20,6 +23,10 @@ function App() {
         <Route path="/developer" element={<Developer  />} /> {/* ✅ Add this line */}
         <Route path="/blogs" element={<Blogs/>  }/> {/* ✅ Add this line */}
         <Route path="/blogs/:slug" element={<ArticlePage />} /> 
+        <Route path="/team" element={<TeamInfo />} /> {/* ✅ Add this line */}
+        <Route path="/rent" element={<Rent />} />
+        <Route path="/newprojects" element={<NewProjects />} />
+
       </Routes>
     </Router>
   );

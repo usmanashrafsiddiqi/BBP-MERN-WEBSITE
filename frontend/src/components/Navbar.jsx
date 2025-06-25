@@ -11,8 +11,8 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Buy', path: '#' },
-    { name: 'Rent', path: '#' },
-    { name: 'New Projects', path: '#' },
+    { name: 'Rent', path: '/rent' },
+    { name: 'New Projects', path: '/newprojects' },
     { name: 'Community', path: '/community' },
     { name: 'Developer', path: '/developer' },
     { name: 'More', path: '#' }, // will trigger dropdown

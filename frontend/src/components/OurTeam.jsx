@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // ✅ Added for routing
 
 const teamMembers = [
   {
@@ -11,10 +12,15 @@ const teamMembers = [
   { id: 3, image: "/u.jpg" },
   { id: 4, image: "/d.jpg" },
   { id: 5, image: "/marufa1.png" },
-
 ];
 
 const OurTeam = () => {
+  const navigate = useNavigate(); // ✅ Hook for navigation
+
+  const handleSeeAll = () => {
+    navigate("/team"); // ✅ Navigate to TeamInfo page
+  };
+
   return (
     <section className="w-full py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-[1320px] mx-auto text-center">
@@ -39,27 +45,28 @@ const OurTeam = () => {
             </div>
           </div>
 
-          {/* Right grid: 2 rows x 4 members */}
-         {/* Right grid: 2 rows x 2 columns (4 members) */}
-<div className="w-full lg:w-[70%] grid grid-cols-2 gap-4 md:gap-6">
-  {teamMembers.slice(1, 5).map((member) => (
-    <div
-      key={member.id}
-      className="rounded-xl overflow-hidden h-[300px]"
-    >
-      <img
-        src={member.image}
-        alt={`Team member ${member.id}`}
-        className="w-full h-full object-cover"
-      />
-    </div>
-  ))}
-</div>
-
+          {/* Right grid: 2 rows x 2 columns (4 members) */}
+          <div className="w-full lg:w-[70%] grid grid-cols-2 gap-4 md:gap-6">
+            {teamMembers.slice(1, 5).map((member) => (
+              <div
+                key={member.id}
+                className="rounded-xl overflow-hidden h-[300px]"
+              >
+                <img
+                  src={member.image}
+                  alt={`Team member ${member.id}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Button */}
-        <button className="mt-10 bg-[#9C2B15] hover:bg-[#831e0d] text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 mx-auto">
+        {/* SEE ALL TEAM MEMBER Button */}
+        <button
+          onClick={handleSeeAll}
+          className="mt-10 bg-[#9C2B15] hover:bg-[#831e0d] text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 mx-auto"
+        >
           SEE ALL TEAM MEMBER
           <span className="bg-white text-[#9C2B15] rounded-full p-1">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
