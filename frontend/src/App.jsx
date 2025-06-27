@@ -1,6 +1,7 @@
 // src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Homepage from './pages/Homepage';
 import About from './pages/About'; // ✅ Import About page
 import Contact from './pages/Contact';
@@ -11,10 +12,11 @@ import ArticlePage from './pages/ArticlePage';
 import TeamInfo from './pages/TeamInfo'; // ✅ Import the new page;
 import Rent from './pages/Rent'; // ✅ import at the top
 import NewProjects from './pages/NewProjects';
-
+import DeveloperDetail from './pages/DeveloperDetail';
 function App() {
   return (
     <Router>
+       <ScrollToTop /> {/* ⬅️ This ensures scroll resets on route change */}
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<About />} /> {/* ✅ Add this line */}
@@ -26,6 +28,7 @@ function App() {
         <Route path="/team" element={<TeamInfo />} /> {/* ✅ Add this line */}
         <Route path="/rent" element={<Rent />} />
         <Route path="/newprojects" element={<NewProjects />} />
+        <Route path="/developer/:name" element={<DeveloperDetail />} />
 
       </Routes>
     </Router>

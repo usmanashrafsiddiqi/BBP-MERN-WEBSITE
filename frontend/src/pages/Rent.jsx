@@ -192,7 +192,7 @@ const Rent = () => {
   return (
     <div className="p-2 md:p-4 bg-white overflow-hidden">
       <Header
-        backgroundImage="/mainbg.png"
+        backgroundImage="/rentbg.jpg"
         title="Find Property In UAE"
         subtitle=""
         description=""

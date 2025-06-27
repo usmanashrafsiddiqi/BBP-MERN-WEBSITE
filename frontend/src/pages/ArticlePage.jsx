@@ -8,54 +8,156 @@ const articles = {
   article1: {
     title: 'Top 5 Real Estate Trends To Watch In 2024',
     date: 'October 28 2024',
-    bannerImage: '/blog.jpg',
+    bannerImage: '/blog1.jpg',
     sections: [
       {
         heading: 'Sustainable Living Takes Center Stage',
-        content:
-          'As climate change remains a top global concern, sustainable housing is no longer a luxury but a necessity. Buyers are increasingly drawn to homes featuring solar panels, energy-efficient appliances, and green building materials.',
-        list: [
-          'Net-zero homes and passive designs are gaining popularity.',
-          'Green certifications like LEED are becoming a major selling point.',
-        ],
-        image: '/articleimg1.jpg',
-      },
-      {
-        heading: 'Smart Homes Revolutionize Living Spaces',
-        content:
-          'The integration of smart technologies is transforming properties into intelligent living spaces. From AI-powered security systems to voice-controlled lighting, buyers now prioritize convenience and efficiency.',
-        list: [
-          '85% of new homebuyers prefer properties with pre-installed smart home systems.',
-          'Emerging tech like AI-powered HVAC systems is saving homeowners thousands annually.',
-        ],
-        image: '/4.jpg',
+        content: 'Sustainability in real estate is gaining momentum. Buyers seek eco-friendly features.',
+        list: ['Net-zero homes are on the rise.', 'Buyers value green certifications.'],
+        image: '/blog1.jpg',
       },
     ],
   },
   article2: {
     title: 'How to Choose the Perfect Neighborhood for Your Family',
-    date: 'October 28 2024',
-    bannerImage: '/blogcover2.jpg',
+    date: 'November 2 2024',
+    bannerImage: '/blog2.jpg',
     sections: [
       {
-        heading: 'Understand Your Family’s Needs',
-        content:
-          'From access to quality schools to proximity to work and safety, every family has unique needs. Start by listing what matters most to you.',
-        list: [
-          'Look for good schools, parks, and low crime rates.',
-          'Walkability and commute times can greatly impact lifestyle.',
-        ],
-        image: '/articleimg3.jpg',
+        heading: 'Know What Matters',
+        content: 'Safety, schools, and nearby parks are top family concerns.',
+        list: ['Check school ratings.', 'Visit during different times of day.'],
+        image: '/blog1.jpg',
       },
+    ],
+  },
+  article3: {
+    title: 'Understanding Off-Plan Properties in Dubai',
+    date: 'November 7 2024',
+    bannerImage: '/articleimg1.jpg',
+    sections: [
       {
-        heading: 'Do a Community Check',
-        content:
-          'Spend time in the neighborhood before deciding. Visit on weekdays and weekends to get a feel for noise, traffic, and atmosphere.',
-        list: [
-          'Talk to locals and visit nearby shops.',
-          'Review future developments or zoning plans.',
-        ],
-        image: '/articleimg4.jpg',
+        heading: 'What is Off-Plan?',
+        content: 'Off-plan properties are purchased before construction is completed.',
+        list: ['Lower initial investment.', 'Potential for higher ROI.'],
+        image: '/blog1.jpg',
+      },
+    ],
+  },
+  article4: {
+    title: 'Tips for First-Time Home Buyers',
+    date: 'November 12 2024',
+    bannerImage: '/blog4.jpg',
+    sections: [
+      {
+        heading: 'Budgeting Smartly',
+        content: 'Start with a clear budget including hidden costs.',
+        list: ['Get pre-approved.', 'Include service fees and maintenance.'],
+        image: '/blog1.jpg',
+      },
+    ],
+  },
+  article5: {
+    title: 'Investing in Dubai Marina: What You Need to Know',
+    date: 'November 15 2024',
+    bannerImage: '/blog5.jpg',
+    sections: [
+      {
+        heading: 'Why Dubai Marina?',
+        content: 'It’s a prime waterfront location with rental yield potential.',
+        list: ['Great for short-term lets.', 'High tourism demand.'],
+        image: '/blog1.jpg',
+      },
+    ],
+  },
+  article6: {
+    title: 'The Rise of Smart Homes in UAE',
+    date: 'November 19 2024',
+    bannerImage: '/blog6.jpg',
+    sections: [
+      {
+        heading: 'Tech-Driven Living',
+        content: 'Smart security, lighting, and energy management are becoming standard.',
+        list: ['Alexa-compatible homes.', 'AI HVAC systems save energy.'],
+        image: '/blog1.jpg',
+      },
+    ],
+  },
+  article7: {
+    title: 'Pros and Cons of Ready vs Off-Plan Properties',
+    date: 'November 21 2024',
+    bannerImage: '/blog1.jpg',
+    sections: [
+      {
+        heading: 'Making the Right Choice',
+        content: 'Understand the timeline, cost, and risk for both options.',
+        list: ['Off-plan offers better payment plans.', 'Ready units give instant returns.'],
+        image: '/blog1.jpg',
+      },
+    ],
+  },
+  article8: {
+    title: 'How to Stage Your Home for Sale',
+    date: 'November 24 2024',
+    bannerImage: '/blog2.jpg',
+    sections: [
+      {
+        heading: 'Impress Buyers',
+        content: 'Declutter and highlight your home’s best features.',
+        list: ['Use neutral tones.', 'Add indoor plants and lighting.'],
+        image: '/blog1.jpg',
+      },
+    ],
+  },
+  article9: {
+    title: 'Best Areas to Invest in Dubai 2025',
+    date: 'December 1 2024',
+    bannerImage: '/blog3.jpg',
+    sections: [
+      {
+        heading: 'Hotspots to Watch',
+        content: 'New developments in Dubai South and Business Bay show high potential.',
+        list: ['Dubai South is near the expo site.', 'Business Bay is popular for short stays.'],
+        image: '/blog1.jpg',
+      },
+    ],
+  },
+  article10: {
+    title: 'Common Mistakes Property Buyers Make',
+    date: 'December 4 2024',
+    bannerImage: '/blog4.jpg',
+    sections: [
+      {
+        heading: 'Avoid These Pitfalls',
+        content: 'Skipping legal checks or overextending your budget are common errors.',
+        list: ['Always verify documents.', 'Don’t ignore maintenance costs.'],
+        image: '/blog1.jpg',
+      },
+    ],
+  },
+  article11: {
+    title: 'Why Location is Key in Real Estate',
+    date: 'December 7 2024',
+    bannerImage: '/blog5.jpg',
+    sections: [
+      {
+        heading: 'Value Comes From Location',
+        content: 'Accessibility and amenities heavily influence pricing.',
+        list: ['Proximity to metro boosts value.', 'Check for future developments.'],
+        image: '/blog1.jpg',
+      },
+    ],
+  },
+  article12: {
+    title: 'Understanding ROI in Rental Properties',
+    date: 'December 10 2024',
+    bannerImage: '/blog6.jpg',
+    sections: [
+      {
+        heading: 'Measure Your Returns',
+        content: 'Calculate ROI based on rental income vs investment cost.',
+        list: ['Look for 6-8% annual return.', 'Factor in vacancy and service fees.'],
+        image: '/blog1.jpg',
       },
     ],
   },
@@ -66,16 +168,12 @@ const ArticlePage = () => {
   const article = articles[slug];
 
   if (!article) {
-    return (
-      <div className="text-center py-20 text-red-600 text-xl">
-        Article not found.
-      </div>
-    );
+    return <div className="text-center py-20 text-red-600 text-xl">Article not found.</div>;
   }
 
   return (
     <div className="relative">
-      {/* Header with background */}
+      {/* Header */}
       <div className="p-2 md:p-4 bg-white overflow-hidden">
         <Header
           backgroundImage={article.bannerImage}
@@ -87,16 +185,22 @@ const ArticlePage = () => {
         />
       </div>
 
-      {/* Title overlay */}
+      {/* Only Date Overlay */}
       <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-20 px-4">
-        {/* <h1 className="text-3xl md:text-5xl font-bold">{article.title}</h1> */}
         <p className="mt-4 text-sm md:text-base">{article.date}</p>
       </div>
 
-      {/* Article Content Section */}
-      <div className="w-full mt-24 px-4">
+      {/* Article Title */}
+      <div className="mt-10 px-4">
+        <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-800 max-w-4xl mx-auto">
+          {article.title}
+        </h1>
+      </div>
+
+      {/* Article Content */}
+      <div className="w-full mt-12 px-4">
         <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-10">
-          {/* Left: Article Text */}
+          {/* Left: Text */}
           <div className="w-full lg:w-[60%] space-y-12">
             {article.sections.map((sec, idx) => (
               <div key={idx} className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
@@ -107,16 +211,13 @@ const ArticlePage = () => {
                     <li key={i}>{point}</li>
                   ))}
                 </ul>
-                {sec.image && (
-                  <img src={sec.image} alt="" className="rounded-xl mt-4 w-full object-cover" />
-                )}
+                {sec.image && <img src={sec.image} alt="" className="rounded-xl mt-4 w-full object-cover" />}
               </div>
             ))}
           </div>
 
           {/* Right: Sidebar */}
           <div className="w-full lg:w-[40%] space-y-8">
-            {/* Social Share Box */}
             <div className="bg-white border p-6 rounded-xl shadow-sm">
               <h3 className="font-semibold text-base mb-3">Let’s share with your Friends.</h3>
               <div className="flex space-x-4 text-2xl text-blue-600">
@@ -126,8 +227,6 @@ const ArticlePage = () => {
                 <i className="fab fa-instagram"></i>
               </div>
             </div>
-
-            {/* Short Consultation Form */}
             <div className="bg-[#17354c] text-white p-6 rounded-xl shadow-sm">
               <h3 className="text-lg font-semibold mb-4">Get A Free Consultation</h3>
               <form className="space-y-3 text-sm">
@@ -142,11 +241,9 @@ const ArticlePage = () => {
                   <label><input type="radio" name="mode" /> Phone</label>
                   <label><input type="radio" name="mode" /> Email</label>
                 </div>
-                <div>
-                  <label className="flex items-start gap-2">
-                    <input type="checkbox" /> I’ve read and agree to the Privacy Policy
-                  </label>
-                </div>
+                <label className="flex items-start gap-2">
+                  <input type="checkbox" /> I’ve read and agree to the Privacy Policy
+                </label>
                 <button className="bg-red-600 text-white w-full p-2 rounded hover:bg-red-700">Get A Free Consultation!</button>
               </form>
             </div>
@@ -154,7 +251,6 @@ const ArticlePage = () => {
         </div>
       </div>
 
-      {/* Bottom Register Section */}
       <div className="mt-24">
         <RegisterInterestForm />
       </div>

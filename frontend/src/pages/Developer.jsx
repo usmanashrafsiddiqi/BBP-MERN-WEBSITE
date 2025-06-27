@@ -1,136 +1,118 @@
-import React from 'react';
-import Header from '../components/Header';
-import Footer from "../components/Footer";
+// src/pages/Developer.jsx
 
-// Main Developers List
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
 const developers = [
   {
     name: 'Emaar',
     location: 'Dubai - UAE',
     logo: '/emardev.png',
     featured: true,
-    description: "Emaar Properties stands at the forefront of Dubai's real estate sector, renowned for iconic developments such as the Burj Khalifa and The Dubai Mall. In January 2025, they achieved a remarkable 2,221 transactions, totaling AED 8.63 billion in sales. Emaar’s commitment to quality and innovation continues to set industry benchmarks."
+    description:
+      "Emaar Properties stands at the forefront of Dubai's real estate sector, renowned for iconic developments such as the Burj Khalifa and The Dubai Mall. In January 2025, they achieved a remarkable 2,221 transactions, totaling AED 8.63 billion in sales. Emaar’s commitment to quality and innovation continues to set industry benchmarks.",
   },
   {
     name: 'Damac',
     location: 'Dubai - UAE',
     logo: '/damacdev.png',
     featured: true,
-    description: "DAMAC Properties has established itself as a leader in luxury real estate, offering a diverse portfolio of residential, commercial, and leisure properties across the Middle East. DAMAC recorded 1,767 transactions, with total sales reaching AED 4.13 billion in  January. Their emphasis on strategic locations and premium amenities appeals to discerning investors."
+    description:
+      'DAMAC Properties has established itself as a leader in luxury real estate, offering a diverse portfolio of residential, commercial, and leisure properties across the Middle East. DAMAC recorded 1,767 transactions, with total sales reaching AED 4.13 billion in January. Their emphasis on strategic locations and premium amenities appeals to discerning investors.',
   },
   {
     name: 'Sobha',
     location: 'Dubai - UAE',
     logo: '/sobhadev.png',
     featured: true,
-    description:" Sobha Realty is recognized for its unwavering commitment to quality and attention to detail, delivering luxury residences that exemplify craftsmanship. In January, Sobha Realty completed 407 transactions, with total sales of AED 1.19 billion. Their integrated approach ensures excellence in every project"
+    description:
+      'Sobha Realty is recognized for its unwavering commitment to quality and attention to detail, delivering luxury residences that exemplify craftsmanship. In January, Sobha Realty completed 407 transactions, with total sales of AED 1.19 billion.',
   },
   {
     name: 'Danube Properties',
     location: 'Dubai - UAE',
     logo: '/propertiesdev.png',
     featured: true,
-    description: "Danube Properties has rapidly ascended in the real estate market, known for delivering affordable yet high-quality residences. In January 2025, Danube completed 497 transactions, totaling AED 761.54 million in sales. Their customer-centric approach and timely project delivery have garnered trust among investors."
+    description:
+      'Danube Properties is known for delivering affordable yet high-quality residences. In January 2025, Danube completed 497 transactions, totaling AED 761.54 million in sales.',
   },
   {
     name: 'Ellington',
     location: 'Dubai - UAE',
     logo: '/ellingtondev.png',
     featured: true,
-    description: "Ellington Properties is distinguished by its design-led approach, crafting bespoke residences that prioritize quality and lifestyle. In January 2025, Ellington achieved 237 transactions, with total sales of AED 620.07 million. Ellington’s focus on detail and aesthetics appeals to discerning buyers."
+    description:
+      'Ellington Properties is distinguished by its design-led approach, crafting bespoke residences that prioritize quality and lifestyle. In January 2025, they achieved 237 transactions, totaling AED 620.07 million.',
   },
   {
     name: 'Samana',
     location: 'Dubai - UAE',
     logo: '/samanadev.png',
     featured: true,
-    description: "SAMANA Developers is currently ranked as the 7th largest real estate developer in Dubai. With over 30 launched projects and 4 successful handovers, our vision is bold—and our growth, unstoppable. We are driven by one powerful philosophy: Pioneering Lifestyles. This means every SAMANA property is more than a building—it’s a transformative living experience, where design meets comfort, innovation meets elegance, and lifestyle comes first."
+    description:
+      'SAMANA Developers is currently ranked as the 7th largest real estate developer in Dubai. With over 30 launched projects and 4 successful handovers, their vision is bold—and growth unstoppable.',
   },
   {
     name: 'Binghatti',
     location: 'Dubai - UAE',
     logo: '/binghatidev.png',
     featured: false,
-    description: "Binghatti Developers is a Dubai-based luxury real estate developer known for its high-quality projects and partnerships with global brands. Founded in 2008, the company has established numerous residential and commercial projects in Dubai with a portfolio valued at over AED 40 billion. Binghatti is particularly recognized for its collaborations with luxury brands like Bugatti, Mercedes-Benz, and Jacob & Co. to develop branded residences. "
+    description:
+      'Binghatti Developers is a Dubai-based luxury real estate developer known for its high-quality projects and global brand partnerships.',
   },
   {
     name: 'Azizi',
     location: 'Dubai - UAE',
     logo: '/azizdev.png',
     featured: false,
-    description:"Azizi Developments is a Dubai-based, award-winning real estate developer known for its construction-driven approach and portfolio of luxury residential and commercial properties. They have a strong track record of delivering high-quality homes to both local and international investors, focusing on transparency and customer satisfaction. "
-  },
-  {
-    name: 'Sobha',
-    location: 'Dubai - UAE',
-    logo: '/sobhadev.png',
-    featured: true,
-    description:" Sobha Realty is recognized for its unwavering commitment to quality and attention to detail, delivering luxury residences that exemplify craftsmanship. In January, Sobha Realty completed 407 transactions, with total sales of AED 1.19 billion. Their integrated approach ensures excellence in every project"
+    description:
+      'Azizi Developments is a Dubai-based, award-winning real estate developer known for luxury residential and commercial properties.',
   },
 ];
 
-// Additional Developers List
 const moreDevelopers = [
-    {
-        name: 'Binghatti',
-        location: 'Dubai - UAE',
-        logo: '/binghatidev.png',
-        featured: false,
-        description: 'Binghatti combines art and architecture to redefine urban living.'
-      },
-      {
-        name: 'Azizi',
-        location: 'Dubai - UAE',
-        logo: '/azizdev.png',
-        featured: false,
-        description: 'Azizi Developments delivers elegant and accessible homes across Dubai.'
-      },
-      {
-        name: 'Danube Properties',
-        location: 'Dubai - UAE',
-        logo: '/propertiesdev.png',
-        featured: true,
-        description: 'Danube is known for affordable luxury and timely project delivery.'
-      },
+  {
+    name: 'Binghatti',
+    location: 'Dubai - UAE',
+    logo: '/binghatidev.png',
+    featured: false,
+    description: 'Binghatti combines art and architecture to redefine urban living.',
+  },
+  {
+    name: 'Azizi',
+    location: 'Dubai - UAE',
+    logo: '/azizdev.png',
+    featured: false,
+    description: 'Azizi Developments delivers elegant and accessible homes across Dubai.',
+  },
+  {
+    name: 'Danube Properties',
+    location: 'Dubai - UAE',
+    logo: '/propertiesdev.png',
+    featured: true,
+    description: 'Danube is known for affordable luxury and timely project delivery.',
+  },
   {
     name: 'Sobha Properties',
     location: 'Dubai - UAE',
     logo: '/logos/sobha.png',
     featured: true,
-    description: 'Sobha Properties emphasizes quality construction and customer satisfaction.'
-  },
-  {
-    name: 'Binghatti',
-    location: 'Dubai - UAE',
-    logo: '/binghatidev.png',
-    featured: false,
-    description: 'Binghatti combines art and architecture to redefine urban living.'
+    description: 'Sobha Properties emphasizes quality construction and customer satisfaction.',
   },
   {
     name: 'Danube Properties',
     location: 'Dubai - UAE',
     logo: '/propertiesdev.png',
     featured: true,
-    description: 'Danube is known for affordable luxury and timely project delivery.'
-  },
-  {
-    name: 'Azizi',
-    location: 'Dubai - UAE',
-    logo: '/azizdev.png',
-    featured: false,
-    description: 'Azizi Developments delivers elegant and accessible homes across Dubai.'
-  },
-  {
-    name: 'Danube Properties',
-    location: 'Dubai - UAE',
-    logo: '/propertiesdev.png',
-    featured: true,
-    description: 'Danube is known for affordable luxury and timely project delivery.'
+    description: 'Danube is known for affordable luxury and timely project delivery.',
   },
 ];
 
-// Component
 const Developer = () => {
+  const formatDevURL = (name) => name.toLowerCase().replace(/\s+/g, '-');
+
   return (
     <div>
       {/* Header Section */}
@@ -143,14 +125,15 @@ const Developer = () => {
         />
       </div>
 
-      {/* Developer Grid Section */}
+      {/* Developer Grid */}
       <div className="w-full max-w-[1440px] mx-auto px-6 py-12">
         <h2 className="text-3xl font-bold mb-8">Discover Our Top Developers</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
           {developers.map((dev, index) => (
-            <div
+            <Link
+              to={`/developer/${formatDevURL(dev.name)}`}
               key={index}
-              className="bg-gray-50 rounded-2xl shadow-sm border border-gray-200 p-4 relative hover:shadow-md transition-all"
+              className="bg-gray-50 rounded-2xl shadow-sm border border-gray-200 p-4 relative hover:shadow-md transition-all block"
             >
               {dev.featured && (
                 <span className="absolute top-3 right-3 text-xs bg-red-600 text-white px-2 py-1 rounded-full font-semibold">
@@ -170,7 +153,7 @@ const Developer = () => {
                 {dev.location}
               </div>
               <p className="text-sm text-gray-600 leading-snug">{dev.description}</p>
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -179,9 +162,10 @@ const Developer = () => {
           <h2 className="text-3xl font-bold mb-8">More Trusted Developers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
             {moreDevelopers.map((dev, index) => (
-              <div
+              <Link
+                to={`/developer/${formatDevURL(dev.name)}`}
                 key={index}
-                className="bg-gray-50 rounded-2xl shadow-sm border border-gray-200 p-4 relative hover:shadow-md transition-all"
+                className="bg-gray-50 rounded-2xl shadow-sm border border-gray-200 p-4 relative hover:shadow-md transition-all block"
               >
                 {dev.featured && (
                   <span className="absolute top-3 right-3 text-xs bg-red-600 text-white px-2 py-1 rounded-full font-semibold">
@@ -201,7 +185,7 @@ const Developer = () => {
                   {dev.location}
                 </div>
                 <p className="text-sm text-gray-600 leading-snug">{dev.description}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

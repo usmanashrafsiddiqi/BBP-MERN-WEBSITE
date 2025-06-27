@@ -15,63 +15,66 @@ const Navbar = () => {
     { name: 'New Projects', path: '/newprojects' },
     { name: 'Community', path: '/community' },
     { name: 'Developer', path: '/developer' },
-    { name: 'More', path: '#' }, // will trigger dropdown
+    { name: 'More', path: '#' },
     { name: 'About', path: '/about' },
     { name: 'Contact Us', path: '/contact' },
     { name: 'EN | AR', path: '#' },
   ];
 
   return (
-    <nav className="w-full px-6 md:px-8 py-4 flex items-center justify-between text-white relative z-50">
+    <nav className="w-full px-4 md:px-8 py-4 flex items-center justify-between text-white relative z-50">
       {/* Logo */}
-      <div className="w-[160px] md:w-[180px]">
+      <div className="w-[140px] sm:w-[150px] md:w-[160px] xl:w-[180px]">
         <img src="/mainlogo.png" alt="Briskbold Property Logo" className="w-full h-auto object-contain" />
       </div>
 
       {/* Desktop Navigation */}
-      <ul className="hidden lg:flex flex-wrap gap-x-4 xl:gap-x-6 uppercase tracking-wide font-normal text-[1rem] md:text-[1.25rem] xl:text-[2rem] leading-snug relative">
-        {navItems.map((item) => (
-          item.name === 'More' ? (
-            <li key={item.name} className="relative group">
-              <div
-                onClick={toggleDropdown}
-                className="flex items-center cursor-pointer text-white/80 hover:text-white transition whitespace-nowrap"
-              >
-                <span>{item.name}</span>
-                <HiChevronDown className="ml-2 w-8 h-8 font-bold" />
-              </div>
+      <div className="hidden lg:flex items-center justify-end flex-wrap gap-2 xl:gap-3 2xl:gap-4 flex-1">
+        <ul className="flex items-center flex-wrap gap-2 xl:gap-3 2xl:gap-4">
+          {navItems.map((item) =>
+            item.name === 'More' ? (
+              <li key={item.name} className="relative">
+                <button
+                  onClick={toggleDropdown}
+                  className="flex items-center px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl border border-white border-opacity-40 backdrop-blur-md bg-white/10 text-white rounded-full transition hover:bg-white/20 hover:shadow-[0_0_10px_rgba(255,255,255,0.4)]"
+                >
+                  {item.name}
+                  <HiChevronDown className="ml-2 w-5 h-5" />
+                </button>
+                {dropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 bg-white text-black rounded shadow-lg w-40 z-50">
+                    <Link
+                      to="/blogs"
+                      className="block px-4 py-2 text-sm hover:bg-gray-100"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      Blogs
+                    </Link>
+                  </div>
+                )}
+              </li>
+            ) : (
+              <li key={item.name}>
+                <Link
+                  to={item.path}
+                  className="px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl border border-white border-opacity-40 backdrop-blur-md bg-white/10 text-white rounded-full transition hover:bg-white/20 hover:shadow-[0_0_10px_rgba(255,255,255,0.4)]"
+                >
+                  {item.name}
+                </Link>
+              </li>
+            )
+          )}
+        </ul>
 
-              {/* Dropdown menu */}
-              {dropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 bg-white text-black rounded shadow-lg w-40">
-                  <Link
-                    to="/blogs"
-                    className="block px-4 py-2 text-sm hover:bg-gray-100"
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    Blogs
-                  </Link>
-                </div>
-              )}
-            </li>
-          ) : (
-            <li key={item.name}>
-              <Link to={item.path} className="text-white/80 hover:text-white transition whitespace-nowrap">
-                {item.name}
-              </Link>
-            </li>
-          )
-        ))}
-      </ul>
-
-      {/* Desktop Buttons */}
-      <div className="hidden lg:flex space-x-4">
-        <button className="bg-transparent border border-white text-white px-4 py-1 rounded-full text-sm hover:bg-white hover:text-red-700 transition">
-          HOT DEALS
-        </button>
-        <button className="bg-white text-red-700 px-4 py-1 rounded-full text-sm font-semibold hover:bg-red-100 transition">
-          LIST YOUR PROPERTY
-        </button>
+        {/* Desktop Buttons */}
+        <div className="flex space-x-3 xl:space-x-4 ml-4">
+          <button className="px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl border border-red-500 backdrop-blur-md bg-white/10 text-white rounded-full transition hover:bg-red-600/20 hover:shadow-[0_0_10px_rgba(255,0,0,0.4)]">
+            HOT DEALS
+          </button>
+          <button className="px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl border border-white border-opacity-40 backdrop-blur-md bg-white/10 text-white rounded-full font-semibold transition hover:bg-white/20 hover:shadow-[0_0_10px_rgba(255,255,255,0.4)]">
+            LIST YOUR PROPERTY
+          </button>
+        </div>
       </div>
 
       {/* Mobile Hamburger Icon */}
@@ -121,10 +124,10 @@ const Navbar = () => {
             )
           )}
           <div className="flex flex-col space-y-2 pt-4">
-            <button className="bg-transparent border border-white text-white px-4 py-2 rounded-full text-sm hover:bg-white hover:text-red-700 transition">
+            <button className="px-4 py-2 border border-red-500 backdrop-blur-md bg-white/10 text-white rounded-full text-sm transition hover:bg-red-600/20 hover:shadow-[0_0_10px_rgba(255,0,0,0.4)]">
               HOT DEALS
             </button>
-            <button className="bg-white text-red-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-100 transition">
+            <button className="px-4 py-2 border border-white border-opacity-40 backdrop-blur-md bg-white/10 text-white rounded-full text-sm font-semibold transition hover:bg-white/20 hover:shadow-[0_0_10px_rgba(255,255,255,0.4)]">
               LIST YOUR PROPERTY
             </button>
           </div>
