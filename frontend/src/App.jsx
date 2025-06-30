@@ -13,6 +13,7 @@ import TeamInfo from './pages/TeamInfo'; // ✅ Import the new page;
 import Rent from './pages/Rent'; // ✅ import at the top
 import NewProjects from './pages/NewProjects';
 import DeveloperDetail from './pages/DeveloperDetail';
+import Career from "./pages/Career";
 function App() {
   return (
     <Router>
@@ -29,6 +30,7 @@ function App() {
         <Route path="/rent" element={<Rent />} />
         <Route path="/newprojects" element={<NewProjects />} />
         <Route path="/developer/:name" element={<DeveloperDetail />} />
+        <Route path="/career" element={<Career />} />
 
       </Routes>
     </Router>
