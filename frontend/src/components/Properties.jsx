@@ -1,29 +1,31 @@
 import React, { useRef } from "react";
-import { FaBed, FaBath, FaWhatsapp } from "react-icons/fa";
+import { FaBed, FaWhatsapp } from "react-icons/fa";
 import { PiRuler } from "react-icons/pi";
 import { MdCall, MdLocationPin } from "react-icons/md";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
-// Dummy data
+// Updated properties data
 const properties = [
     {
         id: 1,
-        title: "AED 1,500,000",
+        title: "AED 574K – 620K",
         image: "/4.jpg",
-        location: "Parallel to Sheikh Zayed Road. 5 Minutes to...",
-        beds: 5,
-        baths: 3,
-        size: "2,800 sq ft",
-        type: "VILLA",
+        location: "38QG+963 - City of Arabia - Dubai - United Arab Emirates",
+        beds: "1 bed",
+        bedroomSize: "633-1212 sq ft",
+        studio: "Studio",
+        studioSize: "330 SQFT",
+        type: "AZIZI MILAN",
     },
     {
         id: 2,
         title: "AED 1,200,000",
         image: "/6.jpg",
         location: "Downtown Dubai. Close to Metro Station",
-        beds: 3,
-        baths: 2,
-        size: "1,900 sq ft",
+        beds: "1 bed",
+        bedroomSize: "800 sq ft",
+        studio: "-",
+        studioSize: "-",
         type: "APARTMENT",
     },
     {
@@ -31,9 +33,10 @@ const properties = [
         title: "AED 2,100,000",
         image: "/5.jpg",
         location: "Palm Jumeirah. Beach access",
-        beds: 4,
-        baths: 3,
-        size: "2,500 sq ft",
+        beds: "4 beds",
+        bedroomSize: "1600 sq ft",
+        studio: "Studio",
+        studioSize: "600 sq ft",
         type: "VILLA",
     },
     {
@@ -41,9 +44,10 @@ const properties = [
         title: "AED 950,000",
         image: "/17.jpg",
         location: "Business Bay. Great city view",
-        beds: 2,
-        baths: 2,
-        size: "1,300 sq ft",
+        beds: "2 beds",
+        bedroomSize: "950 sq ft",
+        studio: "-",
+        studioSize: "-",
         type: "APARTMENT",
     },
     {
@@ -51,9 +55,10 @@ const properties = [
         title: "AED 3,000,000",
         image: "/17.jpg",
         location: "Emirates Hills. Luxury community",
-        beds: 6,
-        baths: 5,
-        size: "4,500 sq ft",
+        beds: "5-6 beds",
+        bedroomSize: "2100 sq ft",
+        studio: "Studio",
+        studioSize: "720 sq ft",
         type: "VILLA",
     },
     {
@@ -61,9 +66,10 @@ const properties = [
         title: "AED 1,800,000",
         image: "/4.jpg",
         location: "Jumeirah Village Circle",
-        beds: 4,
-        baths: 3,
-        size: "2,200 sq ft",
+        beds: "3-4 beds",
+        bedroomSize: "1350 sq ft",
+        studio: "-",
+        studioSize: "-",
         type: "VILLA",
     },
     {
@@ -71,9 +77,10 @@ const properties = [
         title: "AED 1,350,000",
         image: "/5.jpg",
         location: "Al Barsha. Near Mall of Emirates",
-        beds: 3,
-        baths: 2,
-        size: "1,750 sq ft",
+        beds: "3 beds",
+        bedroomSize: "1100 sq ft",
+        studio: "Studio",
+        studioSize: "530 sq ft",
         type: "APARTMENT",
     },
 ];
@@ -117,7 +124,6 @@ const Properties = () => {
                             key={property.id}
                             className="w-[260px] sm:w-[300px] h-[330px] bg-white shadow-md rounded-2xl flex-shrink-0 overflow-hidden snap-start border border-gray-270"
                         >
-
                             <div className="relative h-[60%] w-full px-3 pt-3 pb-0">
                                 <div className="w-full h-full rounded-xl overflow-hidden">
                                     <img
@@ -131,28 +137,31 @@ const Properties = () => {
                                 </span>
                             </div>
 
-                            <div className="p-4 h-[40%] flex flex-col gap-3 ">
-
+                            <div className="p-4 h-[40%] flex flex-col gap-3">
                                 <div>
                                     <h3 className="text-teal-700 font-extrabold text-xl">{property.title}</h3>
-
                                     <p className="text-gray-500 text-sm mt-1 flex items-center gap-1">
                                         <MdLocationPin className="text-gray-400" />
                                         {property.location}
                                     </p>
                                 </div>
+
                                 <div className="mt-3 flex gap-2 flex-wrap">
-                                    <span className="bg-[#E1F4F3] text-[#1E7C78] px-3 py-1 rounded-md text-sm flex items-center gap-1">
-                                        <FaBed /> {property.beds} beds
-                                    </span>
-                                    <span className="bg-[#E1F4F3] text-[#1E7C78] px-3 py-1 rounded-md text-sm flex items-center gap-1">
-                                        <FaBath /> {property.baths} baths
-                                    </span>
-                                    <span className="bg-[#E1F4F3] text-[#1E7C78] px-3 py-1 rounded-md text-sm flex items-center gap-1">
-                                        <PiRuler /> {property.size}
+                                    {/* Beds + Bedroom size */}
+                                    <span className="bg-[#E1F4F3] text-[#1E7C78] px-3 py-1 rounded-md text-sm flex justify-between items-center gap-2 min-w-[100px]">
+                                        <span><FaBed className="inline-block" /> {property.beds}</span>
+                                        <span className="text-xs text-gray-700">{property.bedroomSize}</span>
                                     </span>
 
+                                    {/* Studio + Studio size (only if studio is not "-") */}
+                                    {property.studio !== "-" && (
+                                        <span className="bg-[#E1F4F3] text-[#1E7C78] px-3 py-1 rounded-md text-sm flex justify-between items-center gap-2 min-w-[100px]">
+                                            <span>{property.studio}</span>
+                                            <span className="text-xs text-gray-700">{property.studioSize}</span>
+                                        </span>
+                                    )}
                                 </div>
+
                                 <div className="mt-4 flex justify-between items-center bg-[#E6F0EF] px-3 py-2 rounded-xl">
                                     <div className="flex items-center gap-2">
                                         <img
@@ -162,7 +171,6 @@ const Properties = () => {
                                         />
                                         <div>
                                             <p className="text-base font-bold text-[#1E7C78]">Gelya Meeder</p>
-
                                             <p className="text-xs text-gray-500">Manager</p>
                                         </div>
                                     </div>
@@ -174,9 +182,7 @@ const Properties = () => {
                                             <FaWhatsapp className="text-white text-lg" />
                                         </span>
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
                     ))}

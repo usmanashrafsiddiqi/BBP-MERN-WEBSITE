@@ -22,7 +22,10 @@ const Homepage = () => {
       <UpcomingProjects/>
       <RegisterInterest/>
       <DeveloperCarousel/>
-      <DealOfTheWeek/>
+      <div className="relative z-0">
+  <DealOfTheWeek />
+</div>
+
       <Footer/>
     </div>
   );

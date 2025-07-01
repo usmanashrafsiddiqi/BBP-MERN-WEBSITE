@@ -31,7 +31,8 @@ inspiration for your real estate journey"
       </div>
 
       {/* Blog search bar */}
-      <div className="w-full flex justify-center mt-[-60px] relative z-10 px-4">
+      <div className="w-full flex justify-center mt-[-60px] relative z-0 px-4">
+
         <div className="flex items-center w-full max-w-3xl bg-white rounded-full overflow-hidden border shadow-md">
           <input
             type="text"
