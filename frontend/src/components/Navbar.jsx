@@ -10,7 +10,7 @@ const Navbar = () => {
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
   const navItems = [
-    { name: 'Buy', path: '#' },
+    // { name: 'Buy', path: '#' },
     { name: 'Rent', path: '/rent' },
     { name: 'New Projects', path: '/newprojects' },
     { name: 'Community', path: '/community' },
@@ -18,7 +18,7 @@ const Navbar = () => {
     { name: 'More', path: '#' },
     { name: 'About', path: '/about' },
     { name: 'Contact Us', path: '/contact' },
-    { name: 'EN | AR', path: '#' },
+    // { name: 'EN | AR', path: '#' },
   ];
 
   return (
@@ -73,14 +73,14 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop Buttons */}
-        <div className="flex space-x-3 xl:space-x-4 ml-4">
+        {/* <div className="flex space-x-3 xl:space-x-4 ml-4">
           <button className="px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl border border-red-500 bg-white/10 text-white rounded-full transition hover:bg-red-600/20 hover:shadow-[0_0_10px_rgba(255,0,0,0.4)]">
             HOT DEALS
           </button>
           <button className="px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl border border-white border-opacity-40 bg-white/10 text-white rounded-full font-semibold transition hover:bg-white/20 hover:shadow-[0_0_10px_rgba(255,255,255,0.4)]">
             LIST YOUR PROPERTY
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Mobile Hamburger Icon */}
@@ -149,14 +149,14 @@ const Navbar = () => {
               </Link>
             )
           )}
-          <div className="flex flex-col space-y-2 pt-4">
+          {/* <div className="flex flex-col space-y-2 pt-4">
             <button className="px-4 py-2 border border-red-500 bg-white/10 text-white rounded-full text-base transition hover:bg-red-600/20 hover:shadow-[0_0_10px_rgba(255,0,0,0.4)]">
               HOT DEALS
             </button>
             <button className="px-4 py-2 border border-white border-opacity-40 bg-white/10 text-white rounded-full text-base font-semibold transition hover:bg-white/20 hover:shadow-[0_0_10px_rgba(255,255,255,0.4)]">
               LIST YOUR PROPERTY
             </button>
-          </div>
+          </div> */}
         </div>
       )}
     </nav>

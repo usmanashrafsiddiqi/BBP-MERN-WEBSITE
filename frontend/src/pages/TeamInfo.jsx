@@ -3,7 +3,7 @@ import React from "react";
 const team = [
   {
     id: 1,
-    name: "Aiman Khan",
+    name: "Aiman Rashid",
     role: "General Manager",
     image: "/aimanmam.jpg",
     quote: "Leadership is unlocking people’s potential to become better.",

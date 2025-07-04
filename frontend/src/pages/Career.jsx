@@ -8,7 +8,7 @@ const Career = () => {
     <div className="p-2 md:p-4 bg-white overflow-hidden">
       {/* Reuse Header */}
       <Header
-        backgroundImage="/careerbg.jpeg"
+        backgroundImage="/contactbg.jpg"
         showFilter={false}
         title="Join Our Team At BRISKBOLD PROPERTY"
         subtitle=""

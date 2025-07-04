@@ -6,28 +6,28 @@ import RegisterInterestForm from '../components/RegisterInterestForm';
 
 const articles = {
   article1: {
-    title: 'Top 5 Real Estate Trends To Watch In 2024',
-    date: 'October 28 2024',
+    title: 'BriskBold Properties Hosts Landmark Dubai Real Estate Showcase in Japan 2024',
+    date: "Nov 15, 2024",
     bannerImage: '/blog1.jpg',
     sections: [
       {
-        heading: 'Sustainable Living Takes Center Stage',
-        content: 'Sustainability in real estate is gaining momentum. Buyers seek eco-friendly features.',
-        list: ['Net-zero homes are on the rise.', 'Buyers value green certifications.'],
-        image: '/blog1.jpg',
+        heading: ' A Glimpse into Global Investment Opportunities',
+        content: 'The event brought together a diverse audience of high-net-worth individuals, investors, and real estate enthusiasts eager to explore the booming Dubai property market.',
+        list: ['Live presentations by our Dubai-based real estate experts', 'One-on-one consultation sessions tailored for Japanese investors','Information on residency through property investment programs','A preview of Dubai’s futuristic infrastructure plans, including smart city projects, flying taxis, and metro line expansions'],
+        image: '/japan1.jpeg',
       },
     ],
   },
   article2: {
-    title: 'How to Choose the Perfect Neighborhood for Your Family',
-    date: 'November 2 2024',
+    title: 'June 2025 Event Unites Dubai Real Estate & Global Investors ',
+    date: " June 2025",
     bannerImage: '/blog2.jpg',
     sections: [
       {
-        heading: 'Know What Matters',
-        content: 'Safety, schools, and nearby parks are top family concerns.',
-        list: ['Check school ratings.', 'Visit during different times of day.'],
-        image: '/blog1.jpg',
+        heading: 'Dubai realestate event in Tokyo',
+        content: 'Key Highlights',
+        list: ['Direct project launches from top-tier developers.', '1-on-1 investment consultations for Japanese clients.','Flexible payment plans & up to 10% annual ROI options'],
+        image: '/tokyo.png',
       },
     ],
   },

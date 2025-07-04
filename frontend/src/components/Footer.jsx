@@ -4,6 +4,7 @@ import {
   faFacebook,
   faLinkedin,
   faXTwitter,
+  faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 
@@ -63,14 +64,50 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div>
-            <h4 className="font-extrabold text-white mb-4 text-xl">Socials</h4>
-            <div className="flex gap-4 text-white text-2xl">
-              <FontAwesomeIcon icon={faWhatsapp} />
-              <FontAwesomeIcon icon={faFacebook} />
-              <FontAwesomeIcon icon={faLinkedin} />
-              <FontAwesomeIcon icon={faXTwitter} />
-            </div>
-          </div>
+  <h4 className="font-extrabold text-white mb-4 text-xl">Socials</h4>
+  <div className="flex gap-4 text-white text-2xl">
+    <a
+      href="https://wa.me/+971569242326"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-gray-300"
+    >
+      <FontAwesomeIcon icon={faWhatsapp} />
+    </a>
+    <a
+      href="https://www.facebook.com/share/19QG4JEAYt/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-gray-300"
+    >
+      <FontAwesomeIcon icon={faFacebook} />
+    </a>
+    <a
+      href="https://www.linkedin.com/company/briskbold-properties/?viewAsMember=true"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-gray-300"
+    >
+      <FontAwesomeIcon icon={faLinkedin} />
+    </a>
+    <a
+      href="https://x.com/BB_Properties01"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-gray-300"
+    >
+      <FontAwesomeIcon icon={faXTwitter} />
+    </a>
+    <a
+      href="https://www.instagram.com/brisk_boldproperties?igsh=eXJzcWxkeHB6Mmkx "
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-gray-300"
+    >
+      <FontAwesomeIcon icon={faInstagram} />
+    </a>
+  </div>
+</div>
 
           {/* Contact Info */}
           <div>

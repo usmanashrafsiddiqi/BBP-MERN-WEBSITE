@@ -9,79 +9,112 @@ const properties = [
     {
         id: 1,
         title: "AED 574K – 620K",
-        image: "/4.jpg",
+        image: "/azizimilan.jpg",
         location: "38QG+963 - City of Arabia - Dubai - United Arab Emirates",
         beds: "1 bed",
         bedroomSize: "633-1212 sq ft",
         studio: "Studio",
-        studioSize: "330 SQFT",
+        studioSize: "316.78 - 454 sq ft",
         type: "AZIZI MILAN",
     },
     {
         id: 2,
-        title: "AED 1,200,000",
-        image: "/6.jpg",
-        location: "Downtown Dubai. Close to Metro Station",
+        title: "AED 573K",
+        image: "/rafi.jpg",
+        location: "AL FURJAN",
         beds: "1 bed",
-        bedroomSize: "800 sq ft",
-        studio: "-",
-        studioSize: "-",
-        type: "APARTMENT",
+        bedroomSize: "600 sq ft",
+        studio: "Studio",
+        studioSize: "330 sq ft ",
+        type: "AZIZI RAFFI",
     },
     {
         id: 3,
-        title: "AED 2,100,000",
-        image: "/5.jpg",
-        location: "Palm Jumeirah. Beach access",
-        beds: "4 beds",
-        bedroomSize: "1600 sq ft",
-        studio: "Studio",
-        studioSize: "600 sq ft",
-        type: "VILLA",
+        title: "AED 1.81M",
+        image: "/altan.jpg",
+        location: "Dubai Creek Harbour",
+        beds: " 1-3 beds",
+        bedroomSize: "776 sq ft",
+        studio: " ",
+        studioSize: " ",
+        type: "EMAAR ALTAM",
     },
     {
         id: 4,
-        title: "AED 950,000",
-        image: "/17.jpg",
-        location: "Business Bay. Great city view",
-        beds: "2 beds",
-        bedroomSize: "950 sq ft",
-        studio: "-",
-        studioSize: "-",
-        type: "APARTMENT",
+        title: "AED 1.82M ",
+        image: "/hillside.jpg",
+        location: "Dubai hills Estate",
+        beds: "1-3 beds",
+        bedroomSize: "726 sq ft",
+        studio: " ",
+        studioSize: " ",
+        type: "Emaar Hillside Vida",
     },
     {
         id: 5,
-        title: "AED 3,000,000",
-        image: "/17.jpg",
-        location: "Emirates Hills. Luxury community",
-        beds: "5-6 beds",
-        bedroomSize: "2100 sq ft",
+        title: "AED 900,000",
+        image: "/park.jpg",
+        location: "AL FURJAN",
+        beds: "1-3 beds",
+        bedroomSize: "860 sq ft",
         studio: "Studio",
-        studioSize: "720 sq ft",
-        type: "VILLA",
+        studioSize: "446 sq ft",
+        type: "Sparklz",
     },
     {
         id: 6,
-        title: "AED 1,800,000",
-        image: "/4.jpg",
-        location: "Jumeirah Village Circle",
-        beds: "3-4 beds",
+        title: "AED 850K",
+        image: "/spirz.jpg",
+        location: "Sports City",
+        beds: "1 bed, office",
         bedroomSize: "1350 sq ft",
-        studio: "-",
-        studioSize: "-",
-        type: "VILLA",
+        studio: "Studio",
+        studioSize: "380 sq ft",
+        type: "ASPIRZ",
     },
     {
         id: 7,
-        title: "AED 1,350,000",
-        image: "/5.jpg",
-        location: "Al Barsha. Near Mall of Emirates",
-        beds: "3 beds",
-        bedroomSize: "1100 sq ft",
+        title: "AED 800K",
+        image: "/times.jpg",
+        location: "Silicon Oasis",
+        beds: "1-3 beds",
+        bedroomSize: "545 sq ft",
         studio: "Studio",
-        studioSize: "530 sq ft",
-        type: "APARTMENT",
+        studioSize: "386 sq ft",
+        type: "Timez",
+    },
+    {
+        id: 8,
+        title: "AED 770K ",
+        image: "/logoons.jpg",
+        location: "Dubailand",
+        beds: "1-3 beds",
+        bedroomSize: "750 sq ft",
+        studio: "Studio",
+        studioSize: "393 sq ft",
+        type: "Barari Lagoons",
+    },
+    {
+        id: 9,
+        title: "AED 2.4M ",
+        image: "/pearl.jpg",
+        location: "Dubai Islands",
+        beds: "1-4 beds",
+        bedroomSize: " 892 sq ft",
+        studio: " ",
+        studioSize: " ",
+        type: "Ocean Pearl",
+    },
+    {
+        id: 10,
+        title: "AED 699K ",
+        image: "/parkvilla.jpg",
+        location: "Dubai Land ",
+        beds: "1-3 beds",
+        bedroomSize: "760 sq ft",
+        studio: "Studio",
+        studioSize: " 480 sq ft",
+        type: "Park Villa",
     },
 ];
 
@@ -114,7 +147,6 @@ const Properties = () => {
                     </div>
                 </div>
 
-                {/* Scrollable cards */}
                 <div
                     ref={scrollRef}
                     className="flex gap-6 sm:gap-8 lg:gap-12 overflow-x-auto no-scrollbar px-2 snap-x scroll-smooth"
@@ -147,13 +179,11 @@ const Properties = () => {
                                 </div>
 
                                 <div className="mt-3 flex gap-2 flex-wrap">
-                                    {/* Beds + Bedroom size */}
                                     <span className="bg-[#E1F4F3] text-[#1E7C78] px-3 py-1 rounded-md text-sm flex justify-between items-center gap-2 min-w-[100px]">
                                         <span><FaBed className="inline-block" /> {property.beds}</span>
                                         <span className="text-xs text-gray-700">{property.bedroomSize}</span>
                                     </span>
 
-                                    {/* Studio + Studio size (only if studio is not "-") */}
                                     {property.studio !== "-" && (
                                         <span className="bg-[#E1F4F3] text-[#1E7C78] px-3 py-1 rounded-md text-sm flex justify-between items-center gap-2 min-w-[100px]">
                                             <span>{property.studio}</span>
@@ -165,22 +195,30 @@ const Properties = () => {
                                 <div className="mt-4 flex justify-between items-center bg-[#E6F0EF] px-3 py-2 rounded-xl">
                                     <div className="flex items-center gap-2">
                                         <img
-                                            src="/images/agent.jpg"
+                                            src="/aimanmam.jpg"
                                             alt="agent"
                                             className="h-8 w-8 rounded-full object-cover"
                                         />
                                         <div>
-                                            <p className="text-base font-bold text-[#1E7C78]">Gelya Meeder</p>
+                                            <p className="text-base font-bold text-[#1E7C78]">Aiman Rashid</p>
                                             <p className="text-xs text-gray-500">Manager</p>
                                         </div>
                                     </div>
                                     <div className="flex gap-2">
-                                        <span className="bg-teal-700 p-2 rounded-full">
+                                        <a
+                                            href="tel:+971569242326"
+                                            className="bg-teal-700 p-2 rounded-full hover:bg-teal-800 transition"
+                                        >
                                             <MdCall className="text-white text-lg" />
-                                        </span>
-                                        <span className="bg-teal-700 p-2 rounded-full">
+                                        </a>
+                                        <a
+                                            href="https://wa.me/971569242326"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="bg-teal-700 p-2 rounded-full hover:bg-teal-800 transition"
+                                        >
                                             <FaWhatsapp className="text-white text-lg" />
-                                        </span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

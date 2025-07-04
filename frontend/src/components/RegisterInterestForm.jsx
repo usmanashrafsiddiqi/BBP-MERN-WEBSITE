@@ -1,114 +1,99 @@
-import React from "react";
+// RegisterInterestForm.jsx
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
 
 const RegisterInterestForm = ({
   backgroundImage = "/BULDINGS.png",
   title = "Register Your Interest",
   subtitle = "Our friendly team would love to hear from you.",
   buttonText = "SUBMIT FORM NOW →",
-  showLeftText = false,
-  leftTitle = "",
-  leftDescription = "",
-  leftBulletPoints = [], // 🆕 Add bullet list prop
 }) => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_4hfi5lt",     // Replace with your actual EmailJS service ID
+        "template_zpvhzhc",    // Replace with your actual EmailJS template ID
+        form.current,
+        "I4CoOnYf72QcHtckV"         // Replace with your actual EmailJS public key
+      )
+      .then(
+        (result) => {
+          console.log("Message sent:", result.text);
+          alert("Form submitted successfully!");
+          e.target.reset();
+        },
+        (error) => {
+          console.log("Email error:", error.text);
+          alert("There was an error sending the form.");
+        }
+      );
+  };
+
   return (
-    <div className="h-[700px] w-full bg-white flex items-center justify-center p-4 mt-22">
-      <div
-        className="w-[1800px] h-[600px] rounded-3xl bg-cover bg-center relative flex items-center justify-between p-6"
-        style={{ backgroundImage: `url('${backgroundImage}')` }}
-      >
-        {/* ✅ Left Text */}
-        {showLeftText ? (
-          <div className="w-1/2 pl-10 text-white">
-            <h2 className="text-5xl font-bold mb-4">{leftTitle}</h2>
-            <p className="text-2xl max-w-xl whitespace-pre-line mb-9">
-              {leftDescription}
-            </p>
+    <div
+      className="w-full bg-cover bg-center py-12 px-4"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <div className="max-w-7xl mx-auto flex justify-end">
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="w-full max-w-[600px] bg-white rounded-xl shadow-lg px-8 py-12 min-h-[350px]"
+        >
+          <h2 className="text-3xl font-bold text-black mb-3">{title}</h2>
+          <p className="text-gray-600 mb-8">{subtitle}</p>
 
-            {/* ✅ Bullet Points */}
-            {leftBulletPoints.length > 0 && (
-  <ul className="list-disc list-inside text-white text-2xl leading-relaxed font-medium space-y-2 mt-4">
-    {leftBulletPoints.map((point, index) => (
-      <li key={index}>{point}</li>
-    ))}
-  </ul>
-)}
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <input
+              type="text"
+              name="name"
+              placeholder="First Name *"
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none"
+            />
+            <input
+              type="text"
+              name="last_name"
+              placeholder="Last Name *"
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email *"
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none"
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Mobile Number *"
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none"
+            />
           </div>
-        ) : (
-          <div className="w-1/2" />
-        )}
 
-        {/* ✅ Right-side Form */}
-        <div className="w-full max-w-[620px] bg-white rounded-2xl shadow-2xl p-10 mr-[100px]">
-          <h2 className="text-6xl font-bold text-gray-900 mb-2">{title}</h2>
-          <p className="text-2xl text-gray-900 mb-6">{subtitle}</p>
+          <div className="mb-6">
+            <textarea
+              name="message"
+              placeholder="Message *"
+              rows="4"
+              className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none"
+            ></textarea>
+          </div>
 
-          <form className="space-y-6 text-2xl">
-            <div className="flex gap-4">
-              <div className="w-1/2">
-                <label className="block text-gray-700 mb-2" htmlFor="firstName">
-                  First Name *
-                </label>
-                <input
-                  id="firstName"
-                  type="text"
-                  className="w-full px-5 py-4 border border-gray-400 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-              <div className="w-1/2">
-                <label className="block text-gray-700 mb-2" htmlFor="lastName">
-                  Last Name *
-                </label>
-                <input
-                  id="lastName"
-                  type="text"
-                  className="w-full px-5 py-4 border border-gray-400 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="w-1/2">
-                <label className="block text-gray-700 mb-2" htmlFor="email">
-                  Email *
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  className="w-full px-5 py-4 border border-gray-400 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-              <div className="w-1/2">
-                <label className="block text-gray-700 mb-2" htmlFor="mobile">
-                  Mobile Number *
-                </label>
-                <input
-                  id="mobile"
-                  type="tel"
-                  className="w-full px-5 py-4 border border-gray-400 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-gray-700 mb-2" htmlFor="message">
-                Message *
-              </label>
-              <textarea
-                id="message"
-                rows={3}
-                className="w-full px-5 py-4 border border-gray-400 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-4 rounded-full flex items-center justify-center"
-            >
-              {buttonText}
-            </button>
-          </form>
-        </div>
+          <button
+            type="submit"
+            className="bg-red-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-red-700 transition-all"
+          >
+            {buttonText}
+          </button>
+        </form>
       </div>
     </div>
   );
