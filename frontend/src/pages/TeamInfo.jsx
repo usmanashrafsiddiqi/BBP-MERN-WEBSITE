@@ -39,7 +39,7 @@ const team = [
   {
     id: 6,
     name: "Ramakanth Sursetti",
-    role: "Socail Media Handler",
+    role: "Social Media Handler",
     image: "/raman.jpg",
     quote: "Code is like humor. When you have to explain it, it’s bad.",
   },
