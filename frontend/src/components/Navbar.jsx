@@ -10,7 +10,6 @@ const Navbar = () => {
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
   const navItems = [
-    // { name: 'Buy', path: '#' },
     { name: 'Rent', path: '/rent' },
     { name: 'New Projects', path: '/newprojects' },
     { name: 'Community', path: '/community' },
@@ -18,11 +17,10 @@ const Navbar = () => {
     { name: 'More', path: '#' },
     { name: 'About', path: '/about' },
     { name: 'Contact Us', path: '/contact' },
-    // { name: 'EN | AR', path: '#' },
   ];
 
   return (
-    <nav className="w-full fixed top-0 left-0 px-4 md:px-8 py-4 flex items-center justify-between text-white z-50">
+    <nav className="w-full fixed top-0 left-0 px-4 md:px-8 py-4 flex items-center justify-between z-50">
       {/* Logo */}
       <div className="ml-3 mt-2 w-[120px] sm:w-[140px] md:w-[160px] xl:w-[180px]">
         <img
@@ -40,7 +38,7 @@ const Navbar = () => {
               <li key={item.name} className="relative">
                 <button
                   onClick={toggleDropdown}
-                  className="flex items-center px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl border border-white border-opacity-40 bg-white/10 text-white rounded-full transition hover:bg-white/20 hover:shadow-[0_0_10px_rgba(255,255,255,0.4)]"
+                  className="flex items-center px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl bg-gray-200 text-black rounded-full font-medium transition hover:bg-gray-300"
                 >
                   {item.name}
                   <HiChevronDown className="ml-2 w-5 h-5" />
@@ -63,7 +61,7 @@ const Navbar = () => {
               <li key={item.name}>
                 <Link
                   to={item.path}
-                  className="px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl border border-white border-opacity-40 bg-white/10 text-white rounded-full transition hover:bg-white/20 hover:shadow-[0_0_10px_rgba(255,255,255,0.4)]"
+                  className="px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl bg-gray-200 text-black rounded-full font-medium transition hover:bg-gray-300"
                 >
                   {item.name}
                 </Link>
@@ -73,32 +71,34 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop Buttons */}
-        {/* <div className="flex space-x-3 xl:space-x-4 ml-4">
+        {/* 
+        <div className="flex space-x-3 xl:space-x-4 ml-4">
           <button className="px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl border border-red-500 bg-white/10 text-white rounded-full transition hover:bg-red-600/20 hover:shadow-[0_0_10px_rgba(255,0,0,0.4)]">
             HOT DEALS
           </button>
           <button className="px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl border border-white border-opacity-40 bg-white/10 text-white rounded-full font-semibold transition hover:bg-white/20 hover:shadow-[0_0_10px_rgba(255,255,255,0.4)]">
             LIST YOUR PROPERTY
           </button>
-        </div> */}
+        </div>
+        */}
       </div>
 
       {/* Mobile Hamburger Icon */}
       <div className="lg:hidden z-50">
         <button onClick={toggleMenu}>
-          {menuOpen ? <HiX className="text-3xl" /> : <HiMenu className="text-3xl" />}
+          {menuOpen ? <HiX className="text-3xl text-white" /> : <HiMenu className="text-3xl text-white" />}
         </button>
       </div>
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[90%] max-w-md h-[calc(100vh-80px)] bg-blue-500/40 backdrop-blur-xl px-6 py-6 flex flex-col space-y-4 z-[9999] lg:hidden shadow-xl rounded-2xl border border-white/10 transition-all duration-300 ease-in-out">
+        <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[90%] max-w-md h-[calc(100vh-80px)] bg-blue-500/40 backdrop-blur-xl px-6 py-6 flex flex-col space-y-4 z-[9999] lg:hidden shadow-xl rounded-2xl border border-white/10 transition-all duration-300 ease-in-out overflow-y-auto">
           {navItems.map((item) =>
             item.name === 'More' ? (
               <div key="more" className="relative">
                 <div
                   onClick={toggleDropdown}
-                  className="flex items-center justify-between text-white text-2xl uppercase tracking-wide hover:text-red-400 cursor-pointer"
+                  className="flex items-center justify-between text-white text-2xl uppercase tracking-wide hover:text-red-300 cursor-pointer"
                 >
                   <span>More</span>
                   <HiChevronDown className="w-6 h-6" />
@@ -142,21 +142,25 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className="text-white text-2xl uppercase tracking-wide hover:text-red-400 transition"
+                className="text-white text-2xl uppercase tracking-wide hover:text-red-300 transition"
                 onClick={() => setMenuOpen(false)}
               >
                 {item.name}
               </Link>
             )
           )}
-          {/* <div className="flex flex-col space-y-2 pt-4">
+
+          {/* Mobile Buttons */}
+          {/*
+          <div className="flex flex-col space-y-2 pt-4">
             <button className="px-4 py-2 border border-red-500 bg-white/10 text-white rounded-full text-base transition hover:bg-red-600/20 hover:shadow-[0_0_10px_rgba(255,0,0,0.4)]">
               HOT DEALS
             </button>
             <button className="px-4 py-2 border border-white border-opacity-40 bg-white/10 text-white rounded-full text-base font-semibold transition hover:bg-white/20 hover:shadow-[0_0_10px_rgba(255,255,255,0.4)]">
               LIST YOUR PROPERTY
             </button>
-          </div> */}
+          </div>
+          */}
         </div>
       )}
     </nav>
