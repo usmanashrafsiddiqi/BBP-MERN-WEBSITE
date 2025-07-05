@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { FaBed, FaWhatsapp } from "react-icons/fa";
-import { PiRuler } from "react-icons/pi";
 import { MdCall, MdLocationPin } from "react-icons/md";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
@@ -32,7 +31,7 @@ const properties = [
     title: "AED 1.81M",
     image: "/altan.jpg",
     location: "Dubai Creek Harbour",
-    beds: " 1-3 beds",
+    beds: "1-3 beds",
     bedroomSize: "776 sq ft",
     studio: " ",
     studioSize: " ",
@@ -40,7 +39,7 @@ const properties = [
   },
   {
     id: 4,
-    title: "AED 1.82M ",
+    title: "AED 1.82M",
     image: "/hillside.jpg",
     location: "Dubai hills Estate",
     beds: "1-3 beds",
@@ -84,7 +83,7 @@ const properties = [
   },
   {
     id: 8,
-    title: "AED 770K ",
+    title: "AED 770K",
     image: "/logoons.jpg",
     location: "Dubailand",
     beds: "1-3 beds",
@@ -95,24 +94,24 @@ const properties = [
   },
   {
     id: 9,
-    title: "AED 2.4M ",
+    title: "AED 2.4M",
     image: "/pearl.jpg",
     location: "Dubai Islands",
     beds: "1-4 beds",
-    bedroomSize: " 892 sq ft",
+    bedroomSize: "892 sq ft",
     studio: " ",
     studioSize: " ",
     type: "Ocean Pearl",
   },
   {
     id: 10,
-    title: "AED 699K ",
+    title: "AED 699K",
     image: "/parkvilla.jpg",
     location: "Dubai Land ",
     beds: "1-3 beds",
     bedroomSize: "760 sq ft",
     studio: "Studio",
-    studioSize: " 480 sq ft",
+    studioSize: "480 sq ft",
     type: "Park Villa",
   },
 ];
@@ -137,10 +136,16 @@ const Properties = () => {
             Discover A Luxury Lifestyle
           </h2>
           <div className="flex gap-2">
-            <button onClick={() => scroll("left")} className="p-2 rounded-full border">
+            <button
+              onClick={() => scroll("left")}
+              className="p-2 rounded-full border"
+            >
               <IoChevronBack size={20} />
             </button>
-            <button onClick={() => scroll("right")} className="p-2 rounded-full border">
+            <button
+              onClick={() => scroll("right")}
+              className="p-2 rounded-full border"
+            >
               <IoChevronForward size={20} />
             </button>
           </div>
@@ -148,15 +153,15 @@ const Properties = () => {
 
         <div
           ref={scrollRef}
-          className="flex gap-6 sm:gap-8 lg:gap-12 overflow-x-auto no-scrollbar px-2 snap-x scroll-smooth"
+          className="flex gap-6 sm:gap-8 lg:gap-10 overflow-x-auto no-scrollbar px-2 snap-x scroll-smooth"
         >
           {properties.map((property) => (
             <div
               key={property.id}
-              className="w-[260px] sm:w-[300px] min-h-[330px] bg-white shadow-md rounded-2xl flex-shrink-0 overflow-hidden snap-start border border-gray-200 flex flex-col"
+              className="w-[260px] sm:w-[300px] h-[360px] bg-white shadow-md rounded-2xl flex-shrink-0 overflow-hidden snap-start border border-gray-200"
             >
-              <div className="relative px-3 pt-3">
-                <div className="w-full h-[160px] rounded-xl overflow-hidden">
+              <div className="relative h-[55%] w-full px-3 pt-3">
+                <div className="w-full h-full rounded-xl overflow-hidden">
                   <img
                     src={property.image}
                     alt="property"
@@ -168,39 +173,49 @@ const Properties = () => {
                 </span>
               </div>
 
-              <div className="p-4 flex flex-col gap-3">
+              <div className="p-3 h-[45%] flex flex-col justify-between">
                 <div>
-                  <h3 className="text-teal-700 font-extrabold text-xl">{property.title}</h3>
-                  <p className="text-gray-500 text-sm mt-1 flex items-center gap-1">
+                  <h3 className="text-teal-700 font-extrabold text-lg">
+                    {property.title}
+                  </h3>
+                  <p className="text-gray-500 text-[13px] mt-1 flex items-center gap-1 leading-tight">
                     <MdLocationPin className="text-gray-400" />
                     {property.location}
                   </p>
                 </div>
 
-                <div className="mt-3 flex gap-2 flex-wrap">
-                  <span className="bg-[#E1F4F3] text-[#1E7C78] px-3 py-1 rounded-md text-sm flex justify-between items-center gap-2 min-w-[100px]">
-                    <span><FaBed className="inline-block" /> {property.beds}</span>
-                    <span className="text-xs text-gray-700">{property.bedroomSize}</span>
+                <div className="mt-2 flex gap-2 flex-wrap">
+                  <span className="bg-[#E1F4F3] text-[#1E7C78] px-2 py-1 rounded-md text-[13px] flex justify-between items-center gap-2 min-w-[100px]">
+                    <span>
+                      <FaBed className="inline-block" /> {property.beds}
+                    </span>
+                    <span className="text-[11px] text-gray-700">
+                      {property.bedroomSize}
+                    </span>
                   </span>
 
-                  {property.studio.trim() !== "" && (
-                    <span className="bg-[#E1F4F3] text-[#1E7C78] px-3 py-1 rounded-md text-sm flex justify-between items-center gap-2 min-w-[100px]">
+                  {property.studio.trim() && (
+                    <span className="bg-[#E1F4F3] text-[#1E7C78] px-2 py-1 rounded-md text-[13px] flex justify-between items-center gap-2 min-w-[100px]">
                       <span>{property.studio}</span>
-                      <span className="text-xs text-gray-700">{property.studioSize}</span>
+                      <span className="text-[11px] text-gray-700">
+                        {property.studioSize}
+                      </span>
                     </span>
                   )}
                 </div>
 
-                <div className="mt-4 flex justify-between items-center bg-[#E6F0EF] px-3 py-2 rounded-xl">
+                <div className="mt-2 flex justify-between items-center bg-[#E6F0EF] px-3 py-2 rounded-xl">
                   <div className="flex items-center gap-2">
                     <img
                       src="/aimanmam.jpg"
                       alt="agent"
-                      className="h-8 w-8 rounded-full object-cover"
+                      className="h-7 w-7 rounded-full object-cover"
                     />
                     <div>
-                      <p className="text-base font-bold text-[#1E7C78]">Aiman Rashid</p>
-                      <p className="text-xs text-gray-500">Manager</p>
+                      <p className="text-[14px] font-semibold text-[#1E7C78]">
+                        Aiman Rashid
+                      </p>
+                      <p className="text-[11px] text-gray-500">Manager</p>
                     </div>
                   </div>
                   <div className="flex gap-2">
@@ -208,7 +223,7 @@ const Properties = () => {
                       href="tel:+971569242326"
                       className="bg-teal-700 p-2 rounded-full hover:bg-teal-800 transition"
                     >
-                      <MdCall className="text-white text-lg" />
+                      <MdCall className="text-white text-[15px]" />
                     </a>
                     <a
                       href="https://wa.me/971569242326"
@@ -216,7 +231,7 @@ const Properties = () => {
                       rel="noopener noreferrer"
                       className="bg-teal-700 p-2 rounded-full hover:bg-teal-800 transition"
                     >
-                      <FaWhatsapp className="text-white text-lg" />
+                      <FaWhatsapp className="text-white text-[15px]" />
                     </a>
                   </div>
                 </div>
