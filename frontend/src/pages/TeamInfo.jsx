@@ -25,7 +25,7 @@ const team = [
   {
     id: 4,
     name: "Marufa Ahmed",
-    role: "Marketing Lead",
+    role: "Sales Executive Lead",
     image: "/marufa1.png",
     quote: "Creativity without strategy is called art. With strategy, it's marketing.",
   },
@@ -38,18 +38,12 @@ const team = [
   },
   {
     id: 6,
-    name: "Ummaimah Bhat",
-    role: "Software Engineer",
-    image: "/d.jpg",
+    name: "Ramakanth Sursetti",
+    role: "Socail Media Handler",
+    image: "/raman.jpg",
     quote: "Code is like humor. When you have to explain it, it’s bad.",
   },
-  {
-    id: 6,
-    name: "Ummaimah Bhat",
-    role: "Software Engineer",
-    image: "/d.jpg",
-    quote: "Code is like humor. When you have to explain it, it’s bad.",
-  },
+ 
 ];
 
 const TeamInfo = () => {

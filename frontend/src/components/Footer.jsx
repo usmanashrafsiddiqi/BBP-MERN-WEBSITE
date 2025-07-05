@@ -45,8 +45,8 @@ const Footer = () => {
             <h4 className="font-extrabold text-white mb-4 text-xl">About BRISKBOLD PROPERTY Site</h4>
             <p className="text-gray-300 font-medium leading-relaxed">
               We’re reimagining how you<br />
-              buy, sell and rent. It’s now easier<br />
-              to get into a place you love.
+              buy, sell and rent. It’s now <br />easier
+              to get into a <br />place you love.
             </p>
             <p className="text-gray-300 font-medium mt-2">So let’s do this, together.</p>
           </div>
