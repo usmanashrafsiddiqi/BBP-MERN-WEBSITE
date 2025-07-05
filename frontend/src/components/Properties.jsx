@@ -8,7 +8,7 @@ const properties = [
     id: 1,
     title: "AED 574K – 620K",
     image: "/azizimilan.jpg",
-    location: "38QG+963 - City of Arabia - Dubai - United Arab Emirates",
+    location: "38QG+963 - City of Arabia - Dubai ",
     beds: "1 bed",
     bedroomSize: "633 sq ft",
     studio: "Studio",
