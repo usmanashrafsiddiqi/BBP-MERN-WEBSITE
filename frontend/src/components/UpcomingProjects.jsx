@@ -7,8 +7,8 @@ const projectData = [
     image: "/9.jpg",
     price: "AED 1,500,000",
     handover: "Q4 2025",
-    bedrooms: "Studio, 1, 2 & 3",
-    paymentPlan: "80/20 Post Handover",
+    bedrooms: "Studio, 1, 2 ",
+    paymentPlan: "80/20 ",
     location: "Dubai Creek Harbour (The Lagoons), Dubai",
   },
   {
@@ -48,7 +48,7 @@ const projectData = [
     price: "AED 1,200,000",
     handover: "Q3 2025",
     bedrooms: "1 & 2 Beds",
-    paymentPlan: "70/30 Post Handover",
+    paymentPlan: "70/30 ",
     location: "Dubai Hills Estate",
   },
   {
@@ -60,7 +60,7 @@ const projectData = [
     location: "Dubai Marina",
   },
   {
-    image: "/28.jpg",
+    image: "/26.jpg",
     price: "AED 1,300,000",
     handover: "Q1 2026",
     bedrooms: "1, 2 & 3 Beds",
