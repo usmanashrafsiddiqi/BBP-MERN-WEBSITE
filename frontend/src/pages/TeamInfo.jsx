@@ -11,7 +11,7 @@ const team = [
   {
     id: 2,
     name: "Hilal Paray ",
-    role: "COO",
+    role: "Cheif Operating Officer",
     image: "/testi1.jpeg",
     quote: "Creativity without strategy is called art. With strategy, it's marketing.",
   },
