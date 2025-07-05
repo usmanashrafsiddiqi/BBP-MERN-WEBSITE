@@ -6,11 +6,11 @@ import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 const properties = [
   {
     id: 1,
-    title: "AED 574K",
+    title: "AED 574K – 620K",
     image: "/azizimilan.jpg",
     location: "38QG+963 - City of Arabia - Dubai - United Arab Emirates",
     beds: "1 bed",
-    bedroomSize: "633-1212 sq ft",
+    bedroomSize: "633 sq ft",
     studio: "Studio",
     studioSize: "317 sq ft",
     type: "AZIZI MILAN",
