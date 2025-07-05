@@ -12,7 +12,7 @@ const properties = [
     beds: "1 bed",
     bedroomSize: "633-1212 sq ft",
     studio: "Studio",
-    studioSize: "316.78 - 454 sq ft",
+    studioSize: "317 sq ft",
     type: "AZIZI MILAN",
   },
   {
@@ -64,7 +64,7 @@ const properties = [
     title: "AED 850K",
     image: "/spirz.jpg",
     location: "Sports City",
-    beds: "1 bed, office",
+    beds: "1 br,office",
     bedroomSize: "1350 sq ft",
     studio: "Studio",
     studioSize: "380 sq ft",
