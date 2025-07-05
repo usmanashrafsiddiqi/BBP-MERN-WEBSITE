@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 
-
+body {
+  @apply font-dmsans;
+}
 
 /* tailwind.css or globals.css */
 .no-scrollbar::-webkit-scrollbar {
