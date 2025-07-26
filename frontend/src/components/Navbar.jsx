@@ -20,15 +20,18 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full fixed top-0 left-0 px-4 md:px-8 py-4 flex items-center justify-between z-50">
+    <nav className="fixed top-4 left-0 right-0 mx-auto px-6 py-4 w-[98%] max-w-[98%] flex items-center justify-between z-50 bg-white/20 backdrop-blur-lg border-b border-white/10 rounded-t-[24px]">
+
+
+  {/* Navbar content here */}
       {/* Logo */}
-      <div className="ml-3 mt-2 w-[120px] sm:w-[140px] md:w-[160px] xl:w-[180px]">
+      <Link to="/" className="ml-3 mt-2 w-[120px] sm:w-[140px] md:w-[160px] xl:w-[180px]">
         <img
           src="/mainlogo.png"
           alt="Briskbold Property Logo"
           className="w-full h-auto object-contain"
         />
-      </div>
+      </Link>
 
       {/* Desktop Navigation */}
       <div className="hidden lg:flex items-center justify-end flex-wrap gap-2 xl:gap-3 2xl:gap-4 flex-1">
@@ -38,20 +41,32 @@ const Navbar = () => {
               <li key={item.name} className="relative">
                 <button
                   onClick={toggleDropdown}
-                  className="flex items-center px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl bg-gray-200 text-black rounded-full font-medium transition hover:bg-gray-300"
+                  className="flex items-center px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl bg-transparent text-black rounded-full font-medium transition hover:bg-gray-300"
                 >
                   {item.name}
                   <HiChevronDown className="ml-2 w-5 h-5" />
                 </button>
                 {dropdownOpen && (
                   <div className="absolute top-full left-0 mt-2 bg-white text-black rounded shadow-lg w-52 z-50">
-                    <Link to="/blogs" className="block px-4 py-2 text-sm hover:bg-gray-100" onClick={() => setDropdownOpen(false)}>
+                    <Link
+                      to="/blogs"
+                      className="block px-4 py-2 text-sm hover:bg-gray-100"
+                      onClick={() => setDropdownOpen(false)}
+                    >
                       Blogs
                     </Link>
-                    <Link to="/career" className="block px-4 py-2 text-sm hover:bg-gray-100" onClick={() => setDropdownOpen(false)}>
+                    <Link
+                      to="/career"
+                      className="block px-4 py-2 text-sm hover:bg-gray-100"
+                      onClick={() => setDropdownOpen(false)}
+                    >
                       Careers
                     </Link>
-                    <Link to="/mortgage-calculator" className="block px-4 py-2 text-sm hover:bg-gray-100" onClick={() => setDropdownOpen(false)}>
+                    <Link
+                      to="/mortgage-calculator"
+                      className="block px-4 py-2 text-sm hover:bg-gray-100"
+                      onClick={() => setDropdownOpen(false)}
+                    >
                       Mortgage Calculator
                     </Link>
                   </div>
@@ -61,7 +76,7 @@ const Navbar = () => {
               <li key={item.name}>
                 <Link
                   to={item.path}
-                  className="px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl bg-gray-200 text-black rounded-full font-medium transition hover:bg-gray-300"
+                  className="px-4 xl:px-5 py-2 text-base lg:text-lg xl:text-xl 2xl:text-2xl bg-transparent text-black rounded-full font-medium transition hover:bg-gray-300"
                 >
                   {item.name}
                 </Link>
@@ -86,7 +101,11 @@ const Navbar = () => {
       {/* Mobile Hamburger Icon */}
       <div className="lg:hidden z-50">
         <button onClick={toggleMenu}>
-          {menuOpen ? <HiX className="text-3xl text-white" /> : <HiMenu className="text-3xl text-white" />}
+          {menuOpen ? (
+            <HiX className="text-3xl text-white" />
+          ) : (
+            <HiMenu className="text-3xl text-white" />
+          )}
         </button>
       </div>
 
@@ -151,7 +170,7 @@ const Navbar = () => {
           )}
 
           {/* Mobile Buttons */}
-          {/*
+          {/* 
           <div className="flex flex-col space-y-2 pt-4">
             <button className="px-4 py-2 border border-red-500 bg-white/10 text-white rounded-full text-base transition hover:bg-red-600/20 hover:shadow-[0_0_10px_rgba(255,0,0,0.4)]">
               HOT DEALS

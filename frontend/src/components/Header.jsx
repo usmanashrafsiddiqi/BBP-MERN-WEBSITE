@@ -81,26 +81,40 @@ const Header = ({
             {/* Filter Section */}
             {showFilter && (
               <div className="mt-6 max-w-7xl w-full px-4 relative">
-                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 z-20">
-                  <div className="flex rounded-full overflow-hidden border border-gray-300 bg-transparent">
-                    <button className="px-6 py-2 bg-white text-black font-semibold text-sm rounded-l-full">
-                      BUY
-                    </button>
-                    <button className="px-6 py-2 bg-transparent text-white text-sm border-l border-gray-300">
-                      RENT
-                    </button>
-                  </div>
-                </div>
+               <div className="w-full flex justify-center relative z-50 overflow-visible mb-4">
+  {/* BUY button */}
+  <button className="px-6 py-2 bg-transparent text-white text-sm border border-gray-300 rounded-l-md">
+    BUY
+  </button>
+
+  {/* RENT button with tooltip */}
+  <div className="relative group">
+    <button className="px-6 py-2 bg-transparent text-white text-sm border-t border-b border-r border-gray-300 rounded-r-md">
+      RENT
+    </button>
+
+    {/* Tooltip */}
+    <div className="absolute top-1/2 left-full ml-2 -translate-y-1/2 
+                    bg-red-600 text-white text-xs font-semibold 
+                    px-2 py-1 rounded shadow-lg 
+                    opacity-0 group-hover:opacity-100 transition duration-200 
+                    whitespace-nowrap z-50">
+      Coming Soon
+    </div>
+  </div>
+</div>
+
 
                 <div className="bg-white rounded-2xl p-6 pt-10 shadow-lg w-full">
                   <div className="flex flex-wrap justify-center gap-4">
-                    <input
-                      type="text"
-                      placeholder="Enter Property, Location..."
-                      value={keyword}
-                      onChange={(e) => setKeyword(e.target.value)}
-                      className="min-w-[250px] px-4 py-2 border rounded-full text-sm"
-                    />
+                  <input
+  type="text"
+  placeholder="Enter Property, Location..."
+  value={keyword}
+  onChange={(e) => setKeyword(e.target.value)}
+  className="min-w-[250px] px-4 py-2 border rounded-full text-sm text-black"
+/>
+
                     <select
                       value={category}
                       onChange={(e) => setCategory(e.target.value)}
