@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import { FaArrowRight, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
@@ -83,9 +83,14 @@ const Header = ({
               <div className="mt-6 max-w-7xl w-full px-4 relative">
                <div className="w-full flex justify-center relative z-50 overflow-visible mb-4">
   {/* BUY button */}
+ 
+
+<Link to="/newprojects">
   <button className="px-6 py-2 bg-transparent text-white text-sm border border-gray-300 rounded-l-md">
     BUY
   </button>
+</Link>
+
 
   {/* RENT button with tooltip */}
   <div className="relative group">
