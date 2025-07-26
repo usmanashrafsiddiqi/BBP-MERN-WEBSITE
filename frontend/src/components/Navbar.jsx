@@ -20,7 +20,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-4 left-0 right-0 mx-auto px-6 py-4 w-[98%] max-w-[98%] flex items-center justify-between z-50 bg-white/20 backdrop-blur-lg border-b border-white/10 rounded-t-[24px]">
+    <nav className="fixed top-2 sm:top-3 md:top-4 left-0 right-0 mx-auto px-6 py-4 w-[98%] max-w-[98%] flex items-center justify-between z-50 bg-white/20 backdrop-blur-lg border-b border-white/10 rounded-t-[24px]">
+
 
 
   {/* Navbar content here */}
