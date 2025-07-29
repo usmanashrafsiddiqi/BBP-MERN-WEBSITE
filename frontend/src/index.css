@@ -5,6 +5,7 @@
 
 body {
   @apply font-dmsans;
+  padding-top: 1rem;
 }
 
 /* tailwind.css or globals.css */
