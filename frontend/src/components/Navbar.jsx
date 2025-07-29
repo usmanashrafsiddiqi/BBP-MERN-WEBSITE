@@ -7,53 +7,53 @@ const Navbar = () => {
   const [moreOpen, setMoreOpen] = useState(false);
 
   const toggleMenu = () => {
-    // Close "More" whenever mobile menu is toggled
     setMenuOpen(!menuOpen);
     setMoreOpen(false);
   };
 
   return (
-    <nav className="relative z-50 w-[99%] max-w-[99%] mx-auto px-6 py-4 flex items-center justify-between bg-white/10 backdrop-blur-lg border-b border-white/10 rounded-t-[24px]"
-    style={{ marginTop: 'env(safe-area-inset-top, 16px)' }}>
+    <nav className="w-full z-[9999] px-6 py-4 relative">
+      <div className="w-[99%] max-w-[99%] mx-auto flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/">
+          <img src="/mainlogo.png" alt="Logo" className="h-10 w-auto" />
+        </Link>
 
-      {/* Logo */}
-      <Link to="/">
-        <img src="/mainlogo.png" alt="Logo" className="h-10 w-auto" />
-      </Link>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-6">
+          <Link to="/rent" className="text-white text-sm hover:underline">Rent</Link>
+          <Link to="/newprojects" className="text-white text-sm hover:underline">New Projects</Link>
+          <Link to="/community" className="text-white text-sm hover:underline">Community</Link>
+          <Link to="/developer" className="text-white text-sm hover:underline">Developer</Link>
 
-      {/* Desktop Menu */}
-      <div className="hidden md:flex items-center gap-6">
-        <Link to="/rent" className="text-white text-sm hover:underline">Rent</Link>
-        <Link to="/newprojects" className="text-white text-sm hover:underline">New Projects</Link>
-        <Link to="/community" className="text-white text-sm hover:underline">Community</Link>
-        <Link to="/developer" className="text-white text-sm hover:underline">Developer</Link>
-
-        <div className="relative group">
-          <button className="text-white text-sm flex items-center gap-1">
-            <span>More</span>
-            <HiChevronDown className="mt-[2px]" />
-          </button>
-          <div className="absolute top-full mt-2 hidden group-hover:block bg-white text-black rounded shadow-lg p-2 min-w-[160px]">
-            <Link to="/career" className="block px-4 py-2 hover:bg-gray-100">Careers</Link>
-            <Link to="/blogs" className="block px-4 py-2 hover:bg-gray-100">Blogs</Link>
-            <Link to="/mortgage-calculator" className="block px-4 py-2 hover:bg-gray-100">Mortgage Calculator</Link>
+          {/* More dropdown */}
+          <div className="relative group">
+            <button className="text-white text-sm flex items-center gap-1">
+              <span>More</span>
+              <HiChevronDown className="mt-[2px]" />
+            </button>
+            <div className="absolute top-full mt-2 hidden group-hover:block bg-white text-black rounded shadow-lg p-2 min-w-[160px]">
+              <Link to="/career" className="block px-4 py-2 hover:bg-gray-100">Careers</Link>
+              <Link to="/blogs" className="block px-4 py-2 hover:bg-gray-100">Blogs</Link>
+              <Link to="/mortgage-calculator" className="block px-4 py-2 hover:bg-gray-100">Mortgage Calculator</Link>
+            </div>
           </div>
+
+          <Link to="/about" className="text-white text-sm hover:underline">About</Link>
+          <Link to="/contact" className="text-white text-sm hover:underline">Contact Us</Link>
         </div>
 
-        <Link to="/about" className="text-white text-sm hover:underline">About</Link>
-        <Link to="/contact" className="text-white text-sm hover:underline">Contact Us</Link>
-      </div>
-
-      {/* Hamburger Icon */}
-      <div className="md:hidden z-[9999]">
-        <button onClick={toggleMenu} className="text-white">
-          {menuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
-        </button>
+        {/* Hamburger Icon */}
+        <div className="md:hidden z-[10000]">
+          <button onClick={toggleMenu} className="text-white">
+            {menuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="fixed top-[80px] left-0 w-full bg-white text-black z-[9999] flex flex-col items-center space-y-4 py-6 rounded-b-[24px] shadow-lg md:hidden">
+        <div className="absolute top-full left-0 w-full bg-white text-black z-[9998] flex flex-col items-center space-y-4 py-6 rounded-b-[24px] shadow-lg md:hidden">
           <Link to="/rent" className="hover:underline" onClick={toggleMenu}>Rent</Link>
           <Link to="/newprojects" className="hover:underline" onClick={toggleMenu}>New Projects</Link>
           <Link to="/community" className="hover:underline" onClick={toggleMenu}>Community</Link>
