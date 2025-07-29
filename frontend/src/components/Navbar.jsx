@@ -13,7 +13,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="mt-2 mx-auto px-6 py-4 w-[99%] max-w-[99%] flex items-center justify-between z-50 bg-white/10 backdrop-blur-lg border-b border-white/10 rounded-t-[24px] relative">
+    <nav className="mx-auto px-6 py-4 w-[99%] max-w-[99%] flex items-center justify-between z-50 bg-white/10 backdrop-blur-lg border-b border-white/10 rounded-t-[24px] relative">
+
       {/* Logo */}
       <Link to="/">
         <img src="/mainlogo.png" alt="Logo" className="h-10 w-auto" />
