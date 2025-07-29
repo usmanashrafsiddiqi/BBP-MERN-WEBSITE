@@ -5,8 +5,8 @@ const team = [
     id: 1,
     name: "Aiman Rashid",
     role: "General Manager",
-    image: "/aimanmam.jpg",
-    quote: "Leadership is unlocking people’s potential to become better.",
+    image: "/mam.jfif",
+    quote: "Driving vision into action,aligning people,process and performance for lasting success",
   },
   {
     id: 2,
@@ -27,28 +27,28 @@ const team = [
     name: "Marufa Ahmed",
     role: "Sales Executive Lead",
     image: "/marufa1.png",
-    quote: "Creativity without strategy is called art. With strategy, it's marketing.",
+    quote: "Behind every high performing sales team is a leader who knows how to close minds before deals.",
   },
   {
     id: 5,
     name: "Diya",
     role: "Sales Lead (Japan)",
     image: "/d.jpg",
-    quote: "Creativity without strategy is called art. With strategy, it's marketing.",
+    quote: "Precision in approach,passion in execution.",
   },
   {
     id: 6,
     name: "Ramakanth Sursetti",
     role: "Digital Marketing Manager",
     image: "/raman.jpg",
-    quote: "Code is like humor. When you have to explain it, it’s bad.",
+    quote: "Where creativity meets conversion- and nothing is accidental ",
   },
   {
     id: 7,
     name: "Usman Ashraf",
     role: "Full Stack Developer",
     image: "/.jpg",
-    quote: "Code is like humor. When you have to explain it, it’s bad.",
+    quote: "Building seamless digital experiences from front to back-code that connects,designs that deliver.",
   },
  
 ];

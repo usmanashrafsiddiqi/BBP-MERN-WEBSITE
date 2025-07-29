@@ -13,7 +13,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="mt-2 mx-auto px-6 py-4 w-[99%] max-w-[99%] flex items-center justify-between z-50 bg-white/10 backdrop-blur-lg border-b border-white/10 rounded-t-[24px] relative">
+    <nav className="relative z-50 w-[99%] max-w-[99%] mx-auto px-6 py-4 flex items-center justify-between bg-white/10 backdrop-blur-lg border-b border-white/10 rounded-t-[24px]"
+    style={{ marginTop: 'env(safe-area-inset-top, 16px)' }}>
+
       {/* Logo */}
       <Link to="/">
         <img src="/mainlogo.png" alt="Logo" className="h-10 w-auto" />

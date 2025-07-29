@@ -5,7 +5,7 @@ const teamMembers = [
   {
     id: 1,
     name: "General Manager",
-    image: "/aimanmam.jpg",
+    image: "/mam.jfif",
     isHighlighted: true,
   },
   { id: 2, image: "/testi1.jpeg" },
