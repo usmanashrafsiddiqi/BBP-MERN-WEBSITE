@@ -55,7 +55,11 @@ const Header = ({
         <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative z-10 h-full flex flex-col justify-center">
-          <Navbar />
+        <div className="pt-4 sm:pt-6 md:pt-8">
+  <Navbar />
+</div>
+
+         
 
           <div className="flex flex-col items-center justify-center text-center text-white px-4 h-full pt-32 sm:pt-20">
             {/* Title & Subtitles */}
