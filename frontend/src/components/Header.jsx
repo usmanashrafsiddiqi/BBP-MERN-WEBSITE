@@ -47,19 +47,18 @@ const Header = ({
       </style>
 
       <header
-        className={`relative min-h-[100vh] sm:min-h-[90vh] md:h-[85vh] bg-cover bg-center rounded-[24px] overflow-hidden ${
-          !showFilter ? 'header-no-filter-sm' : ''
-        }`}
+  className={`relative h-auto min-h-[100vh] sm:min-h-[95vh] md:min-h-[100vh] lg:min-h-[100vh] bg-cover bg-center rounded-[24px] overflow-hidden ${
+    !showFilter ? 'header-no-filter-sm' : ''
+  }`}
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="absolute inset-0 bg-black/50" />
 
-        <div className="relative z-10 h-full flex flex-col justify-center">
-        <div className="pt-4 sm:pt-6 md:pt-8">
+        <div className="relative z-10 h-full flex flex-col justify-center ">
+          
+        <div className="pt-8 pb-8">
   <Navbar />
 </div>
-
-         
 
           <div className="flex flex-col items-center justify-center text-center text-white px-4 h-full pt-32 sm:pt-20">
             {/* Title & Subtitles */}
