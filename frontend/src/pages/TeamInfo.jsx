@@ -11,14 +11,14 @@ const team = [
   {
     id: 2,
     name: "Hilal Paray ",
-    role: "Chief Operating Officer",
+    role: "Marketing Director",
     image: "/testi1.jpeg",
     quote: "Creativity without strategy is called art. With strategy, it's marketing.",
   },
   {
     id: 3,
     name: "Obaid",
-    role: "UI/UX Designer",
+    role: "Marketing & Socail Media Designer",
     image: "/u.jpg",
     quote: "Design is not just what it looks like. Design is how it works.",
   },
@@ -32,15 +32,22 @@ const team = [
   {
     id: 5,
     name: "Diya",
-    role: "Marketing Lead",
+    role: "Sales Lead (Japan)",
     image: "/d.jpg",
     quote: "Creativity without strategy is called art. With strategy, it's marketing.",
   },
   {
     id: 6,
     name: "Ramakanth Sursetti",
-    role: "Social Media Handler",
+    role: "Digital Marketing Manager",
     image: "/raman.jpg",
+    quote: "Code is like humor. When you have to explain it, it’s bad.",
+  },
+  {
+    id: 7,
+    name: "Usman Ashraf",
+    role: "Full Stack Developer",
+    image: "/.jpg",
     quote: "Code is like humor. When you have to explain it, it’s bad.",
   },
  

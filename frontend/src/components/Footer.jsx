@@ -42,7 +42,7 @@ const Footer = () => {
 
           {/* About */}
           <div>
-            <h4 className="font-extrabold text-white mb-4 text-xl">About BRISKBOLD PROPERTY Site</h4>
+            <h4 className="font-extrabold text-white mb-4 text-xl">About Us</h4>
             <p className="text-gray-300 font-medium leading-relaxed">
               We’re reimagining how you<br />
               buy, sell and rent. It’s now <br />easier
