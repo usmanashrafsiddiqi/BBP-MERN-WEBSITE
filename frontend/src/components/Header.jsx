@@ -56,7 +56,7 @@ const Header = ({
 
         <div className="relative z-10 h-full flex flex-col justify-center ">
           
-        <div className="pt-4 pb-4">
+        <div className="pt-1 pb-1">
   <Navbar />
 </div>
 
