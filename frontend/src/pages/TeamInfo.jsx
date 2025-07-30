@@ -47,7 +47,7 @@ const team = [
     id: 7,
     name: "Usman Ashraf",
     role: "Full Stack Developer",
-    image: "/.jpg",
+    image: "/usman.png",
     quote: "Building seamless digital experiences from front to back-code that connects,designs that deliver.",
   },
  
