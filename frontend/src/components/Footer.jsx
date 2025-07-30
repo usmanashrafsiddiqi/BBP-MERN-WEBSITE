@@ -116,8 +116,8 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <span>📞</span> +971 56 924 2326
               </li>
-              <li className="flex items-center gap-2">
-                <span>📧</span> bbpmarketing@briskboldproperties.com
+              <li className="flex  gap-2">
+                <span>📧</span> bbpmarketing<br/>@briskboldproperties.com
               </li>
               <li className="flex items-center gap-2">
                 <span>📍</span> Business Bay, Dubai, UAE

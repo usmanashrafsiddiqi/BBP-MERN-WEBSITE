@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import { FaMapMarkerAlt, FaArrowRight } from "react-icons/fa";
 import Footer from "../components/Footer";
-
+import { Link } from "react-router-dom";
 const Career = () => {
   return (
     <div className="p-2 md:p-4 bg-white overflow-hidden">
@@ -57,61 +57,51 @@ const Career = () => {
           {[
             {
               title: "Customer Service Representative",
-              desc:
-                "Be the friendly face of BRISKBOLD, helping customers with inquiries and providing world-class support.",
+              slug: "customer-service-representative",
+              desc: "Be the friendly face of BRISKBOLD, helping customers with inquiries and providing world-class support.",
             },
             {
               title: "Sales Executive",
-              desc:
-                "Join our sales team and drive business growth by building client relationships and closing deals.",
+              slug: "sales-executive",
+              desc: "Join our sales team and drive business growth by building client relationships and closing deals.",
             },
             {
-              title: "Marketing Coordinator",
-              desc:
-                "Support marketing campaigns and content creation to increase brand awareness and engagement.",
-            },
-            {
-              title: "Operations Associate",
-              desc:
-                "Ensure smooth day-to-day operations and help optimize internal processes for better efficiency.",
-            },
-            {
-              title: "Marketing Coordinator",
-              desc:
-                "Support marketing campaigns and content creation to increase brand awareness and engagement.",
-            },
-            {
-              title: "Operations Associate",
-              desc:
-                "Ensure smooth day-to-day operations and help optimize internal processes for better efficiency.",
-            },
-          ].map((job, index) => (
-            <div
-              key={index}
-              className="bg-white border rounded-2xl px-6 py-4 flex flex-col md:flex-row md:items-center justify-between shadow-sm"
-            >
-              <div className="mb-4 md:mb-0">
-                <h3 className="text-lg font-bold text-teal-700">
-                  {job.title}
-                </h3>
-                <p className="text-gray-600 text-sm mt-1">{job.desc}</p>
-              </div>
-
-              <div className="flex items-center justify-between md:justify-end gap-6">
-                <div className="flex items-center text-sm text-gray-600">
-                  <FaMapMarkerAlt className="mr-1 text-blue-600" />
-                  Dubai, UAE
+              title: "Back Office Assistant",
+              slug: "back-office-assistant",
+              desc: "Support daily operations by managing administrative tasks, maintaining records, and ensuring smooth internal coordination.",
+            }
+          ]
+            .map((job, index) => (
+              <div
+                key={index}
+                className="bg-white border rounded-2xl px-6 py-4 flex flex-col md:flex-row md:items-center justify-between shadow-sm"
+              >
+                <div className="mb-4 md:mb-0">
+                  <h3 className="text-lg font-bold text-teal-700">
+                    {job.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mt-1">{job.desc}</p>
                 </div>
-                <button className="flex items-center gap-2 border border-red-700 text-red-700 px-4 py-2 rounded-full hover:bg-red-700 hover:text-white transition">
-                  VIEW DETAILS
-                  <FaArrowRight className="text-xs" />
-                </button>
+
+                <div className="flex items-center justify-between md:justify-end gap-6">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <FaMapMarkerAlt className="mr-1 text-blue-600" />
+                    Dubai, UAE
+                  </div>
+                  <Link
+                    to={`/careers/${job.slug}`}
+                    className="flex items-center gap-2 border border-red-700 text-red-700 px-4 py-2 rounded-full hover:bg-red-700 hover:text-white transition"
+                  >
+                    VIEW DETAILS
+                    <FaArrowRight className="text-xs" />
+                  </Link>
+
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

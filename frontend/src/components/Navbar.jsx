@@ -12,7 +12,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full z-[9999] px-6 py-4 mt-2 md:mt-4 relative">
+   <nav className="w-full z-[9999] px-6 py-4 mt-2 md:mt-4 relative bg-white/5 backdrop-blur-md shadow-md rounded-xl ">
+
 
       <div className="w-[99%] max-w-[99%] mx-auto flex items-center justify-between">
         {/* Logo */}
@@ -27,18 +28,25 @@ const Navbar = () => {
           <Link to="/community" className="text-white text-sm hover:underline">Community</Link>
           <Link to="/developer" className="text-white text-sm hover:underline">Developer</Link>
 
-          {/* More dropdown */}
-          <div className="relative group">
-            <button className="text-white text-sm flex items-center gap-1">
+          {/* More dropdown (Click to open) */}
+          <div className="relative">
+            <button
+              onClick={() => setMoreOpen(!moreOpen)}
+              className="text-white text-sm flex items-center gap-1"
+            >
               <span>More</span>
               <HiChevronDown className="mt-[2px]" />
             </button>
-            <div className="absolute top-full mt-2 hidden group-hover:block bg-white text-black rounded shadow-lg p-2 min-w-[160px]">
-              <Link to="/career" className="block px-4 py-2 hover:bg-gray-100">Careers</Link>
-              <Link to="/blogs" className="block px-4 py-2 hover:bg-gray-100">Blogs</Link>
-              <Link to="/mortgage-calculator" className="block px-4 py-2 hover:bg-gray-100">Mortgage Calculator</Link>
-            </div>
+            {moreOpen && (
+              <div className="absolute top-full mt-2 bg-white text-black rounded shadow-lg p-2 min-w-[160px] z-[9999]">
+                <Link to="/career" className="block px-4 py-2 hover:bg-gray-100">Careers</Link>
+                <Link to="/events" className="block px-4 py-2 hover:bg-gray-100">Events</Link>
+                <Link to="/blogs" className="block px-4 py-2 hover:bg-gray-100">Blogs</Link>
+                <Link to="/mortgage-calculator" className="block px-4 py-2 hover:bg-gray-100">Mortgage Calculator</Link>
+              </div>
+            )}
           </div>
+
 
           <Link to="/about" className="text-white text-sm hover:underline">About</Link>
           <Link to="/contact" className="text-white text-sm hover:underline">Contact Us</Link>
