@@ -149,7 +149,7 @@ const Developer = () => {
               </div>
               <h3 className="text-lg font-semibold text-gray-800">{dev.name}</h3>
               <div className="flex items-center text-sm text-gray-600 mb-2">
-                <img src="/icons/location.svg" alt="location" className="w-4 h-4 mr-1" />
+                {/* <img src="/icons/location.svg" alt="location" className="w-4 h-4 mr-1" /> */}
                 {dev.location}
               </div>
               <p className="text-sm text-gray-600 leading-snug">{dev.description}</p>

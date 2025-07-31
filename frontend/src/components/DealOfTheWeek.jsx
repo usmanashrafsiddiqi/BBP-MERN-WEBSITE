@@ -54,3 +54,5 @@ const DealCard = ({ image, title, label, detail }) => {
   
   export default DealOfTheWeek;
   
+
+  
