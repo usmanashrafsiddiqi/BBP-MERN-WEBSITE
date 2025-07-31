@@ -110,7 +110,7 @@ const NewProjects = () => {
     <div className="p-2 md:p-4 bg-white overflow-hidden">
       <Header
         backgroundImage="/community.jpg"
-        title="Upcoming Projects In Dubai"
+        title="Projects In Dubai"
         subtitle=""
         description="Find exciting new real estate projects and investment opportunities"
         showFilter={false}
