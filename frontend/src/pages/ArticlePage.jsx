@@ -187,7 +187,7 @@ const ArticlePage = () => {
 
       {/* Only Date Overlay */}
       <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-20 px-4">
-        <p className="mt-4 text-sm md:text-base">{article.date}</p>
+        {/* <p className="mt-4 text-sm md:text-base">{article.date}</p> */}
       </div>
 
       {/* Article Title */}
