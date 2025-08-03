@@ -149,6 +149,89 @@ const Contact = () => {
           </form>
         </div>
       </div>
+   {/* 🌍 Office Locations Section with background image */}
+<div
+  className="bg-cover bg-center bg-no-repeat py-20 px-4 sm:px-6 lg:px-20 text-white"
+  style={{ backgroundImage: "url('/contactbg.jpg')" }} // replace path if needed
+>
+  <div className="max-w-[1440px] mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+    {/* Card - Dubai */}
+    <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-2xl p-6 shadow-xl">
+      <img src="/dubai.png" alt="UAE Logo" className="w-12 mb-3" />
+      <h3 className="text-2xl font-semibold mb-2">Dubai</h3>
+      <p className="text-sm leading-relaxed">
+        Office 3507<br />
+        Churchill Executive Tower<br />
+        Business Bay, Dubai, UAE
+      </p>
+      <div className="mt-4 space-y-2 text-sm text-gray-300">
+        <p>📞 (+971) 554372731</p>
+        <p>💬 +971554372731</p>
+      </div>
+    </div>
+
+    {/* Card - Canada */}
+    <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-2xl p-6 shadow-xl">
+      <img src="/canada.png" alt="Canada Logo" className="w-12 mb-3" />
+      <h3 className="text-2xl font-semibold mb-2">Canada</h3>
+      <p className="text-sm leading-relaxed">
+        100-4310, Sherwoodtowne Boulevard<br />
+        Mississauga, Ontario<br />
+        Canada, L4Z4C4
+      </p>
+      <div className="mt-4 space-y-2 text-sm text-gray-300">
+        <p>📞 (+1) 6474463712</p>
+        <p>💬 (+1) 6474463712</p>
+      </div>
+    </div>
+
+    {/* Card - Japan */}
+    <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-2xl p-6 shadow-xl">
+      <img src="/japan.png" alt="Japan Logo" className="w-12 mb-3" />
+      <h3 className="text-2xl font-semibold mb-2">Japan</h3>
+      <p className="text-sm leading-relaxed">
+        7th Floor Wakamatsu building<br />
+        Honchome 3-3-6, Chuo-ku<br />
+        Tokyo, Japan
+      </p>
+      <div className="mt-4 space-y-2 text-sm text-gray-300">
+        <p>📞 (+81) 7036162428</p>
+        <p>💬 (+81) 7036162428</p>
+      </div>
+    </div>
+
+    {/* Card - India */}
+    <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-2xl p-6 shadow-xl">
+      <img src="/india.png" alt="India Logo" className="w-12 mb-3" />
+      <h3 className="text-2xl font-semibold mb-2">India</h3>
+      <p className="text-sm leading-relaxed">
+        Delhi<br />
+        Jammu & Kashmir
+      </p>
+      <div className="mt-4 space-y-2 text-sm text-gray-300">
+        <p>📞 (+91) 9103163366</p>
+        <p>💬 (+91) 9103163366</p>
+      </div>
+    </div>
+
+    {/* Card - USA */}
+    <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-2xl p-6 shadow-xl">
+      <img src="/united.png" alt="USA Logo" className="w-12 mb-3" />
+      <h3 className="text-2xl font-semibold mb-2">United States</h3>
+      <p className="text-sm leading-relaxed">
+        3400 COTTAGE WAY, STE G2 #24309<br />
+        Sacramento, CA 95825
+      </p>
+      <div className="mt-4 space-y-2 text-sm text-gray-300">
+        <p>📞 (+1) 415 755 8939</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
       <Footer />
     </div>
   );
