@@ -196,8 +196,8 @@ const Contact = () => {
         Tokyo, Japan
       </p>
       <div className="mt-4 space-y-2 text-sm text-gray-300">
-        <p>📞 (+81) 7036162428</p>
-        <p>💬 (+81) 7036162428</p>
+        <p>📞 (+81) 8012198750</p>
+        <p>💬 (+81) 8012198750</p>
       </div>
     </div>
 
