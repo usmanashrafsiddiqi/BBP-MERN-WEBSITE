@@ -1,12 +1,13 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-// ✅ Updated Project Data
+// ✅ Updated Project Data with slugs
 const projects = [
   {
     id: 1,
+    slug: "reef998",
     image: "/reef998.jpg",
     title: "Reef 998",
     startingFrom: "AED 760K",
@@ -17,6 +18,7 @@ const projects = [
   },
   {
     id: 2,
+    slug: "azizi-sikandar",
     image: "/sikandar.jpg",
     title: "Azizi Sakandar",
     startingFrom: "AED 550K",
@@ -27,6 +29,7 @@ const projects = [
   },
   {
     id: 3,
+    slug: "azizi-arian",
     image: "/arian.jpg",
     title: "Azizi Arian",
     startingFrom: "AED 960K",
@@ -37,6 +40,7 @@ const projects = [
   },
   {
     id: 4,
+    slug: "azizi-wasel",
     image: "/wasel.jpg",
     title: "Azizi Wasel",
     startingFrom: "AED 1,675,000",
@@ -47,6 +51,7 @@ const projects = [
   },
   {
     id: 5,
+    slug: "alta-view-skyhomes",
     image: "/view.jpg",
     title: "ALTA VIEW Skyhomes",
     startingFrom: "AED 748K",
@@ -57,6 +62,7 @@ const projects = [
   },
   {
     id: 6,
+    slug: "samana-skyviews",
     image: "/skyview.jpg",
     title: "Samana Skyviews",
     startingFrom: "AED 689,000",
@@ -67,6 +73,7 @@ const projects = [
   },
   {
     id: 7,
+    slug: "azizi-ameer",
     image: "/ameer.jpg",
     title: "AZIZI AMEER",
     startingFrom: "AED 1,269,000",
@@ -75,8 +82,6 @@ const projects = [
     paymentPlan: "70/30",
     location: "AL Furjan ",
   },
-  
-
 ];
 
 // 🔍 Function to extract query params
@@ -95,7 +100,6 @@ const NewProjects = () => {
 
   const filteredProjects = projects.filter((project) => {
     const priceNumber = parseInt(project.startingFrom.replace(/[^\d]/g, ""));
-
     return (
       (!keyword ||
         project.title.toLowerCase().includes(keyword) ||
@@ -122,9 +126,10 @@ const NewProjects = () => {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => (
-              <div
+              <Link
+                to={`/projects/${project.slug}`}
                 key={project.id}
-                className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+                className="block bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition"
               >
                 <div className="relative">
                   <img
@@ -160,7 +165,7 @@ const NewProjects = () => {
                   <span className="text-gray-500">📍</span>
                   <span>{project.location}</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}

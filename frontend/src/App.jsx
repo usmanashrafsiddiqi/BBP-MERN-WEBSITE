@@ -18,6 +18,7 @@ import Career from "./pages/Career";
 import Blogs from './pages/Blogs';
 import BlogArticle from './pages/BlogArticle';
 import JobDetail from "./pages/JobDetail";
+import ProjectDetails from "./pages/ProjectDetails";
 function App() {
   return (
     <Router>
@@ -35,6 +36,7 @@ function App() {
         <Route path="/team" element={<TeamInfo />} /> 
         <Route path="/rent" element={<Rent />} />
         <Route path="/newprojects" element={<NewProjects />} />
+        <Route path="/projects/:slug" element={<ProjectDetails />} />
         <Route path="/developer/:name" element={<DeveloperDetail />} />
         <Route path="/career" element={<Career />} />
         <Route path="/careers/:slug" element={<JobDetail />} />
