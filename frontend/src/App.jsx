@@ -19,6 +19,7 @@ import Blogs from './pages/Blogs';
 import BlogArticle from './pages/BlogArticle';
 import JobDetail from "./pages/JobDetail";
 import ProjectDetails from "./pages/ProjectDetails";
+import Crypto from "./pages/Crypto";
 function App() {
   return (
     <Router>
@@ -41,6 +42,7 @@ function App() {
         <Route path="/career" element={<Career />} />
         <Route path="/careers/:slug" element={<JobDetail />} />
         <Route path="/mortgage-calculator" element={<MortgageCalculator />} />
+        <Route path="/crypto" element={<Crypto  />} />
 
       </Routes>
     </Router>

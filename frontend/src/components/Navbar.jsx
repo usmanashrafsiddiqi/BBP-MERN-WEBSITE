@@ -23,6 +23,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
+          <Link to="/crypto" className="text-white text-sm hover:underline">Crypto</Link>
          {/* Rent (Coming Soon) */}
 <div className="relative group cursor-default">
   <span className="text-white text-sm">Rent</span>
@@ -70,8 +71,11 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="absolute top-full left-0 w-full bg-white text-black z-[9998] flex flex-col items-center space-y-4 py-6 rounded-b-[24px] shadow-lg md:hidden">
+       
+         <Link to="/crypto"  className="hover:underline"  onClick={toggleMenu}>Crypto</Link>
         {/* Rent (Coming Soon) */}
 <div className="relative group cursor-default">
+
   <span className="text-black text-base">Rent</span>
   <div className="absolute left-1/2 -translate-x-1/2 mt-1 hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 whitespace-nowrap">
     Coming Soon

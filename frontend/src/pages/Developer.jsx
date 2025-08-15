@@ -1,198 +1,104 @@
-// src/pages/Developer.jsx
+// src/pages/Crypto.jsx
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import Header from "../components/Header"; // already contains Navbar
+import Footer from "../components/Footer";
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-
-const developers = [
-  {
-    name: 'Emaar',
-    location: 'Dubai - UAE',
-    logo: '/emardev.png',
-    featured: true,
-    description:
-      "Emaar Properties stands at the forefront of Dubai's real estate sector, renowned for iconic developments such as the Burj Khalifa and The Dubai Mall. In January 2025, they achieved a remarkable 2,221 transactions, totaling AED 8.63 billion in sales. Emaar’s commitment to quality and innovation continues to set industry benchmarks.",
-  },
-  {
-    name: 'Damac',
-    location: 'Dubai - UAE',
-    logo: '/damacdev.png',
-    featured: true,
-    description:
-      'DAMAC Properties has established itself as a leader in luxury real estate, offering a diverse portfolio of residential, commercial, and leisure properties across the Middle East. DAMAC recorded 1,767 transactions, with total sales reaching AED 4.13 billion in January. Their emphasis on strategic locations and premium amenities appeals to discerning investors.',
-  },
-  {
-    name: 'Sobha',
-    location: 'Dubai - UAE',
-    logo: '/sobhadev.png',
-    featured: true,
-    description:
-      'Sobha Realty is recognized for its unwavering commitment to quality and attention to detail, delivering luxury residences that exemplify craftsmanship. In January, Sobha Realty completed 407 transactions, with total sales of AED 1.19 billion.',
-  },
-  {
-    name: 'Danube Properties',
-    location: 'Dubai - UAE',
-    logo: '/propertiesdev.png',
-    featured: true,
-    description:
-      'Danube Properties is known for delivering affordable yet high-quality residences. In January 2025, Danube completed 497 transactions, totaling AED 761.54 million in sales.',
-  },
-  {
-    name: 'Ellington',
-    location: 'Dubai - UAE',
-    logo: '/ellingtondev.png',
-    featured: true,
-    description:
-      'Ellington Properties is distinguished by its design-led approach, crafting bespoke residences that prioritize quality and lifestyle. In January 2025, they achieved 237 transactions, totaling AED 620.07 million.',
-  },
-  {
-    name: 'Samana',
-    location: 'Dubai - UAE',
-    logo: '/samanadev.png',
-    featured: true,
-    description:
-      'SAMANA Developers is currently ranked as the 7th largest real estate developer in Dubai. With over 30 launched projects and 4 successful handovers, their vision is bold—and growth unstoppable.',
-  },
-  {
-    name: 'Binghatti',
-    location: 'Dubai - UAE',
-    logo: '/binghatidev.png',
-    featured: false,
-    description:
-      'Binghatti Developers is a Dubai-based luxury real estate developer known for its high-quality projects and global brand partnerships.',
-  },
-  {
-    name: 'Azizi',
-    location: 'Dubai - UAE',
-    logo: '/azizdev.png',
-    featured: false,
-    description:
-      'Azizi Developments is a Dubai-based, award-winning real estate developer known for luxury residential and commercial properties.',
-  },
+const cryptoCoins = [
+  { name: "Bitcoin", img: "/c1.png" },
+  { name: "Ethereum", img: "/c2.png" },
+  { name: "BNB", img: "/c3.png" },
+  { name: "USDT", img: "/c4.png" },
+  { name: "Solana", img: "/c5.png" },
 ];
 
-const moreDevelopers = [
-  {
-    name: 'Binghatti',
-    location: 'Dubai - UAE',
-    logo: '/binghatidev.png',
-    featured: false,
-    description: 'Binghatti combines art and architecture to redefine urban living.',
-  },
-  {
-    name: 'Azizi',
-    location: 'Dubai - UAE',
-    logo: '/azizdev.png',
-    featured: false,
-    description: 'Azizi Developments delivers elegant and accessible homes across Dubai.',
-  },
-  {
-    name: 'Danube Properties',
-    location: 'Dubai - UAE',
-    logo: '/propertiesdev.png',
-    featured: true,
-    description: 'Danube is known for affordable luxury and timely project delivery.',
-  },
-  {
-    name: 'Sobha Properties',
-    location: 'Dubai - UAE',
-    logo: '/logos/sobha.png',
-    featured: true,
-    description: 'Sobha Properties emphasizes quality construction and customer satisfaction.',
-  },
-  {
-    name: 'Danube Properties',
-    location: 'Dubai - UAE',
-    logo: '/propertiesdev.png',
-    featured: true,
-    description: 'Danube is known for affordable luxury and timely project delivery.',
-  },
-];
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeInOut" } },
+};
 
-const Developer = () => {
-  const formatDevURL = (name) => name.toLowerCase().replace(/\s+/g, '-');
+const Crypto = () => {
+  const [usdAmount, setUsdAmount] = useState("");
+  const [btcAmount, setBtcAmount] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const BTC_RATE = 0.000025; // example conversion rate
+
+  const handleConvert = () => {
+    const usd = parseFloat(usdAmount);
+    setBtcAmount(!isNaN(usd) ? (usd * BTC_RATE).toFixed(6) : null);
+  };
 
   return (
-    <div>
-      {/* Header Section */}
-      <div className="p-2 md:p-4 bg-white overflow-hidden">
-        <Header
-          backgroundImage="/devloper.jpg"
-          title="Top Real Estate Developers"
-          subtitle="Expertly Designed Spaces for Modern Living"
-          showFilter={false}
-        />
-      </div>
+    <div className="min-h-screen flex flex-col text-white bg-gradient-to-br from-indigo-900 via-purple-900 to-black">
+      
+      {/* Header section */}
+      <Header
+        backgroundImage="/crypto-bg.jpg"
+        title="Buy Luxury Property in Dubai with Cryptocurrency"
+        subtitle="Fast, secure, and global real estate transactions using crypto payments"
+        showFilter={false}
+      />
 
-      {/* Developer Grid */}
-      <div className="w-full max-w-[1440px] mx-auto px-6 py-12">
-        <h2 className="text-3xl font-bold mb-8">Discover Our Top Developers</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
-          {developers.map((dev, index) => (
-            <Link
-              to={`/developer/${formatDevURL(dev.name)}`}
-              key={index}
-              className="bg-gray-50 rounded-2xl shadow-sm border border-gray-200 p-4 relative hover:shadow-md transition-all block"
+      {/* Supported Cryptos */}
+      <motion.section
+        className="max-w-5xl mx-auto px-4 py-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+      >
+        <div className="flex flex-wrap justify-center gap-8">
+          {cryptoCoins.map((coin, idx) => (
+            <motion.div
+              key={idx}
+              className="flex flex-col items-center p-5 rounded-xl bg-white/10 backdrop-blur-sm shadow-md hover:shadow-2xl transition-all duration-300"
+              whileHover={{ scale: 1.08 }}
             >
-              {dev.featured && (
-                <span className="absolute top-3 right-3 text-xs bg-red-600 text-white px-2 py-1 rounded-full font-semibold">
-                  FEATURED
-                </span>
-              )}
-              <div className="bg-[#e6f0fa] h-[160px] rounded-lg flex items-center justify-center mb-4">
-                <img
-                  src={dev.logo}
-                  alt={dev.name}
-                  className="max-h-[110px] max-w-[240px] w-auto object-contain"
-                />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-800">{dev.name}</h3>
-              <div className="flex items-center text-sm text-gray-600 mb-2">
-                {/* <img src="/icons/location.svg" alt="location" className="w-4 h-4 mr-1" /> */}
-                {dev.location}
-              </div>
-              <p className="text-sm text-gray-600 leading-snug">{dev.description}</p>
-            </Link>
+              <img src={coin.img} alt={coin.name} className="w-16 h-16 object-contain" />
+              <span className="mt-3 text-sm font-medium">{coin.name}</span>
+            </motion.div>
           ))}
         </div>
+      </motion.section>
 
-        {/* More Developers Section */}
-        <div className="mt-20">
-          <h2 className="text-3xl font-bold mb-8">More Trusted Developers</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
-            {moreDevelopers.map((dev, index) => (
-              <Link
-                to={`/developer/${formatDevURL(dev.name)}`}
-                key={index}
-                className="bg-gray-50 rounded-2xl shadow-sm border border-gray-200 p-4 relative hover:shadow-md transition-all block"
-              >
-                {dev.featured && (
-                  <span className="absolute top-3 right-3 text-xs bg-red-600 text-white px-2 py-1 rounded-full font-semibold">
-                    FEATURED
-                  </span>
-                )}
-                <div className="bg-[#e6f0fa] h-[160px] rounded-lg flex items-center justify-center mb-4">
-                  <img
-                    src={dev.logo}
-                    alt={dev.name}
-                    className="max-h-[110px] max-w-[240px] w-auto object-contain"
-                  />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-800">{dev.name}</h3>
-                <div className="flex items-center text-sm text-gray-600 mb-2">
-                  <img src="/icons/location.svg" alt="location" className="w-4 h-4 mr-1" />
-                  {dev.location}
-                </div>
-                <p className="text-sm text-gray-600 leading-snug">{dev.description}</p>
-              </Link>
-            ))}
-          </div>
+      {/* Converter */}
+      <motion.section
+        className="max-w-lg mx-auto px-4 py-12 text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+      >
+        <h2 className="text-2xl font-semibold mb-6">USD to BTC Converter</h2>
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <input
+            type="number"
+            placeholder="Enter USD amount"
+            value={usdAmount}
+            onChange={(e) => setUsdAmount(e.target.value)}
+            className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+          <button
+            onClick={handleConvert}
+            className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg transition-all"
+          >
+            Convert
+          </button>
         </div>
-      </div>
+        {btcAmount !== null && (
+          <p className="mt-4 text-lg">
+            {usdAmount} USD ≈ <span className="font-bold">{btcAmount}</span> BTC
+          </p>
+        )}
+      </motion.section>
+
       <Footer />
     </div>
   );
 };
 
-export default Developer;
+export default Crypto;
