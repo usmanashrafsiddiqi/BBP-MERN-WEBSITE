@@ -72,44 +72,6 @@ const developers = [
   },
 ];
 
-const moreDevelopers = [
-  {
-    name: 'Binghatti',
-    location: 'Dubai - UAE',
-    logo: '/binghatidev.png',
-    featured: false,
-    description: 'Binghatti combines art and architecture to redefine urban living.',
-  },
-  {
-    name: 'Azizi',
-    location: 'Dubai - UAE',
-    logo: '/azizdev.png',
-    featured: false,
-    description: 'Azizi Developments delivers elegant and accessible homes across Dubai.',
-  },
-  {
-    name: 'Danube Properties',
-    location: 'Dubai - UAE',
-    logo: '/propertiesdev.png',
-    featured: true,
-    description: 'Danube is known for affordable luxury and timely project delivery.',
-  },
-  {
-    name: 'Sobha Properties',
-    location: 'Dubai - UAE',
-    logo: '/logos/sobha.png',
-    featured: true,
-    description: 'Sobha Properties emphasizes quality construction and customer satisfaction.',
-  },
-  {
-    name: 'Danube Properties',
-    location: 'Dubai - UAE',
-    logo: '/propertiesdev.png',
-    featured: true,
-    description: 'Danube is known for affordable luxury and timely project delivery.',
-  },
-];
-
 const Developer = () => {
   const formatDevURL = (name) => name.toLowerCase().replace(/\s+/g, '-');
 
@@ -155,39 +117,6 @@ const Developer = () => {
               <p className="text-sm text-gray-600 leading-snug">{dev.description}</p>
             </Link>
           ))}
-        </div>
-
-        {/* More Developers Section */}
-        <div className="mt-20">
-          <h2 className="text-3xl font-bold mb-8">More Trusted Developers</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
-            {moreDevelopers.map((dev, index) => (
-              <Link
-                to={`/developer/${formatDevURL(dev.name)}`}
-                key={index}
-                className="bg-gray-50 rounded-2xl shadow-sm border border-gray-200 p-4 relative hover:shadow-md transition-all block"
-              >
-                {dev.featured && (
-                  <span className="absolute top-3 right-3 text-xs bg-red-600 text-white px-2 py-1 rounded-full font-semibold">
-                    FEATURED
-                  </span>
-                )}
-                <div className="bg-[#e6f0fa] h-[160px] rounded-lg flex items-center justify-center mb-4">
-                  <img
-                    src={dev.logo}
-                    alt={dev.name}
-                    className="max-h-[110px] max-w-[240px] w-auto object-contain"
-                  />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-800">{dev.name}</h3>
-                <div className="flex items-center text-sm text-gray-600 mb-2">
-                  <img src="/icons/location.svg" alt="location" className="w-4 h-4 mr-1" />
-                  {dev.location}
-                </div>
-                <p className="text-sm text-gray-600 leading-snug">{dev.description}</p>
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
       <Footer />
