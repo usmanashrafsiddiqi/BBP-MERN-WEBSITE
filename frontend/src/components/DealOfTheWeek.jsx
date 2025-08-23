@@ -1,58 +1,71 @@
-const DealCard = ({ image, title, label, detail }) => {
-    return (
-      <div className="w-[270px] sm:w-[250px] md:w-[230px] lg:w-[240px] xl:w-[260px] 2xl:w-[280px] h-[32rem] rounded-2xl overflow-hidden shadow-md relative">
-        {/* Background */}
-        <div className="absolute top-0 left-0 w-full h-full z-0">
-          <div className="h-[30%] bg-gray-100 w-full" />
-          <div className="h-[70%] bg-cyan-700 w-full" />
-        </div>
-  
-        {/* Image and overlay */}
-        <div className="relative z-10 flex flex-col items-center h-full px-4 pt-14">
-          <div className="relative 
-              w-[85%] sm:w-[85%] md:w-[85%] 
-              lg:w-[85%] xl:w-[85%] 2xl:w-[85%] 
-              flex-1 overflow-hidden rounded-md shadow-lg self-center">
-            <img
-              src={image}
-              alt="deal"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute top-4 left-0 right-0 px-4 text-center text-white">
-              <p className="text-sm text-black font-bold uppercase">{title}</p>
-              <p className="text-pink-500 font-bold text-xl mt-1">{label}</p>
-              <p className="text-black font-bold text-xl mt-1">{detail}</p>
-            </div>
-          </div>
-        </div>
+const DealCard = ({ image, title, location, price, plan }) => {
+  return (
+    <div className="w-[280px] bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+      {/* Image */}
+      <div className="h-48 w-full overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transform hover:scale-105 transition duration-500"
+        />
       </div>
-    );
-  };
-  
-  const DealOfTheWeek = () => {
-    const sampleDeals = new Array(8).fill({
-      image: "/5.jpg",
-      title: "An Ideal Location",
-      label: "Hot Deal",
-      detail: "2BR | 1.7 M",
-    });
-  
-    return (
-      <div className="w-full bg-white py-12 px-4">
-        <h2 className="text-center text-4xl sm:text-5xl md:text-6xl font-bold text-[#6B1B07] uppercase mb-12 sm:mb-16">
-          Deal of the Week
-        </h2>
-  
-        <div className="max-w-[1600px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-10 justify-items-center">
-          {sampleDeals.map((deal, index) => (
-            <DealCard key={index} {...deal} />
-          ))}
-        </div>
-      </div>
-    );
-  };
-  
-  export default DealOfTheWeek;
-  
 
-  
+      {/* Content */}
+      <div className="p-5 text-center">
+        <h3 className="text-xl font-bold text-gray-800 uppercase">{title}</h3>
+        <p className="text-gray-500 mt-1">{location}</p>
+        <p className="text-lg font-semibold text-gray-900 mt-2">{price}</p>
+        <p className="text-pink-600 font-bold text-sm mt-2">{plan}</p>
+      </div>
+    </div>
+  );
+};
+
+const DealOfTheWeek = () => {
+  const deals = [
+    {
+      image: "/afford1.webp",
+      title: "AZIZI MILAN",
+      location: "City of Arabia Dubailand",
+      price: "Studio AED 586,000",
+      plan: "1% Monthly Payment Plan",
+    },
+    {
+      image: "/afford2.jpg",
+      title: "JADE TOWER",
+      location: "Majan",
+      price: "1BR AED 1M",
+      plan: "2 Years PHPP",
+    },
+    {
+      image: "/afford3.jpg",
+      title: "SAMANA HILLS 2",
+      location: " Dubai South",
+      price: "1BR AED 849,000",
+      plan: "1% Monthly Payment Plan",
+    },
+    {
+      image: "/afford4.jpg",
+      title: "AZIZI RAFI",
+      location: "AL Furjan",
+      price: "1BR AED 834,240",
+      plan: "60/40 Payment Plan",
+    },
+  ];
+
+  return (
+    <div className="w-full bg-gray-50 py-12 px-4">
+      <h2 className="text-center text-4xl sm:text-5xl md:text-6xl font-bold text-[#6B1B07] uppercase mb-12 sm:mb-16">
+      Affordable picks
+      </h2>
+
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-8 justify-items-center">
+        {deals.map((deal, index) => (
+          <DealCard key={index} {...deal} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default DealOfTheWeek;
