@@ -20,6 +20,13 @@ const eventPosts = [
     title: "BriskBold Properties x Iconic Dubai Developers – Tokyo Event",
     description: "",
   },
+   {
+    slug: "article3",   // 👈 new article slug (must match your route later)
+    image: "/blog3.jpg", // 👈 new image path
+    date: "July 2025",   
+    title: "BriskBOLD Properties Team Get-Together 2025",
+    description: "On 29th July 2025, the BriskBOLD Properties family came together for a memorable Day at Café Sufi Riverfront, Kashmir..", 
+  },
 ];
 
 const Events = () => {

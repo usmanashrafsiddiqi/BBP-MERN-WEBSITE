@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import RegisterInterestForm from '../components/RegisterInterestForm';
-
+import SectionImageSlider from '../components/ImageSlider';
 const articles = {
   article1: {
     title: 'BriskBold Properties Hosts Landmark Dubai Real Estate Showcase in Japan 2024',
@@ -21,143 +21,40 @@ const articles = {
   article2: {
     title: 'June 2025 Event Unites Dubai Real Estate & Global Investors ',
     date: " June 2025",
-    bannerImage: '/blog2.jpg',
+    bannerImage: '/tok.jpg',
     sections: [
       {
         heading: 'Dubai realestate event in Tokyo',
         content: 'Key Highlights',
         list: ['Direct project launches from top-tier developers.', '1-on-1 investment consultations for Japanese clients.','Flexible payment plans & up to 10% annual ROI options'],
-        image: '/tokyo.png',
+       images: [
+        '/tokyo.png',
+        '/blog2.jpg'  
+      ]
       },
     ],
   },
-  article3: {
-    title: 'Understanding Off-Plan Properties in Dubai',
-    date: 'November 7 2024',
-    bannerImage: '/articleimg1.jpg',
-    sections: [
-      {
-        heading: 'What is Off-Plan?',
-        content: 'Off-plan properties are purchased before construction is completed.',
-        list: ['Lower initial investment.', 'Potential for higher ROI.'],
-        image: '/blog1.jpg',
-      },
-    ],
-  },
-  article4: {
-    title: 'Tips for First-Time Home Buyers',
-    date: 'November 12 2024',
-    bannerImage: '/blog4.jpg',
-    sections: [
-      {
-        heading: 'Budgeting Smartly',
-        content: 'Start with a clear budget including hidden costs.',
-        list: ['Get pre-approved.', 'Include service fees and maintenance.'],
-        image: '/blog1.jpg',
-      },
-    ],
-  },
-  article5: {
-    title: 'Investing in Dubai Marina: What You Need to Know',
-    date: 'November 15 2024',
-    bannerImage: '/blog5.jpg',
-    sections: [
-      {
-        heading: 'Why Dubai Marina?',
-        content: 'It’s a prime waterfront location with rental yield potential.',
-        list: ['Great for short-term lets.', 'High tourism demand.'],
-        image: '/blog1.jpg',
-      },
-    ],
-  },
-  article6: {
-    title: 'The Rise of Smart Homes in UAE',
-    date: 'November 19 2024',
-    bannerImage: '/blog6.jpg',
-    sections: [
-      {
-        heading: 'Tech-Driven Living',
-        content: 'Smart security, lighting, and energy management are becoming standard.',
-        list: ['Alexa-compatible homes.', 'AI HVAC systems save energy.'],
-        image: '/blog1.jpg',
-      },
-    ],
-  },
-  article7: {
-    title: 'Pros and Cons of Ready vs Off-Plan Properties',
-    date: 'November 21 2024',
-    bannerImage: '/blog1.jpg',
-    sections: [
-      {
-        heading: 'Making the Right Choice',
-        content: 'Understand the timeline, cost, and risk for both options.',
-        list: ['Off-plan offers better payment plans.', 'Ready units give instant returns.'],
-        image: '/blog1.jpg',
-      },
-    ],
-  },
-  article8: {
-    title: 'How to Stage Your Home for Sale',
-    date: 'November 24 2024',
-    bannerImage: '/blog2.jpg',
-    sections: [
-      {
-        heading: 'Impress Buyers',
-        content: 'Declutter and highlight your home’s best features.',
-        list: ['Use neutral tones.', 'Add indoor plants and lighting.'],
-        image: '/blog1.jpg',
-      },
-    ],
-  },
-  article9: {
-    title: 'Best Areas to Invest in Dubai 2025',
-    date: 'December 1 2024',
+   article3: {  
+    title: 'BriskBOLD Properties Team Get-Together 2025',
+    date: "July 2025",
     bannerImage: '/blog3.jpg',
     sections: [
       {
-        heading: 'Hotspots to Watch',
-        content: 'New developments in Dubai South and Business Bay show high potential.',
-        list: ['Dubai South is near the expo site.', 'Business Bay is popular for short stays.'],
-        image: '/blog1.jpg',
-      },
-    ],
-  },
-  article10: {
-    title: 'Common Mistakes Property Buyers Make',
-    date: 'December 4 2024',
-    bannerImage: '/blog4.jpg',
-    sections: [
-      {
-        heading: 'Avoid These Pitfalls',
-        content: 'Skipping legal checks or overextending your budget are common errors.',
-        list: ['Always verify documents.', 'Don’t ignore maintenance costs.'],
-        image: '/blog1.jpg',
-      },
-    ],
-  },
-  article11: {
-    title: 'Why Location is Key in Real Estate',
-    date: 'December 7 2024',
-    bannerImage: '/blog5.jpg',
-    sections: [
-      {
-        heading: 'Value Comes From Location',
-        content: 'Accessibility and amenities heavily influence pricing.',
-        list: ['Proximity to metro boosts value.', 'Check for future developments.'],
-        image: '/blog1.jpg',
-      },
-    ],
-  },
-  article12: {
-    title: 'Understanding ROI in Rental Properties',
-    date: 'December 10 2024',
-    bannerImage: '/blog6.jpg',
-    sections: [
-      {
-        heading: 'Measure Your Returns',
-        content: 'Calculate ROI based on rental income vs investment cost.',
-        list: ['Look for 6-8% annual return.', 'Factor in vacancy and service fees.'],
-        image: '/blog1.jpg',
+        heading: 'On 29th July 2025, the BriskBOLD Properties family came together for a memorable Day at Café Sufi Riverfront, Kashmir.',
+        content: 'It was more than just a gathering – it was a celebration of teamwork, shared goals, and the strong bond that drives our success. Surrounded by the serene beauty of Kashmir, our team enjoyed moments of connection, laughter, and inspiration.At BriskBOLD, we believe that great businesses are built not only on vision and strategy but also on people who work together with passion and purpose. Events like these remind us that we are not just colleagues, but a family growing stronger every day.Together we grow. Together we achieve.',
+        list: [
+          'Strengthening bonds beyond the workplace',
+          'Celebrating teamwork in the heart of Kashmir',
+          'Inspiring conversations & shared vision',
+          'A perfect blend of work, joy, and togethernes'
+        ],
+        images: [
+  '/eve5.jpg',
+  '/eve1.jpg',
+  '/eve2.jpg',
+  '/eve3.jpg',
+  '/eve4.jpg',
+]
       },
     ],
   },
@@ -202,19 +99,41 @@ const ArticlePage = () => {
         <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-10">
           {/* Left: Text */}
           <div className="w-full lg:w-[60%] space-y-12">
-            {article.sections.map((sec, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
-                <h2 className="text-xl font-semibold text-green-700 mb-4">{sec.heading}</h2>
-                <p className="text-gray-800 leading-relaxed mb-4">{sec.content}</p>
-                <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-                  {sec.list.map((point, i) => (
-                    <li key={i}>{point}</li>
-                  ))}
-                </ul>
-                {sec.image && <img src={sec.image} alt="" className="rounded-xl mt-4 w-full object-cover" />}
-              </div>
-            ))}
-          </div>
+  {article.sections.map((sec, idx) => (
+    <div
+      key={idx}
+      className="bg-white p-6 rounded-xl shadow-md border border-gray-200"
+    >
+      <h2 className="text-xl font-semibold text-green-700 mb-4">
+        {sec.heading}
+      </h2>
+
+      <p className="text-gray-800 leading-relaxed mb-4">{sec.content}</p>
+
+      {sec.list && sec.list.length > 0 && (
+        <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
+          {sec.list.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
+        </ul>
+      )}
+
+      {/* Handle images */}
+      {sec.images && sec.images.length > 0 ? (
+        <div className="relative mt-4">
+          <SectionImageSlider images={sec.images} />
+        </div>
+      ) : sec.image ? (
+        <img
+          src={sec.image}
+          alt={sec.heading}
+          className="w-full h-64 object-cover rounded-xl mt-4"
+        />
+      ) : null}
+    </div>
+  ))}
+</div>
+
 
           {/* Right: Sidebar */}
           <div className="w-full lg:w-[40%] space-y-8">
