@@ -9,7 +9,7 @@ const About = () => {
             {/* ✅ Header Section */}
             <div className="p-2 md:p-4 bg-white overflow-hidden">
                 <Header
-                    backgroundImage="/aboutbase.jpg"
+                    backgroundImage="/newpro.jpg"
                     showFilter={false}
                     title="WELCOME TO BRISKBOLD PROPERTIES"
                     subtitle="Who We Are"

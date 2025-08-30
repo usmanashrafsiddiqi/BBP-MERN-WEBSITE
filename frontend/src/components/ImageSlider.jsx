@@ -15,11 +15,12 @@ const SectionImageSlider = ({ images }) => {
   return (
     <div className="relative w-full overflow-hidden rounded-xl">
       {/* Image */}
-      <img
-        src={images[current]}
-        alt=""
-        className="w-full h-64 object-cover rounded-xl"
-      />
+     <img
+  src={images[current]}
+  alt=""
+  className="w-full h-[400px] md:h-[500px] object-cover rounded-xl"
+/>
+
 
       {/* Left Arrow */}
       {images.length > 1 && (

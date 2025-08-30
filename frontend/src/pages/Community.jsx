@@ -83,7 +83,7 @@ const Community = () => {
       {/* Header */}
       <div className="p-2 md:p-4 bg-white overflow-hidden">
         <Header
-          backgroundImage="/community.jpg"
+          backgroundImage="/newcom.jpg"
           title="Our Communities"
           subtitle="Explore Vibrant Living Spaces"
           description="Discover thoughtfully planned communities that bring people together in modern, comfortable environments."

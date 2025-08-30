@@ -28,7 +28,7 @@ const MortgageCalculator = () => {
   return (
     <div className="p-2 md:p-4 bg-white overflow-hidden">
       <Header
-        backgroundImage="/contactbg.jpg"
+        backgroundImage="/newcom.jpg"
         title="Mortgage Calculator"
         subtitle=""
         showFilter={false}

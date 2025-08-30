@@ -1,28 +1,38 @@
 // src/pages/BlogArticle.jsx
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import React from "react";
+import { useParams } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const blogArticles = {
-  "future-of-real-estate": {
-    title: "The Future of Real Estate Is Bold — Are You In?",
-    date: "July 2025",
-    image: "/blog1.jpg",
-    content: `Today, it's not just about location — it's about timing, data, innovation, and vision. At BriskBold Properties, we’re not selling walls and windows. We’re offering a mindset — one that’s smart, scalable, and built for the future.
-    
-We work with investors, homeowners, and global buyers who think ahead. People who want more than just a transaction — they want a strategy.
+  "Where-every-home-tells-a-story": {
+    title: "Unlocking Dreams with BriskBold Properties: Where Every Home Tells a Story",
+    subtitle: "By Marufa, Sales Executive – BriskBold Properties",
+    date: "August 2025",
+    image: "/newblog2.jpg",
+    content: `
+Stepping into the world of real estate isn’t just about buying or selling property, it’s about unlocking dreams, building futures, and creating stories that last a lifetime. At BriskBold Properties, I’ve seen how a simple decision to invest in a home can transform not only someone’s lifestyle but their entire outlook on life.
 
-From ultra-modern residences to high-yield investment units, BriskBold offers exclusive access to some of the most promising real estate opportunities — backed by market intelligence, tech-driven tools, and end-to-end support.`,
-    bullets: [
-      "👉 Curated, high-potential properties",
-      "👉 Real-time data & trend-backed insights",
-      "👉 Personalized consultation, zero guesswork",
-      "👉 A bold, clear roadmap for long-term ROI",
-    ],
-    ending: `Whether you’re looking to diversify your portfolio or make your first confident move — we’re the partner that brings clarity to complexity.
+When I joined BriskBold Properties, I realized very quickly that we’re not just a real estate company, we’re dream curators. Each client I’ve worked with carries a vision: a cozy family home, a profitable investment in Dubai’s thriving real estate market, or a modern apartment with skyline views. My role as a sales executive goes beyond transactions, it’s about listening, guiding, and walking hand-in-hand with clients on their journey to finding the perfect property.
 
-This isn’t just real estate. This is BriskBold.`,
+## Why BriskBold Properties Feels Different
+
+In today’s fast-paced market, property decisions can feel overwhelming. What sets us apart is the way we simplify the process. From in-depth market insights to one-on-one consultation, we ensure that every client feels confident and informed before making their decision. We’re not here to push; we’re here to guide.
+
+I’ve had clients who walked in confused and hesitant but left with keys to their dream home because we took the time to understand their needs, budgets, and aspirations. That’s the BriskBold difference: people-first, always.
+
+## Dubai’s Real Estate: A Land of Opportunities
+
+Being a part of Dubai’s real estate journey excites me every day. This city isn’t just about luxury; it’s about opportunities. From high rental yields to futuristic developments, Dubai continues to attract investors worldwide. Whether you’re a first-time buyer or a seasoned investor, BriskBold ensures you don’t just buy property, you invest in the future.
+
+## A Personal Note
+
+For me, real estate is personal. Every time a client smiles while signing the final agreement or sends me a picture of their new view, it reminds me why I love what I do. Homes aren’t just buildings; they’re emotions, milestones, and sometimes even legacies.
+
+At BriskBold Properties, we don’t just sell properties, we build trust, relationships, and futures. And as your sales executive, I’m here to make sure your journey is smooth, transparent, and memorable.
+
+So, whether you’re searching for your dream home, exploring investment opportunities, or simply curious about Dubai’s market—I’d love to be part of your story. Because at the end of the day, real estate isn’t just about property; it’s about people.
+`,
   },
 };
 
@@ -31,34 +41,47 @@ const BlogArticle = () => {
   const article = blogArticles[slug];
 
   if (!article) {
-    return <div className="text-center text-gray-700 p-10">Blog article not found.</div>;
+    return (
+      <div className="text-center text-gray-700 p-10">
+        Blog article not found.
+      </div>
+    );
   }
 
+  // Split content into lines and detect headings
+  const renderContent = (content) => {
+    return content.split("\n").map((line, idx) => {
+      if (line.startsWith("##")) {
+        return (
+          <h2 key={idx} className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+            {line.replace("##", "").trim()}
+          </h2>
+        );
+      } else if (line.trim() === "") {
+        return <div key={idx} className="my-4" />;
+      } else {
+        return (
+          <p key={idx} className="text-lg text-gray-700 leading-relaxed mb-4">
+            {line}
+          </p>
+        );
+      }
+    });
+  };
+
   return (
-    <div className="relative">
+   <div className="p-2 md:p-4 bg-white overflow-hidden">
       <Header
         backgroundImage={article.image}
         showFilter={false}
         title={article.title}
         subtitle={article.date}
-        description=""
+        description={article.subtitle}
         showContactInfo={false}
       />
 
       <div className="max-w-4xl mx-auto px-6 py-12 text-gray-800">
-        <div className="text-base md:text-lg whitespace-pre-line mb-6">
-          {article.content}
-        </div>
-
-        <ul className="list-none space-y-2 text-base font-medium">
-          {article.bullets.map((point, index) => (
-            <li key={index}>{point}</li>
-          ))}
-        </ul>
-
-        <div className="mt-8 text-base md:text-lg whitespace-pre-line font-medium">
-          {article.ending}
-        </div>
+        {renderContent(article.content)}
       </div>
 
       <Footer />

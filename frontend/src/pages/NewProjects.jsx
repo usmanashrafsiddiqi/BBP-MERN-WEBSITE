@@ -113,7 +113,7 @@ const NewProjects = () => {
   return (
     <div className="p-2 md:p-4 bg-white overflow-hidden">
       <Header
-        backgroundImage="/community.jpg"
+        backgroundImage="/newpro.jpg"
         title=" New Projects"
         subtitle=""
         description="Find exciting new real estate projects and investment opportunities"

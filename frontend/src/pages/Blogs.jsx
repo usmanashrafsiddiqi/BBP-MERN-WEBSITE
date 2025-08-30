@@ -5,20 +5,19 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const blogPosts = [
-  {
-    slug: "future-of-real-estate",
-    image: "/blog1.jpg",
-    date: "July 2025",
-    title: "The Future of Real Estate Is Bold — Are You In?",
+ {
+    slug: "Where-every-home-tells-a-story",
+    image: "/newblog.jpg",
+    date: "August 2025",
+    title: "Unlocking Dreams with BriskBold Properties: Where Every Home Tells a Story",
   },
-  // Add more blog summaries here if needed
 ];
 
 const Blogs = () => {
   return (
-    <div className="relative">
+    <div className="p-2 md:p-4 bg-white overflow-hidden">
       <Header
-        backgroundImage="/blog.jpg"
+        backgroundImage="/newblog2.jpg"
         showFilter={false}
         title="BriskBold Blogs"
         subtitle="Ideas, Perspectives, Insights"

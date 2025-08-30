@@ -80,7 +80,7 @@ const Developer = () => {
       {/* Header Section */}
       <div className="p-2 md:p-4 bg-white overflow-hidden">
         <Header
-          backgroundImage="/devloper.jpg"
+          backgroundImage="/newdev.jpg"
           title="Top Real Estate Developers"
           subtitle="Expertly Designed Spaces for Modern Living"
           showFilter={false}

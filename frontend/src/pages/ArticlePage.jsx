@@ -8,13 +8,16 @@ const articles = {
   article1: {
     title: 'BriskBold Properties Hosts Landmark Dubai Real Estate Showcase in Japan 2024',
     date: "Nov 15, 2024",
-    bannerImage: '/blog1.jpg',
+    bannerImage: '/jap.jpg',
     sections: [
       {
         heading: ' A Glimpse into Global Investment Opportunities',
         content: 'The event brought together a diverse audience of high-net-worth individuals, investors, and real estate enthusiasts eager to explore the booming Dubai property market.',
         list: ['Live presentations by our Dubai-based real estate experts', 'One-on-one consultation sessions tailored for Japanese investors','Information on residency through property investment programs','A preview of Dubai’s futuristic infrastructure plans, including smart city projects, flying taxis, and metro line expansions'],
-        image: '/japan1.jpeg',
+       images: [
+        '/japan1.jpeg',
+        '/blog1.jpg'
+      ]
       },
     ],
   },
@@ -29,6 +32,9 @@ const articles = {
         list: ['Direct project launches from top-tier developers.', '1-on-1 investment consultations for Japanese clients.','Flexible payment plans & up to 10% annual ROI options'],
        images: [
         '/tokyo.png',
+        '/jip2.jpg',
+        '/jip3.jpg',
+        '/jip4.jpg',
         '/blog2.jpg'  
       ]
       },
@@ -49,11 +55,11 @@ const articles = {
           'A perfect blend of work, joy, and togethernes'
         ],
         images: [
+          '/eve1.jpg',
+          '/eve2.jpg',
+          '/eve3.jpg',
+          '/eve4.jpg',
   '/eve5.jpg',
-  '/eve1.jpg',
-  '/eve2.jpg',
-  '/eve3.jpg',
-  '/eve4.jpg',
 ]
       },
     ],
