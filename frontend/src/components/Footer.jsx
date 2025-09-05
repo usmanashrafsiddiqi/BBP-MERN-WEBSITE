@@ -19,20 +19,23 @@ const Footer = () => {
             Subscribe To The Newsletter<br />To Stay Up To Date
           </h2>
 
-          {/* Input */}
-          <div className="flex w-full lg:w-[500px] bg-white rounded-full shadow-md overflow-hidden">
-            <input
-              type="email"
-              placeholder="Enter your email here...."
-              className="flex-1 px-6 py-4 outline-none text-black text-base font-medium"
-            />
-            <button className="bg-[#A13214] text-white px-6 py-4 font-semibold hover:bg-[#871e05] flex items-center gap-2 text-sm sm:text-base">
-              SUBSCRIBE NOW
-              <span className="bg-white text-[#A13214] rounded-full w-6 h-6 flex items-center justify-center font-bold">
-                →
-              </span>
-            </button>
-          </div>
+       {/* Input */}
+<div className="flex w-full lg:w-[500px] bg-white rounded-full shadow-md overflow-hidden">
+  <input
+    type="email"
+    placeholder="Enter your email here...."
+    className="flex-1 px-4 sm:px-6 py-2 sm:py-4 outline-none text-black text-sm sm:text-base font-medium"
+  />
+<button className="bg-[#A13214] text-white px-4 sm:px-6 py-3 sm:py-4 font-semibold hover:bg-[#871e05] flex items-center gap-2 text-sm sm:text-base">
+  SUBSCRIBE NOW
+  {/* Arrow visible only on sm+ devices */}
+  <span className="hidden sm:flex bg-white text-[#A13214] rounded-full w-6 h-6 items-center justify-center font-bold">
+    →
+  </span>
+</button>
+
+</div>
+
         </div>
 
         <hr className="border-[#174857]" />

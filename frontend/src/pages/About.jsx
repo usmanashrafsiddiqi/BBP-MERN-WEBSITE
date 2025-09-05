@@ -7,7 +7,7 @@ const About = () => {
     return (
         <div>
             {/* ✅ Header Section */}
-            <div className="p-2 md:p-4 bg-white overflow-hidden">
+            <div className="p-2 md:p-4 bg-white">
                 <Header
                     backgroundImage="/newpro.jpg"
                     showFilter={false}

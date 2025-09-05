@@ -78,7 +78,7 @@ const Developer = () => {
   return (
     <div>
       {/* Header Section */}
-      <div className="p-2 md:p-4 bg-white overflow-hidden">
+      <div className="p-2 md:p-4 bg-white">
         <Header
           backgroundImage="/newdev.jpg"
           title="Top Real Estate Developers"

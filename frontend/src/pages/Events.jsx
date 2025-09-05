@@ -33,7 +33,7 @@ const Events = () => {
   return (
     <div className="relative">
       {/* Header Section */}
-      <div className="p-2 md:p-4 bg-white overflow-hidden">
+      <div className="p-2 md:p-4 bg-white">
         <Header
           backgroundImage="/blog.jpg"
           showFilter={false}

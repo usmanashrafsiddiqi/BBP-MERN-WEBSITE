@@ -99,6 +99,7 @@ const Navbar = () => {
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white text-black rounded shadow-lg p-2 min-w-[180px] text-center">
                 <Link to="/career" className="block px-4 py-2 hover:bg-gray-100" onClick={toggleMenu}>Careers</Link>
                 <Link to="/blogs" className="block px-4 py-2 hover:bg-gray-100" onClick={toggleMenu}>Blogs</Link>
+                <Link to="/events" className="block px-4 py-2 hover:bg-gray-100" onClick={toggleMenu}>Events</Link>
                 <Link to="/mortgage-calculator" className="block px-4 py-2 hover:bg-gray-100" onClick={toggleMenu}>Mortgage Calculator</Link>
               </div>
             )}

@@ -81,7 +81,7 @@ const Community = () => {
   return (
     <div>
       {/* Header */}
-      <div className="p-2 md:p-4 bg-white overflow-hidden">
+      <div className="p-2 md:p-4 bg-white">
         <Header
           backgroundImage="/newcom.jpg"
           title="Our Communities"

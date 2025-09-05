@@ -35,7 +35,7 @@ const Contact = () => {
   return (
     <div>
       {/* ✅ Header Section */}
-      <div className="p-2 md:p-4 bg-white overflow-hidden">
+      <div className="p-2 md:p-4 bg-white">
         <Header
           title="We’re Here To Help!"
           subtitle=""

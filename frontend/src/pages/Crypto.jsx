@@ -49,7 +49,7 @@ const Crypto = () => {
 
   return (
     <div className="min-h-screen flex flex-col text-white bg-white ">
-        <div className="p-2 md:p-4 bg-white overflow-hidden">
+        <div className="p-2 md:p-4 bg-white">
       {/* Header */}
       <Header
         backgroundImage="/crypto1.jpg"

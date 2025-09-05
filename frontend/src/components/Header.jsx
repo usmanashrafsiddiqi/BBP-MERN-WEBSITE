@@ -47,7 +47,7 @@ const Header = ({
       </style>
 
       <header
-  className={`relative h-auto min-h-[100vh] sm:min-h-[95vh] md:min-h-[100vh] lg:min-h-[100vh] bg-cover bg-center rounded-[24px] overflow-hidden ${
+  className={`relative h-auto min-h-[100vh] sm:min-h-[95vh] md:min-h-[100vh] lg:min-h-[100vh] bg-cover bg-center rounded-[24px] overflow-visible ${
     !showFilter ? 'header-no-filter-sm' : ''
   }`}
         style={{ backgroundImage: `url(${backgroundImage})` }}

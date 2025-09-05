@@ -9,7 +9,7 @@ const projectData = [
     handover: "Q4 2025",
     bedrooms: "Studio, 1, 2 ",
     paymentPlan: "80/20 ",
-    location: "Dubai Creek Harbour (The Lagoons), Dubai",
+    location: "Dubai Creek Harbour",
   },
   {
     image: "/10.jpg",

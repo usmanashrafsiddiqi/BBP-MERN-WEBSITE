@@ -23,7 +23,7 @@ const properties = [
     beds: "1 bed",
     bedroomSize: "600 sq ft",
     studio: "Studio",
-    studioSize: "330 sq ft ",
+    studioSize: "330 sq ft",
     type: "AZIZI RAFFI",
   },
   {
@@ -184,25 +184,26 @@ const Properties = () => {
                   </p>
                 </div>
 
-                <div className="mt-2 flex gap-2 flex-wrap">
-                  <span className="bg-[#E1F4F3] text-[#1E7C78] px-2 py-1 rounded-md text-[13px] flex justify-between items-center gap-2 min-w-[100px]">
-                    <span>
-                      <FaBed className="inline-block" /> {property.beds}
-                    </span>
-                    <span className="text-[11px] text-gray-700">
-                      {property.bedroomSize}
-                    </span>
-                  </span>
+             <div className="mt-2 flex gap-2 flex-wrap max-sm:flex-nowrap max-sm:overflow-x-auto max-sm:no-scrollbar">
+  <span className="bg-[#E1F4F3] text-[#1E7C78] px-2 py-1 rounded-md text-[12px] flex justify-between items-center gap-2 min-w-[90px]">
+    <span className="whitespace-nowrap">
+      <FaBed className="inline-block" /> {property.beds}
+    </span>
+    <span className="text-[11px] text-gray-700 whitespace-nowrap">
+      {property.bedroomSize}
+    </span>
+  </span>
 
-                  {property.studio.trim() && (
-                    <span className="bg-[#E1F4F3] text-[#1E7C78] px-2 py-1 rounded-md text-[13px] flex justify-between items-center gap-2 min-w-[100px]">
-                      <span>{property.studio}</span>
-                      <span className="text-[11px] text-gray-700">
-                        {property.studioSize}
-                      </span>
-                    </span>
-                  )}
-                </div>
+  {property.studio.trim() && (
+    <span className="bg-[#E1F4F3] text-[#1E7C78] px-2 py-1 rounded-md text-[12px] flex justify-between items-center gap-2 min-w-[90px]">
+      <span className="whitespace-nowrap">{property.studio}</span>
+      <span className="text-[11px] text-gray-700 whitespace-nowrap">
+        {property.studioSize}
+      </span>
+    </span>
+  )}
+</div>
+
 
                 <div className="mt-2 flex justify-between items-center bg-[#E6F0EF] px-3 py-2 rounded-xl">
                   <div className="flex items-center gap-2">
