@@ -20,6 +20,7 @@ import BlogArticle from './pages/BlogArticle';
 import JobDetail from "./pages/JobDetail";
 import ProjectDetails from "./pages/ProjectDetails";
 import Crypto from "./pages/Crypto";
+import PrivacyPolicy from './pages/PrivacyPolicy'; 
 function App() {
   return (
     <Router>
@@ -43,7 +44,7 @@ function App() {
         <Route path="/careers/:slug" element={<JobDetail />} />
         <Route path="/mortgage-calculator" element={<MortgageCalculator />} />
         <Route path="/crypto" element={<Crypto  />} />
-
+<Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
   );
