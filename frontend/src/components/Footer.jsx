@@ -7,8 +7,9 @@ import {
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
-
+import { useTranslation } from "react-i18next";
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <div className="bg-white px-4 py-20">
       <div className="bg-[#0A3D4D] text-white rounded-2xl max-w-[1800px] mx-auto px-6 sm:px-10 lg:px-20 py-20 space-y-16">
@@ -16,18 +17,18 @@ const Footer = () => {
         {/* Newsletter */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-center lg:text-left leading-snug">
-            Subscribe To The Newsletter<br />To Stay Up To Date
+            {t("SUBSCRIBE_TO_HEADING_LINE1")}<br />{t("SUBSCRIBE_TO_HEADING_LINE2")}
           </h2>
 
        {/* Input */}
 <div className="flex w-full lg:w-[500px] bg-white rounded-full shadow-md overflow-hidden">
   <input
     type="email"
-    placeholder="Enter your email here...."
+    placeholder={t("ENTER_YOUR_HEADING")}
     className="flex-1 px-4 sm:px-6 py-2 sm:py-4 outline-none text-black text-sm sm:text-base font-medium"
   />
 <button className="bg-[#A13214] text-white px-4 sm:px-6 py-3 sm:py-4 font-semibold hover:bg-[#871e05] flex items-center gap-2 text-sm sm:text-base">
-  SUBSCRIBE NOW
+  {t("SUBSCRIBE_NOW_HEADING")}
   {/* Arrow visible only on sm+ devices */}
   <span className="hidden sm:flex bg-white text-[#A13214] rounded-full w-6 h-6 items-center justify-center font-bold">
     →
@@ -45,23 +46,22 @@ const Footer = () => {
 
           {/* About */}
           <div>
-            <h4 className="font-extrabold text-white mb-4 text-xl">About Us</h4>
+            <h4 className="font-extrabold text-white mb-4 text-xl">{t("ABOUT_US_HEADING")}</h4>
             <p className="text-gray-300 font-medium leading-relaxed">
-              We’re reimagining how you<br />
-              buy, sell and rent. It’s now <br />easier
-              to get into a <br />place you love.
+             {t("WE_REIMAGINING_LINE1")}<br />
+             {t("WE_REIMAGINING_LINE2")} <br />{t("WE_REIMAGINING_LINE3")}
             </p>
-            <p className="text-gray-300 font-medium mt-2">So let’s do this, together.</p>
+            <p className="text-gray-300 font-medium mt-2">{t("LETS_DO_THIS_LINE")}</p>
           </div>
 
           {/* Quick Links - with React Router */}
           <div>
-            <h4 className="font-extrabold text-white mb-4 text-xl">Quick Links</h4>
+            <h4 className="font-extrabold text-white mb-4 text-xl">{t("QUICK_LINKS_HEADING")} </h4>
             <ul className="space-y-2 text-gray-300 font-medium">
-              <li><Link to="/" className="hover:underline">Home</Link></li>
-              <li><Link to="/about" className="hover:underline">About</Link></li>
-              <li><Link to="/contact" className="hover:underline">Contact</Link></li>
-              <li><Link to="/newprojects" className="hover:underline">New Projects</Link></li>
+              <li><Link to="/" className="hover:underline">{t("HOME")} </Link></li>
+              <li><Link to="/about" className="hover:underline">{t("ABOUT")}</Link></li>
+              <li><Link to="/contact" className="hover:underline">{t("CONTACT")}</Link></li>
+              <li><Link to="/newprojects" className="hover:underline">{t("NEW_PROJECTS")}</Link></li>
                <li><Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link></li>
             </ul>
           </div>

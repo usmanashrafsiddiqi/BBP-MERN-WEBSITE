@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useTransition } from 'react';
 import { HiMenu, HiX, HiChevronDown } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
+import LanguageSwitcher from "../components/LanguageSwitcher";
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
-
+ const {t} = useTranslation()
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
     setMoreOpen(false);
@@ -23,18 +25,18 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <Link to="/crypto" className="text-white text-sm hover:underline">Crypto</Link>
+          <Link to="/crypto" className="text-white text-sm hover:underline">{t("CRYPTO")}</Link>
          {/* Rent (Coming Soon) */}
 <div className="relative group cursor-default">
-  <span className="text-white text-sm">Rent</span>
+  <span className="text-white text-sm">{t("RENT_SMALL")}</span>
   <div className="absolute left-1/2 -translate-x-1/2 mt-1 hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 whitespace-nowrap">
     Coming Soon
   </div>
 </div>
 
-          <Link to="/newprojects" className="text-white text-sm hover:underline">New Projects</Link>
-          <Link to="/community" className="text-white text-sm hover:underline">Community</Link>
-          <Link to="/developer" className="text-white text-sm hover:underline">Developer</Link>
+          <Link to="/newprojects" className="text-white text-sm hover:underline">{t("NEW_PROJECTS")}</Link>
+          <Link to="/community" className="text-white text-sm hover:underline">{t("COMMUNITY")}</Link>
+          <Link to="/developer" className="text-white text-sm hover:underline">{t("DEVELOPER")}</Link>
 
           {/* More dropdown (Click to open) */}
           <div className="relative">
@@ -42,30 +44,34 @@ const Navbar = () => {
               onClick={() => setMoreOpen(!moreOpen)}
               className="text-white text-sm flex items-center gap-1"
             >
-              <span>More</span>
+              <span>{t("MORE")}</span>
               <HiChevronDown className="mt-[2px]" />
             </button>
             {moreOpen && (
               <div className="absolute top-full mt-2 bg-white text-black rounded shadow-lg p-2 min-w-[160px] z-[9999]">
-                <Link to="/career" className="block px-4 py-2 hover:bg-gray-100">Careers</Link>
-                <Link to="/events" className="block px-4 py-2 hover:bg-gray-100">Events</Link>
-                <Link to="/blogs" className="block px-4 py-2 hover:bg-gray-100">Blogs</Link>
-                <Link to="/mortgage-calculator" className="block px-4 py-2 hover:bg-gray-100">Mortgage Calculator</Link>
+                <Link to="/career" className="block px-4 py-2 hover:bg-gray-100">{t("CAREERS")}</Link>
+                <Link to="/events" className="block px-4 py-2 hover:bg-gray-100">{t("EVENTS")}</Link>
+                <Link to="/blogs" className="block px-4 py-2 hover:bg-gray-100">{t("BLOGS")}</Link>
+                <Link to="/mortgage-calculator" className="block px-4 py-2 hover:bg-gray-100">{t("MORTGAGE_CALCULATOR")}</Link>
               </div>
             )}
           </div>
 
 
-          <Link to="/about" className="text-white text-sm hover:underline">About</Link>
-          <Link to="/contact" className="text-white text-sm hover:underline">Contact Us</Link>
+          <Link to="/about" className="text-white text-sm hover:underline">{t("ABOUT")}</Link>
+          <Link to="/contact" className="text-white text-sm hover:underline">{t("CONTACT_US")}</Link>
+           <LanguageSwitcher />
         </div>
 
         {/* Hamburger Icon */}
-        <div className="md:hidden z-[10000]">
-          <button onClick={toggleMenu} className="text-white">
-            {menuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
-          </button>
-        </div>
+        {/* Mobile Hamburger + LanguageSwitcher */}
+<div className="md:hidden z-[10000] flex items-center gap-2">
+  <LanguageSwitcher />
+  <button onClick={toggleMenu} className="text-white">
+    {menuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
+  </button>
+</div>
+
       </div>
 
       {/* Mobile Menu */}
@@ -107,6 +113,7 @@ const Navbar = () => {
 
           <Link to="/about" className="hover:underline" onClick={toggleMenu}>About</Link>
           <Link to="/contact" className="hover:underline" onClick={toggleMenu}>Contact Us</Link>
+
         </div>
       )}
     </nav>

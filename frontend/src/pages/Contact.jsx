@@ -2,11 +2,12 @@ import React, { useRef } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import emailjs from "emailjs-com";
-
+import { useTranslation } from 'react-i18next';
 const Contact = () => {
-  const title = "Get In Touch With Us";
-  const subtitle = "Our friendly team would love to hear from you.";
-  const buttonText = "SUBMIT FORM NOW →";
+   const {t} = useTranslation();
+  const title = t("CONTACT_TEXT");
+  const subtitle = t("OUR_FRIENDLY_TEXT");
+  const buttonText = t("SUBMIT_FORM_NOW_HEADING");
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -37,7 +38,7 @@ const Contact = () => {
       {/* ✅ Header Section */}
       <div className="p-2 md:p-4 bg-white">
         <Header
-          title="We’re Here To Help!"
+          title={t("CONTACT_HEADING")}
           subtitle=""
           description=""
           backgroundImage="/contactbg.jpg"
@@ -76,7 +77,7 @@ const Contact = () => {
             <div className="flex gap-4">
               <div className="w-1/2">
                 <label className="block text-gray-700 mb-2" htmlFor="firstName">
-                  First Name *
+               {t("FIRST_NAME_HEADING")} *
                 </label>
                 <input
                   id="firstName"
@@ -88,7 +89,7 @@ const Contact = () => {
               </div>
               <div className="w-1/2">
                 <label className="block text-gray-700 mb-2" htmlFor="lastName">
-                  Last Name *
+                  {t("LAST_NAME_HEADING")} *
                 </label>
                 <input
                   id="lastName"
@@ -103,7 +104,7 @@ const Contact = () => {
             <div className="flex gap-4">
               <div className="w-1/2">
                 <label className="block text-gray-700 mb-2" htmlFor="email">
-                  Email *
+               {t("EMAIL_HEADING")} *
                 </label>
                 <input
                   id="email"
@@ -115,7 +116,7 @@ const Contact = () => {
               </div>
               <div className="w-1/2">
                 <label className="block text-gray-700 mb-2" htmlFor="mobile">
-                  Mobile Number *
+                  {t("MOBILE_NUMBER_HEADING")} *
                 </label>
                 <input
                   id="mobile"
@@ -129,7 +130,7 @@ const Contact = () => {
 
             <div>
               <label className="block text-gray-700 mb-2" htmlFor="message">
-                Message *
+              {t("MESSAGE_HEADING")} *
               </label>
               <textarea
                 id="message"
@@ -159,11 +160,11 @@ const Contact = () => {
     {/* Card - Dubai */}
     <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-2xl p-6 shadow-xl">
       <img src="/dubai.png" alt="UAE Logo" className="w-12 mb-3" />
-      <h3 className="text-2xl font-semibold mb-2">Dubai</h3>
+      <h3 className="text-2xl font-semibold mb-2">{t("DUBAI")}</h3>
       <p className="text-sm leading-relaxed">
-        Office 3507<br />
-        Churchill Executive Tower<br />
-        Business Bay, Dubai, UAE
+        {t("DUBAI_ADDRESS_1")}<br />
+        {t("DUBAI_ADDRESS_2")}<br />
+        {t("DUBAI_ADDRESS_3")}
       </p>
       <div className="mt-4 space-y-2 text-sm text-gray-300">
         <p>📞 (+971) 554372731</p>
@@ -174,11 +175,11 @@ const Contact = () => {
     {/* Card - Canada */}
     <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-2xl p-6 shadow-xl">
       <img src="/canada.png" alt="Canada Logo" className="w-12 mb-3" />
-      <h3 className="text-2xl font-semibold mb-2">Canada</h3>
+      <h3 className="text-2xl font-semibold mb-2">{t("CANADA")}</h3>
       <p className="text-sm leading-relaxed">
-        100-4310, Sherwoodtowne Boulevard<br />
-        Mississauga, Ontario<br />
-        Canada, L4Z4C4
+        {t("CANADA_ADDRESS_1")}<br />
+       {t("CANADA_ADDRESS_2")}<br />
+       {t("CANADA_ADDRESS_3")}
       </p>
       <div className="mt-4 space-y-2 text-sm text-gray-300">
         <p>📞 (+1) 6474463712</p>
@@ -189,11 +190,11 @@ const Contact = () => {
     {/* Card - Japan */}
     <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-2xl p-6 shadow-xl">
       <img src="/japan.png" alt="Japan Logo" className="w-12 mb-3" />
-      <h3 className="text-2xl font-semibold mb-2">Japan</h3>
+      <h3 className="text-2xl font-semibold mb-2">{t("JAPAN")}</h3>
       <p className="text-sm leading-relaxed">
-        7th Floor Wakamatsu building<br />
-        Honchome 3-3-6, Chuo-ku<br />
-        Tokyo, Japan
+      {t("JAPAN_ADDRESS_1")}<br />
+       {t("JAPAN_ADDRESS_2w")}<br />
+       {t("JAPAN_ADDRESS_3")}
       </p>
       <div className="mt-4 space-y-2 text-sm text-gray-300">
         <p>📞 (+81) 8012198750</p>
@@ -204,10 +205,10 @@ const Contact = () => {
     {/* Card - India */}
     <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-2xl p-6 shadow-xl">
       <img src="/india.png" alt="India Logo" className="w-12 mb-3" />
-      <h3 className="text-2xl font-semibold mb-2">India</h3>
+      <h3 className="text-2xl font-semibold mb-2">{t("INDIA")}</h3>
       <p className="text-sm leading-relaxed">
-        Delhi<br />
-        Jammu & Kashmir
+        {t("INDIA_ADDRESS_1")}<br />
+        {t("INDIA_ADDRESS_2")}
       </p>
       <div className="mt-4 space-y-2 text-sm text-gray-300">
         <p>📞 (+91) 9103163366</p>
@@ -218,10 +219,10 @@ const Contact = () => {
     {/* Card - USA */}
     <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-2xl p-6 shadow-xl">
       <img src="/united.png" alt="USA Logo" className="w-12 mb-3" />
-      <h3 className="text-2xl font-semibold mb-2">United States</h3>
+      <h3 className="text-2xl font-semibold mb-2">{t("UNITED_STATES")}</h3>
       <p className="text-sm leading-relaxed">
-        3400 COTTAGE WAY, STE G2 #24309<br />
-        Sacramento, CA 95825
+       {t("UNITED_STATES_ADDRESS_1")}<br />
+       {t("UNITED_STATES_ADDRESS_2")}
       </p>
       <div className="mt-4 space-y-2 text-sm text-gray-300">
         <p>📞 (+1) 415 755 8939</p>

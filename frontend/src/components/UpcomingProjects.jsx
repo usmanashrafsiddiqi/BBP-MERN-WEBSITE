@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { MdLocationPin } from "react-icons/md";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
+import { useTranslation } from "react-i18next";
 const projectData = [
   {
     image: "/9.jpg",
@@ -71,7 +71,7 @@ const projectData = [
 
 const UpcomingProjects = () => {
   const scrollRef = useRef(null);
-
+const { t } = useTranslation();
   const scroll = (direction) => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
@@ -86,7 +86,7 @@ const UpcomingProjects = () => {
       <div className="max-w-[1320px] mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-12">
-            Upcoming Projects In Dubai
+           {t("UPCOMING_PROJECTS_HEADING")}
           </h2>
         </div>
 

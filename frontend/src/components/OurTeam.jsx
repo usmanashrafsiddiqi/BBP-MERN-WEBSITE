@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // ✅ Added for routing
-
+import { useTranslation } from "react-i18next";
 const teamMembers = [
   {
     id: 1,
@@ -16,7 +16,7 @@ const teamMembers = [
 
 const OurTeam = () => {
   const navigate = useNavigate(); // ✅ Hook for navigation
-
+const { t } = useTranslation();
   const handleSeeAll = () => {
     navigate("/team"); // ✅ Navigate to TeamInfo page
   };
@@ -24,9 +24,9 @@ const OurTeam = () => {
   return (
     <section className="w-full py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-[1320px] mx-auto text-center">
-        <h2 className="text-3xl md:text-5xl font-bold text-gray-800">Our Team</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-800"> {t("OUR_TEAM")}</h2>
         <p className="text-gray-600 mt-2 mb-10 text-base md:text-xl max-w-2xl mx-auto">
-          “Unlocking your Dreams, one key at a Time with Our Real Estate Expertise.”
+          {t("OUR_TEAM_TEXT")}
         </p>
 
         {/* Flex layout: Left manager, right grid */}
@@ -67,7 +67,7 @@ const OurTeam = () => {
           onClick={handleSeeAll}
           className="mt-10 bg-[#9C2B15] hover:bg-[#831e0d] text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 mx-auto"
         >
-          SEE ALL TEAM MEMBER
+          {t("SEE_ALL_TEAM_MEMBERS")}
           <span className="bg-white text-[#9C2B15] rounded-full p-1">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path

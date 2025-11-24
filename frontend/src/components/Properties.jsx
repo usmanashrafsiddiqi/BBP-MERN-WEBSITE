@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { FaBed, FaWhatsapp } from "react-icons/fa";
 import { MdCall, MdLocationPin } from "react-icons/md";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
-
+import { useTranslation } from "react-i18next";
 const properties = [
   {
     id: 1,
@@ -118,7 +118,7 @@ const properties = [
 
 const Properties = () => {
   const scrollRef = useRef(null);
-
+ const { t } = useTranslation();
   const scroll = (direction) => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
@@ -133,7 +133,7 @@ const Properties = () => {
       <div className="max-w-[1320px] mx-auto px-4">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold text-gray-900">
-            Discover A Luxury Lifestyle
+             {t("DISCOVER_ A_LUXURY_LIFESTYLE")}
           </h2>
           <div className="flex gap-2">
             <button

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ArrowLeftCircle, ArrowRightCircle } from "lucide-react";
-
+import { useTranslation } from "react-i18next";
 const DeveloperCarousel = () => {
   const [startIndex, setStartIndex] = useState(0);
 
@@ -18,7 +18,7 @@ const DeveloperCarousel = () => {
     "/dugasta.jpg",
     "/azizi.jpg",
   ];
-
+const { t } = useTranslation();
   const visibleLogos = logos.slice(startIndex, startIndex + 6);
 
   const prev = () => {
@@ -32,7 +32,7 @@ const DeveloperCarousel = () => {
   return (
     <div className="w-full py-20 bg-white text-center">
       <h2 className="text-5xl font-bold text-gray-800 mb-16">
-        Explore Our Developers
+        {t("EXPLORE_OUR_DEVELOPERS_HEADING")}
       </h2>
 
       <div className="flex items-center justify-center gap-10 mb-14 flex-wrap">

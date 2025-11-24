@@ -3,39 +3,40 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Header from "../components/Header"; // already contains Navbar
 import Footer from "../components/Footer";
+import { useTranslation } from 'react-i18next';
 
-const cryptoCoins = [
-  { name: "Bitcoin", img: "/c1.png" },
-  { name: "Ethereum", img: "/c2.png" },
-  { name: "BNB", img: "/c3.png" },
-  { name: "USDT", img: "/c4.png" },
-  { name: "Solana", img: "/c5.png" },
+
+const Crypto = () => {
+  const [usdAmount, setUsdAmount] = useState("");
+  const [btcAmount, setBtcAmount] = useState(null);
+   const {t} = useTranslation();
+   const cryptoCoins = [
+  { name: t("BITCOIN"), img: "/c1.png" },
+  { name: t("ETHEREUM"), img: "/c2.png" },
+  { name: t("BNB"), img: "/c3.png" },
+  { name: t("USDT"), img: "/c4.png" },
+  { name: t("SOLANA"), img: "/c5.png" },
 ];
 
 const benefits = [
-  { title: "Fast Transactions", desc: "Complete purchases in minutes, not weeks." },
-  { title: "Secure Payments", desc: "Blockchain-backed security and transparency." },
-  { title: "Global Access", desc: "Invest from anywhere without exchange hassles." },
-  { title: "Lower Fees", desc: "Avoid high banking and processing costs." },
-  { title: "Potential Growth", desc: "Benefit from crypto’s price appreciation." },
-  { title: "Privacy", desc: "Keep your investments confidential." },
+  { title: t("FAST_TRANSACTIONS"), desc:  t("FAST_TRANSACTIONS_TEXT") },
+  { title:  t("SECURE_PAYMENTS"), desc:  t("SECURE_PAYMENTS_TEXT") },
+  { title: t("GLOBAL_ACCESS"), desc: t("GLOBAL_ACCESS_TEXT") },
+  { title: t("LOWER_FEES"), desc:t("LOWER_FEES_TEXT") },
+  { title: t("POTENTIAL_GROWTH"), desc: t("POTENTIAL_GROWTH_TEXT") },
+  { title:t("PRIVACY"), desc:t("PRIVACY_TEXT") },
 ];
 
 const steps = [
-  { title: "Choose Property", desc: "Select your desired luxury property." },
-  { title: "Initiate Payment", desc: "Send crypto securely from your wallet." },
-  { title: "Confirm Ownership", desc: "Receive ownership documents instantly." },
+  { title: t("CHOOSE_PROPERTY"), desc: t("CHOOSE_PROPERTY_TEXT") },
+  { title:t("INITIATE_PAYMENT"), desc:t("INITITATE_PAYMENT_TEXT") },
+  { title: t("CONFIRM_OWNERSHIP"), desc: t("CONFIRM_OWNERSHIP_TEXT") },
 ];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeInOut" } },
 };
-
-const Crypto = () => {
-  const [usdAmount, setUsdAmount] = useState("");
-  const [btcAmount, setBtcAmount] = useState(null);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -53,8 +54,8 @@ const Crypto = () => {
       {/* Header */}
       <Header
         backgroundImage="/crypto1.jpg"
-        title="Buy Luxury Property in Dubai with Cryptocurrency"
-        subtitle="Fast, secure, and global real estate transactions using crypto payments"
+        title={t("CRYPTO_HEADING")}
+        subtitle={t("CRYPTO_TEXT")}
         showFilter={false}
       /></div>
 
@@ -89,7 +90,7 @@ const Crypto = () => {
   variants={fadeUp}
 >
   <h2 className="text-3xl font-semibold text-center mb-12 text-gray-900">
-    Why Choose Crypto for Real Estate?
+    {t("WHY_CHOOSE_HEADING")}
   </h2>
   <div className="grid md:grid-cols-3 gap-8">
     {benefits.map((item, idx) => (

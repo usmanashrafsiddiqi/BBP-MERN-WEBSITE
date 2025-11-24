@@ -2,15 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
+import { useTranslation } from 'react-i18next';
 const PrivacyPolicy = () => {
+   const {t} = useTranslation();
   return (
     <div className=" min-h-screen">
       {/* Reuse Header */}
       <Header
         backgroundImage="/newpro.jpg"
-        title="Privacy Policy"
-        subtitle="Your data, your control" // ✅ Subtitle added
+        title= {t("PRIVACY_POLICY_HEADING")}
+        subtitle={t("PRIVACY_POLICY_TEXT")} // ✅ Subtitle added
         description=""
         showFilter={false} // No search/filter needed
       />
@@ -21,37 +22,37 @@ const PrivacyPolicy = () => {
         {/* Two sections */}
         <div className="flex flex-col md:flex-row gap-8 w-full">
           <div className="flex-1 text-left">
-            <h5 className="text-lg font-semibold mb-2">Who We Are:</h5>
+            <h5 className="text-lg font-semibold mb-2">{t("WHO_WE_ARE")}:</h5>
             <p className="mb-4">
-              BriskBold Properties is a forward-thinking real estate company committed to redefining property investment experiences. We specialize in premium residential and commercial properties across Dubai, offering clients exclusive access to some of the city’s most sought-after locations. Our mission is to help investors, buyers, and homeowners achieve their real estate goals with ease, transparency, and trust. With expert market knowledge and a client-first approach, we provide seamless property buying, selling, and investment solutions turning dreams into valuable assets.
+             {t("INSIDE_TEXT")}
             </p>
 
-            <h5 className="text-lg font-semibold mb-2">Information Collection:</h5>
+            <h5 className="text-lg font-semibold mb-2">{t("INFORMATION_COLLECTION")}:</h5>
             <p className="mb-4">
-              We may collect personal and organizational details such as your name, email address, company name, and project requirements when you interact with us via our website, forms, or consultation requests.
+              {t("INFORMATION_COLLECTION_TEXT")}
             </p>
 
-            <h5 className="text-lg font-semibold mb-2">How We Use Your Information:</h5>
+            <h5 className="text-lg font-semibold mb-2">{t("HOW_WE_USE_YOUR_INFORMATION")}:</h5>
             <p className="mb-4">
-              Your information helps us understand your business goals, provide tailored automation and development solutions, follow up on service inquiries, and send important updates about our offerings and innovations.
+             {t("HOW_WE_USE_YOUR_INFORMATION_TEXT")}
             </p>
           </div>
 
           <div className="flex-1 text-left">
-            <h5 className="text-lg font-semibold mb-2">Cookies:</h5>
+            <h5 className="text-lg font-semibold mb-2">{t("COOKIES")}:</h5>
             <p className="mb-4">
-              We use cookies to enhance your browsing experience and analyze traffic patterns. You can choose to disable cookies via your browser settings, but this may limit some functionality of our website.
+              {t("COOKIES_TEXT")}
             </p>
 
-            <h5 className="text-lg font-semibold mb-2">Sharing of Information:</h5>
+            <h5 className="text-lg font-semibold mb-2">{t("SHARING_OF_INFORMATION")}:</h5>
             <p className="mb-4">
-              We do not sell your personal data. We may share information with trusted partners to support project execution, marketing, or infrastructure — all under strict confidentiality agreements.
+             {t("SHARING_OF_INFORMATION_TEXT")}
             </p>
 
-            <h5 className="text-lg font-semibold mb-2">Contact Us:</h5>
+            <h5 className="text-lg font-semibold mb-2">{t("CONTACT_US")}:</h5>
             <p>
-              For questions about this Privacy Policy or how we manage your data, please contact us at{" "}
-              <strong>Bbpmarketing@briskboldproperties.com</strong>.
+             {t("FOR_QUESTIONS_TEXT_1")}{" "}
+              <strong>{t("FOR_QUESTIONS_TEXT_2")}</strong>.
             </p>
           </div>
         </div>

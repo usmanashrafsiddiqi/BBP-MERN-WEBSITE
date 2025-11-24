@@ -122,7 +122,7 @@ const DeveloperDetail = () => {
   return (
     <div className="p-2 md:p-4 bg-white overflow-hidden">
       <Header
-        backgroundImage="/devloper.jpg"
+        backgroundImage="/newcom.jpg"
         title={`${dev.name}: Redefining Real Estate Excellence`}
         subtitle=""
         description={`Welcome to ${dev.name}, a trusted name in real estate known for luxury, innovation, and quality.`}

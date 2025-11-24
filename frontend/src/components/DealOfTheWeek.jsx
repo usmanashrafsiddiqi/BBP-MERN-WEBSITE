@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 const DealCard = ({ image, title, location, price, plan }) => {
   return (
     <div className="w-[280px] bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
@@ -22,6 +23,7 @@ const DealCard = ({ image, title, location, price, plan }) => {
 };
 
 const DealOfTheWeek = () => {
+  const { t } = useTranslation();
   const deals = [
     {
       image: "/afford1.webp",
@@ -56,7 +58,7 @@ const DealOfTheWeek = () => {
   return (
     <div className="w-full bg-gray-50 py-12 px-4">
       <h2 className="text-center text-4xl sm:text-5xl md:text-6xl font-bold text-[#6B1B07] uppercase mb-12 sm:mb-16">
-      Affordable picks
+     {t("AFFORDABLE_PICKS_HEADING")}
       </h2>
 
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-8 justify-items-center">

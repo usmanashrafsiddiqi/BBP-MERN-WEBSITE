@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useTranslation } from "react-i18next";
 
 // ✅ Updated Project Data with slugs
 const projects = [
@@ -91,6 +92,7 @@ const useQuery = () => {
 };
 
 const NewProjects = () => {
+  const {t} = useTranslation();
   const query = useQuery();
 
   const keyword = query.get("keyword")?.toLowerCase() || "";
@@ -114,9 +116,9 @@ const NewProjects = () => {
     <div className="p-2 md:p-4 bg-white overflow-hidden">
       <Header
         backgroundImage="/newpro.jpg"
-        title=" New Projects"
+        title= {t("NEW_PROJECTS")}
         subtitle=""
-        description="Find exciting new real estate projects and investment opportunities"
+        description={t("OUR_PROJECTS_HEADING")}
         showFilter={false}
       />
 

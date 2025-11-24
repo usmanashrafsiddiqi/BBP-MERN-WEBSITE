@@ -1,13 +1,14 @@
-// RegisterInterestForm.jsx
 import React, { useRef } from "react";
 import emailjs from "emailjs-com";
+import { useTranslation } from "react-i18next";
 
 const RegisterInterestForm = ({
   backgroundImage = "/BULDINGS.png",
-  title = "Register Your Interest",
-  subtitle = "Our friendly team would love to hear from you.",
-  buttonText = "SUBMIT FORM NOW →",
+  title,       // can be passed from parent
+  subtitle,    // can be passed from parent
+  buttonText,  // can be passed from parent
 }) => {
+  const { t } = useTranslation();
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -15,10 +16,10 @@ const RegisterInterestForm = ({
 
     emailjs
       .sendForm(
-        "service_4hfi5lt",     // Replace with your actual EmailJS service ID
-        "template_zpvhzhc",    // Replace with your actual EmailJS template ID
+        "service_4hfi5lt",
+        "template_zpvhzhc",
         form.current,
-        "I4CoOnYf72QcHtckV"         // Replace with your actual EmailJS public key
+        "I4CoOnYf72QcHtckV"
       )
       .then(
         (result) => {
@@ -44,35 +45,41 @@ const RegisterInterestForm = ({
           onSubmit={sendEmail}
           className="w-full max-w-[600px] bg-white rounded-xl shadow-lg px-8 py-12 min-h-[350px]"
         >
-          <h2 className="text-3xl font-bold text-black mb-3">{title}</h2>
-          <p className="text-gray-600 mb-8">{subtitle}</p>
+          {/* ✅ Title and Subtitle use passed props or fallback to translation */}
+          <h2 className="text-3xl font-bold text-black mb-3">
+            {title || t("REGISTER_YOUR_INTEREST")}
+          </h2>
+          <p className="text-gray-600 mb-8">
+            {subtitle || t("OUR_FRIENDLY_TEAM_TEXT")}
+          </p>
 
+          {/* ✅ Input Fields (Translated Placeholders) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <input
               type="text"
               name="name"
-              placeholder="First Name *"
+              placeholder={`${t("FIRST_NAME_HEADING")} *`}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none"
             />
             <input
               type="text"
               name="last_name"
-              placeholder="Last Name *"
+              placeholder={`${t("LAST_NAME_HEADING")} *`}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none"
             />
             <input
               type="email"
               name="email"
-              placeholder="Email *"
+              placeholder={`${t("EMAIL_HEADING")} *`}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none"
             />
             <input
               type="tel"
               name="phone"
-              placeholder="Mobile Number *"
+              placeholder={`${t("MOBILE_NUMBER_HEADING")} *`}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none"
             />
@@ -81,7 +88,7 @@ const RegisterInterestForm = ({
           <div className="mb-6">
             <textarea
               name="message"
-              placeholder="Message *"
+              placeholder={`${t("MESSAGE_HEADING")} *`}
               rows="4"
               className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none"
             ></textarea>
@@ -91,7 +98,7 @@ const RegisterInterestForm = ({
             type="submit"
             className="bg-red-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-red-700 transition-all"
           >
-            {buttonText}
+            {buttonText || t("SUBMIT_FORM_NOW_HEADING")}
           </button>
         </form>
       </div>

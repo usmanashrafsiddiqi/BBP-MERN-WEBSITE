@@ -2,8 +2,10 @@ import React from 'react';
 import Header from '../components/Header';
 import RegisterInterestForm from '../components/RegisterInterestForm';
 import Footer from '../components/Footer';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+    const {t} = useTranslation();
     return (
         <div>
             {/* ✅ Header Section */}
@@ -11,10 +13,9 @@ const About = () => {
                 <Header
                     backgroundImage="/newpro.jpg"
                     showFilter={false}
-                    title="WELCOME TO BRISKBOLD PROPERTIES"
-                    subtitle="Who We Are"
-                    description="We’re reimagining how you buy, sell and rent. It’s now easier to get into a 
-place you love. So let’s do this, together."
+                    title= {t("ABOUT_HEADING")}
+                    subtitle={t("WHO_WE_ARE")}
+                    description={t("ABOUT_TEXT")}
                 />
             </div>
 
@@ -35,13 +36,10 @@ place you love. So let’s do this, together."
                     <div className="flex-1 px-4 md:px-8 py-4 flex items-center">
                         <div>
                             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-gray-900">
-                                About BRISKBOLD PROPERTY
+                                {t("ABOUT_BRISKBOLD_PROPERTIES")}
                             </h2>
                             <p className="text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
-                                BriskBOLD Properties is a leading real estate brokerage firm in the UAE,
-                                known for its expertise, professionalism, and commitment to delivering
-                                exceptional client experiences. Our team of multilingual and highly
-                                skilled agents ensures tailored solutions for every property need.
+                               {t("BRISKBOLD_TEXT")}
                             </p>
                         </div>
                     </div>
@@ -76,26 +74,20 @@ place you love. So let’s do this, together."
                     {/* Vision Card */}
                     <div className="flex-1 bg-[#EAF2F5] rounded-3xl p-8 lg:p-12 shadow-md">
                         <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                            Our Vision
+                            {t("OUR_VISION_HEADING")}
                         </h3>
                         <p className="text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed">
-                            To become one of the leading providers of total real estate solutions,
-                            delivering the most prominent portfolio of properties, innovative solutions,
-                            and top-notch customer services in the Middle East, driven by quality,
-                            high-end services, and an expert team of consultants.
+                           {t("OUR_VISION_TEXT")}
                         </p>
                     </div>
 
                     {/* Mission Card */}
                     <div className="flex-1 bg-[#EAF2F5] rounded-3xl p-8 lg:p-12 shadow-md">
                         <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                            Our Mission
+                        {t("OUR_MISSION_HEADING")}
                         </h3>
                         <p className="text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed">
-                            To develop an energetic, research oriented, and results-driven focused work
-                            environment, providing expert and definitive commercial and residential
-                            property advice, driving meaningful value, and managing all clients’ property
-                            interests with transparency and mutual trust.
+                           {t("OUR_MISSION_TEXT")} 
                         </p>
                     </div>
 

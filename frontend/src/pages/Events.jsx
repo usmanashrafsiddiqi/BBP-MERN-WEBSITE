@@ -3,33 +3,35 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import RegisterInterestForm from '../components/RegisterInterestForm';
 import Footer from '../components/Footer';
-
-const eventPosts = [
-  {
-    slug: "article1",
-    image: "/blog1.jpg",
-    date: "Nov 15, 2024",
-    title:
-      "BriskBold Properties Hosts Landmark Dubai Real Estate Showcase in Japan 2024 – A Glimpse into Global Investment Opportunities",
-    description: " ",
-  },
-  {
-    slug: "article2",
-    image: "/blog2.jpg",
-    date: "June 2025",
-    title: "BriskBold Properties x Iconic Dubai Developers – Tokyo Event",
-    description: "",
-  },
-   {
-    slug: "article3",   // 👈 new article slug (must match your route later)
-    image: "/blog3.jpg", // 👈 new image path
-    date: "July 2025",   
-    title: "BriskBOLD Properties Team Get-Together 2025",
-    description: "On 29th July 2025, the BriskBOLD Properties family came together for a memorable Day at Café Sufi Riverfront, Kashmir..", 
-  },
-];
+import { useTranslation } from 'react-i18next'; // 👈 import translation hook
 
 const Events = () => {
+  const { t } = useTranslation(); // 👈 get translation function
+
+  const eventPosts = [
+    {
+      slug: "article1",
+      image: "/blog1.jpg",
+      date: t("1ST_EVENT_DATE"),
+      title: t("1ST_EVENT_TITLE"),
+      description: "", // you can add t("1ST_EVENT_DESC") if available
+    },
+    {
+      slug: "article2",
+      image: "/blog2.jpg",
+      date: t("2ND_EVENT_DATE"),
+      title: t("2ND_EVENT_TITLE"),
+      description: "",
+    },
+    {
+      slug: "article3",
+      image: "/blog3.jpg",
+      date: t("3RD_EVENT_DATE"),
+      title: t("3RD_EVENT_TITLE"),
+      description: t("3RD_EVENT_DESC"),
+    },
+  ];
+
   return (
     <div className="relative">
       {/* Header Section */}
@@ -37,9 +39,9 @@ const Events = () => {
         <Header
           backgroundImage="/blog.jpg"
           showFilter={false}
-          title="Real Estate Events"
-          subtitle="Conferences, Expos, and Global Shows"
-          description="Your gateway to past and upcoming property events, investment expos, and expert sessions."
+          title={t("EVENTS_HEADING")}
+          subtitle={t("EVENTS_SUB_HEADING")}
+          description={t("EVENTS_TEXT")}
           showContactInfo={false}
         />
       </div>
@@ -49,7 +51,7 @@ const Events = () => {
         <div className="flex items-center w-full max-w-3xl bg-white rounded-full overflow-hidden border shadow-md">
           <input
             type="text"
-            placeholder="Search By Keyword"
+            placeholder={t("SEARCH_BY_KEYWORD")}
             className="flex-grow px-4 py-3 text-sm outline-none rounded-l-full"
           />
           <button className="bg-red-700 text-white px-5 py-3 rounded-r-full hover:bg-red-800 transition">
@@ -62,12 +64,14 @@ const Events = () => {
 
       {/* Breadcrumb */}
       <div className="text-white mt-6 text-center text-sm md:text-base font-light">
-        Home / More / <span className="font-semibold">Events</span>
+        Home / More / <span className="font-semibold">{t("EVENTS_HEADING")}</span>
       </div>
 
       {/* Latest Events Section */}
-     <div className="mt-20 max-w-[1440px] mx-auto px-6 pb-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Latest Events</h2>
+      <div className="mt-20 max-w-[1440px] mx-auto px-6 pb-16">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+          {t("LATEST_EVENT")}
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {eventPosts.map((post, idx) => (
@@ -105,7 +109,7 @@ const Events = () => {
                   to={`/events/${post.slug}`}
                   className="text-red-600 text-sm font-semibold hover:underline"
                 >
-                  Read Article →
+                  {t("READ_ARTICLE")} →
                 </Link>
               </div>
             </div>

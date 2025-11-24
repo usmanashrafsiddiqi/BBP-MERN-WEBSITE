@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import { useNavigate,Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import { FaArrowRight, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-
+import { useTranslation } from "react-i18next";
 const Header = ({
   backgroundImage = "/mainbg.png",
   showFilter = true,
-  title = "BRISKBOLD PROPERTY",
-  subtitle = "Real Estate Network",
-  description = "We're reimagining how you buy, sell and rent...",
+  title ,
+  subtitle,
+  description,
   showContactInfo = false,
 }) => {
   const navigate = useNavigate();
-
+ const { t } = useTranslation();
+ const headerTitle = title !== undefined ? title : t("BRISKBOLD_PROPERTY_TEXT");
+const headerSubtitle = subtitle !== undefined ? subtitle : t("REAL_ESTATE_NETWORK");
+const headerDescription = description !== undefined ? description : t("HEADER_DESCRIPTION_TEXT");
   const [keyword, setKeyword] = useState('');
   const [category, setCategory] = useState('');
   const [propertyType, setPropertyType] = useState('');
@@ -64,13 +67,13 @@ const Header = ({
             {/* Title & Subtitles */}
             <div className="mb-12">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wide">
-                {title}
+                {headerTitle}
               </h1>
               <p className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mt-2">
-                {subtitle}
+                {headerSubtitle}
               </p>
               <p className="mt-4 text-sm sm:text-base md:text-lg max-w-3xl mx-auto font-light">
-                {description}
+                {headerDescription}
               </p>
             </div>
 
@@ -90,7 +93,7 @@ const Header = ({
 
 <Link to="/newprojects">
   <button className="px-6 py-2 bg-transparent text-white text-sm border border-gray-300 rounded-l-md">
-    BUY
+    {t("BUY")}
   </button>
 </Link>
 
@@ -98,7 +101,7 @@ const Header = ({
   {/* RENT button with tooltip */}
   <div className="relative group">
     <button className="px-6 py-2 bg-transparent text-white text-sm border-t border-b border-r border-gray-300 rounded-r-md">
-      RENT
+      {t("RENT")}
     </button>
 
     {/* Tooltip */}
@@ -128,7 +131,7 @@ const Header = ({
                       onChange={(e) => setCategory(e.target.value)}
                       className="min-w-[180px] px-4 py-2 border rounded-full text-sm text-black"
                     >
-                      <option value="">Residential</option>
+                      <option value="">{t("RESIDENTIAL_TEXT")}</option>
                       <option value="commercial">Commercial</option>
                     </select>
                     <select
@@ -136,7 +139,7 @@ const Header = ({
                       onChange={(e) => setPropertyType(e.target.value)}
                       className="min-w-[180px] px-4 py-2 border rounded-full text-sm text-black"
                     >
-                      <option value="">Property Type</option>
+                      <option value="">{t("PROPERTY_TYPE_TEXT")}</option>
                       <option value="studio">Studio</option>
                       <option value="1br">1BR</option>
                       <option value="2br">2BR</option>
@@ -146,7 +149,7 @@ const Header = ({
                       onChange={(e) => setMinPrice(e.target.value)}
                       className="min-w-[130px] px-4 py-2 border rounded-full text-sm text-black"
                     >
-                      <option value="">Min Price</option>
+                      <option value="">{t("MIN_PRICE_TEXT")}</option>
                       <option value="500000">500K</option>
                       <option value="1000000">1M</option>
                     </select>
@@ -155,7 +158,7 @@ const Header = ({
                       onChange={(e) => setMaxPrice(e.target.value)}
                       className="min-w-[130px] px-4 py-2 border rounded-full text-sm text-black"
                     >
-                      <option value="">Max Price</option>
+                      <option value="">{t("MAX_PRICE_TEXT")}</option>
                       <option value="1500000">1.5M</option>
                       <option value="2000000">2M</option>
                     </select>
@@ -164,7 +167,7 @@ const Header = ({
                       onChange={(e) => setBedrooms(e.target.value)}
                       className="min-w-[130px] px-4 py-2 border rounded-full text-sm text-black"
                     >
-                      <option value="">Bedroom</option>
+                      <option value="">{t("BEDROOM_TEXT")}</option>
                       <option value="studio">Studio</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -175,7 +178,7 @@ const Header = ({
                       onChange={(e) => setSize(e.target.value)}
                       className="min-w-[130px] px-4 py-2 border rounded-full text-sm text-black"
                     >
-                      <option value="">Size</option>
+                      <option value="">{t("SIZE_TEXT")}</option>
                       <option value="small">Small</option>
                       <option value="large">Large</option>
                     </select>
@@ -183,7 +186,7 @@ const Header = ({
                       onClick={handleSearch}
                       className="bg-red-700 text-white px-6 py-2 rounded-full font-semibold text-sm flex items-center gap-2 hover:bg-red-800 transition"
                     >
-                      SEARCH NOW <FaArrowRight className="text-xs" />
+                        {t("SEARCH_NOW")}<FaArrowRight className="text-xs" />
                     </button>
                   </div>
                 </div>
