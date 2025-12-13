@@ -9,22 +9,22 @@ const Career = () => {
   const { t } = useTranslation();
 
   const jobs = [
-    {
-      title: t("JOB_PROFILE_1"),
-      slug: "customer-service-representative",
-      desc: t("CUSTOMER_SERVICE_TEXT"),
-    },
-    {
-      title: t("JOB_PROFILE_2"),
-      slug: "sales-executive",
-      desc: t("SALES_EXECUTIVE_TEXT"),
-    },
-    {
-      title: t("JOB_PROFILE_3"),
-      slug: "back-office-assistant",
-      desc: t("BACK_OFFICE_ASSISTANT_TEXT"),
-    },
-  ];
+  {
+    title: "JOB_PROFILE_1",
+    slug: "customer-service-representative",
+    desc: "CUSTOMER_SERVICE_TEXT",
+  },
+  {
+    title: "JOB_PROFILE_2",
+    slug: "sales-executive",
+    desc: "SALES_EXECUTIVE_TEXT",
+  },
+  {
+    title: "JOB_PROFILE_3",
+    slug: "back-office-assistant",
+    desc: "BACK_OFFICE_ASSISTANT_TEXT",
+  },
+];
 
   return (
     <div className="p-2 md:p-4 bg-white overflow-hidden">
@@ -78,8 +78,9 @@ const Career = () => {
               className="bg-white border rounded-2xl px-6 py-4 flex flex-col md:flex-row md:items-center justify-between shadow-sm"
             >
               <div className="mb-4 md:mb-0">
-                <h3 className="text-lg font-bold text-teal-700">{job.title}</h3>
-                <p className="text-gray-600 text-sm mt-1">{job.desc}</p>
+             <h3 className="text-lg font-bold text-teal-700">{t(job.title)}</h3>
+               <p className="text-gray-600 text-sm mt-1">{t(job.desc)}</p>
+
               </div>
 
               <div className="flex items-center justify-between md:justify-end gap-6">

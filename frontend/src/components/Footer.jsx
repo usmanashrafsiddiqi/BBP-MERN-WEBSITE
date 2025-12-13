@@ -62,13 +62,13 @@ const Footer = () => {
               <li><Link to="/about" className="hover:underline">{t("ABOUT")}</Link></li>
               <li><Link to="/contact" className="hover:underline">{t("CONTACT")}</Link></li>
               <li><Link to="/newprojects" className="hover:underline">{t("NEW_PROJECTS")}</Link></li>
-               <li><Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link></li>
+               <li><Link to="/privacy-policy" className="hover:underline">{t("PRIVACY_POLICY")}</Link></li>
             </ul>
           </div>
 
           {/* Social Icons */}
           <div>
-  <h4 className="font-extrabold text-white mb-4 text-xl">Socials</h4>
+  <h4 className="font-extrabold text-white mb-4 text-xl">{t("SOCIAL")}</h4>
   <div className="flex gap-4 text-white text-2xl">
     <a
       href="https://wa.me/+971569242326"
@@ -115,7 +115,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-extrabold text-white mb-4 text-xl">Contact Us</h4>
+            <h4 className="font-extrabold text-white mb-4 text-xl"> {t("CONTACT_US")}</h4>
             <ul className="space-y-3 text-gray-300 font-medium">
               <li className="flex items-center gap-2">
                 <span>📞</span> +971 56 924 2326

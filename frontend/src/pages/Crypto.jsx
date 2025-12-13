@@ -115,7 +115,7 @@ const fadeUp = {
   variants={fadeUp}
 >
   <h2 className="text-3xl font-semibold mb-12 text-gray-900">
-    Simple Crypto Payment Process
+     {t("SIMPLE_CRYPTO_HEADING")}   
   </h2>
   <div className="grid md:grid-cols-3 gap-8">
     {steps.map((step, idx) => (

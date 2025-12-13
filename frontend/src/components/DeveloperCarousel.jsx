@@ -17,6 +17,12 @@ const DeveloperCarousel = () => {
     "/reef.jpg",
     "/dugasta.jpg",
     "/azizi.jpg",
+    "/tigerdev.jpg",
+    "/leos.jpg",
+    "/reportage.png",
+    "/TownX.png",
+    "/tarrad.jpg",
+    "/gfs.png"
   ];
 const { t } = useTranslation();
   const visibleLogos = logos.slice(startIndex, startIndex + 6);

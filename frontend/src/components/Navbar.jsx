@@ -28,7 +28,7 @@ const Navbar = () => {
           <Link to="/crypto" className="text-white text-sm hover:underline">{t("CRYPTO")}</Link>
          {/* Rent (Coming Soon) */}
 <div className="relative group cursor-default">
-  <span className="text-white text-sm">{t("RENT_SMALL")}</span>
+  <span className="text-white text-sm">{t("RENT")}</span>
   <div className="absolute left-1/2 -translate-x-1/2 mt-1 hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1 whitespace-nowrap">
     Coming Soon
   </div>
