@@ -21,6 +21,7 @@ import JobDetail from "./pages/JobDetail";
 import ProjectDetails from "./pages/ProjectDetails";
 import Crypto from "./pages/Crypto";
 import PrivacyPolicy from './pages/PrivacyPolicy'; 
+import FloatingChatWidget from './components/FloatingChatWidget';
 function App() {
   return (
     <Router>
@@ -46,6 +47,7 @@ function App() {
         <Route path="/crypto" element={<Crypto  />} />
 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
+        <FloatingChatWidget />
     </Router>
   );
 }
